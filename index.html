@@ -288,6 +288,32 @@
     }
     .trajectory-bar .traj-text { font-size: 13px; color: var(--text-light); line-height: 1.7; }
 
+    /* ===== CLIENT LOGOS (P&B) ===== */
+    .logos-section { padding: 72px 32px; border-top: 1px solid var(--border); }
+    .logos-label {
+      font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px;
+      color: var(--text-light); margin-bottom: 40px; text-align: center;
+    }
+    .logos-grid {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 40px 48px; max-width: 760px; margin: 0 auto;
+    }
+    .logos-grid img {
+      height: 32px; width: auto; max-width: 120px; object-fit: contain;
+      filter: grayscale(100%) brightness(0.4);
+      opacity: 0.45;
+      transition: opacity 0.4s, filter 0.4s;
+    }
+    .logos-grid img:hover {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .logos-grid { gap: 28px 32px; }
+      .logos-grid img { height: 24px; max-width: 90px; }
+    }
+
     /* ===== NEWSLETTER (dark) ===== */
     .newsletter-section { text-align: center; }
     .newsletter-section .section-title { margin-bottom: 16px; }
@@ -567,6 +593,33 @@
       <div class="trajectory-bar reveal">
         <div class="traj-label">Trajetória</div>
         <div class="traj-text">Co-fundador ABStartups &middot; C-Level TOTVS &middot; C-Level Grupo SEB &middot; XP Investimentos &middot; Professor Alura Empresas &middot; Advisory em energia, agro, seguros, tecnologia e educação</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS CLIENTES -->
+  <section class="logos-section section--white">
+    <div class="container">
+      <p class="logos-label reveal">Empresas que já trabalharam com o Mário</p>
+      <div class="logos-grid reveal">
+        <img src="assets/logos/novartis.png" alt="Novartis" loading="lazy">
+        <img src="assets/logos/caixa-seguradora.png" alt="Caixa Seguradora" loading="lazy">
+        <img src="assets/logos/cnp-holding.png" alt="CNP Seguros Holding Brasil" loading="lazy">
+        <img src="assets/logos/grupo-seb.png" alt="Grupo SEB" loading="lazy">
+        <img src="assets/logos/grupo-protege.png" alt="Grupo Protege" loading="lazy">
+        <img src="assets/logos/sonda.png" alt="Sonda" loading="lazy">
+        <img src="assets/logos/softplan.png" alt="Softplan" loading="lazy">
+        <img src="assets/logos/grupo-cometa.png" alt="Grupo Cometa" loading="lazy">
+        <img src="assets/logos/soul-parques.png" alt="Soul Parques" loading="lazy">
+        <img src="assets/logos/global-vita.jpeg" alt="Global Vita Sports" loading="lazy">
+        <img src="assets/logos/cnp-seguradora.png" alt="CNP Seguradora" loading="lazy">
+        <img src="assets/logos/link-school.png" alt="Link School" loading="lazy">
+        <img src="assets/logos/cei.png" alt="CEI" loading="lazy">
+        <img src="assets/logos/bx.png" alt="BX" loading="lazy">
+        <img src="assets/logos/reed.png" alt="Reed Exhibitions" loading="lazy">
+        <img src="assets/logos/upmat.png" alt="UpMat Educacional" loading="lazy">
+        <img src="assets/logos/estimulo.png" alt="Estímulo" loading="lazy">
+        <img src="assets/logos/city.png" alt="City Soluções Urbanas" loading="lazy">
       </div>
     </div>
   </section>
