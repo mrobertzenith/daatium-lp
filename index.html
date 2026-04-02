@@ -289,29 +289,32 @@
     .trajectory-bar .traj-text { font-size: 13px; color: var(--text-light); line-height: 1.7; }
 
     /* ===== CLIENT LOGOS (P&B) ===== */
-    .logos-section { padding: 72px 32px; border-top: 1px solid var(--border); }
+    .logos-section { padding: 80px 32px; border-top: 1px solid var(--border); }
     .logos-label {
       font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 3px;
-      color: var(--text-light); margin-bottom: 40px; text-align: center;
+      color: var(--text-light); margin-bottom: 48px; text-align: center;
     }
     .logos-grid {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-      gap: 40px 48px; max-width: 760px; margin: 0 auto;
+      gap: 32px 40px; max-width: 800px; margin: 0 auto;
     }
-    .logos-grid img {
-      height: 32px; width: auto; max-width: 120px; object-fit: contain;
-      filter: grayscale(100%) brightness(0.4);
-      opacity: 0.45;
+    .logo-item {
+      width: 110px; height: 44px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-item img {
+      max-width: 100%; max-height: 100%; object-fit: contain;
+      filter: grayscale(100%) brightness(0.35);
+      opacity: 0.5;
       transition: opacity 0.4s, filter 0.4s;
     }
-    .logos-grid img:hover {
+    .logo-item:hover img {
       filter: grayscale(0%) brightness(1);
       opacity: 1;
     }
 
     @media (max-width: 768px) {
-      .logos-grid { gap: 28px 32px; }
-      .logos-grid img { height: 24px; max-width: 90px; }
+      .logos-grid { gap: 24px 28px; }
+      .logo-item { width: 80px; height: 36px; }
     }
 
     /* ===== NEWSLETTER (dark) ===== */
@@ -602,24 +605,24 @@
     <div class="container">
       <p class="logos-label reveal">Empresas que já trabalharam com o Mário</p>
       <div class="logos-grid reveal">
-        <img src="assets/logos/novartis.png" alt="Novartis" loading="lazy">
-        <img src="assets/logos/caixa-seguradora.png" alt="Caixa Seguradora" loading="lazy">
-        <img src="assets/logos/cnp-holding.png" alt="CNP Seguros Holding Brasil" loading="lazy">
-        <img src="assets/logos/grupo-seb.png" alt="Grupo SEB" loading="lazy">
-        <img src="assets/logos/grupo-protege.png" alt="Grupo Protege" loading="lazy">
-        <img src="assets/logos/sonda.png" alt="Sonda" loading="lazy">
-        <img src="assets/logos/softplan.png" alt="Softplan" loading="lazy">
-        <img src="assets/logos/grupo-cometa.png" alt="Grupo Cometa" loading="lazy">
-        <img src="assets/logos/soul-parques.png" alt="Soul Parques" loading="lazy">
-        <img src="assets/logos/global-vita.jpeg" alt="Global Vita Sports" loading="lazy">
-        <img src="assets/logos/cnp-seguradora.png" alt="CNP Seguradora" loading="lazy">
-        <img src="assets/logos/link-school.png" alt="Link School" loading="lazy">
-        <img src="assets/logos/cei.png" alt="CEI" loading="lazy">
-        <img src="assets/logos/bx.png" alt="BX" loading="lazy">
-        <img src="assets/logos/reed.png" alt="Reed Exhibitions" loading="lazy">
-        <img src="assets/logos/upmat.png" alt="UpMat Educacional" loading="lazy">
-        <img src="assets/logos/estimulo.png" alt="Estímulo" loading="lazy">
-        <img src="assets/logos/city.png" alt="City Soluções Urbanas" loading="lazy">
+        <div class="logo-item"><img src="assets/logos/novartis.png" alt="Novartis" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/caixa-seguradora.png" alt="Caixa Seguradora" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/cnp-holding.png" alt="CNP Seguros Holding Brasil" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/grupo-seb.png" alt="Grupo SEB" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/grupo-protege.png" alt="Grupo Protege" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/sonda.png" alt="Sonda" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/softplan.png" alt="Softplan" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/grupo-cometa.png" alt="Grupo Cometa" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/soul-parques.png" alt="Soul Parques" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/global-vita.jpeg" alt="Global Vita Sports" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/cnp-seguradora.png" alt="CNP Seguradora" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/link-school.png" alt="Link School" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/cei.png" alt="CEI" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/bx.png" alt="BX" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/reed.png" alt="Reed Exhibitions" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/upmat.png" alt="UpMat Educacional" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/estimulo.png" alt="Estímulo" loading="lazy"></div>
+        <div class="logo-item"><img src="assets/logos/city.png" alt="City Soluções Urbanas" loading="lazy"></div>
       </div>
     </div>
   </section>
