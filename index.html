@@ -231,32 +231,44 @@
       max-width: 540px; line-height: 1.8; margin-bottom: 64px;
     }
 
-    .hero-adoption { margin-bottom: 64px; max-width: 560px; }
-    .hero-adoption-title {
-      font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 3px;
-      color: rgba(255,255,255,0.3); margin-bottom: 20px;
+    .hero-data { margin-bottom: 64px; max-width: 560px; }
+    .hero-blocks {
+      display: flex; gap: 12px; margin-bottom: 16px;
     }
-    .adoption-row {
-      display: flex; align-items: center; gap: 16px; margin-bottom: 10px;
+    .hero-block {
+      border-radius: 4px; padding: 24px 20px; display: flex;
+      flex-direction: column; justify-content: center;
     }
-    .adoption-label {
-      font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.45);
-      width: 100px; text-align: right; flex-shrink: 0; letter-spacing: 0.3px;
+    .hero-block--large {
+      flex: 93; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
     }
-    .adoption-bar-wrap { flex: 1; position: relative; height: 28px; }
-    .adoption-bar {
-      height: 100%; border-radius: 2px;
-      background: rgba(47, 128, 235, 0.2);
-      position: relative; min-width: 2px;
-      transition: width 1s cubic-bezier(0.16,1,0.3,1);
+    .hero-block--small {
+      flex: 20; background: var(--blue2);
+      min-width: 120px; text-align: center;
     }
-    .adoption-bar--highlight { background: var(--blue2); }
-    .adoption-value {
-      font-family: var(--font-serif); font-size: 15px; font-weight: 700;
-      color: var(--white); position: absolute; right: -8px; top: 50%;
-      transform: translate(100%, -50%); white-space: nowrap; padding-left: 12px;
+    .hero-block .block-num {
+      font-family: var(--font-serif); font-weight: 700; line-height: 1;
     }
-    .adoption-bar--highlight .adoption-value { color: var(--blue2); font-size: 17px; }
+    .hero-block--large .block-num {
+      font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 6px;
+    }
+    .hero-block--small .block-num {
+      font-size: 40px; color: var(--white); letter-spacing: -2px; margin-bottom: 6px;
+    }
+    .hero-block .block-desc {
+      font-size: 12px; line-height: 1.4;
+    }
+    .hero-block--large .block-desc { color: rgba(255,255,255,0.35); }
+    .hero-block--small .block-desc { color: rgba(255,255,255,0.7); }
+    .hero-source {
+      font-size: 10px; color: rgba(255,255,255,0.2); line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .hero-insight {
+      font-family: var(--font-serif); font-size: 17px; font-style: italic;
+      color: rgba(255,255,255,0.5); line-height: 1.5;
+    }
 
     .hero-buttons { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .btn-primary {
@@ -526,8 +538,10 @@
       .hero { padding: 110px 20px 72px; }
       .hero h1 { font-size: 30px; letter-spacing: -0.5px; }
       .hero-sub { font-size: 15px; margin-bottom: 48px; }
-      .hero-adoption { max-width: 100%; margin-bottom: 48px; }
-      .adoption-label { width: 72px; font-size: 11px; }
+      .hero-data { max-width: 100%; margin-bottom: 48px; }
+      .hero-blocks { flex-direction: column; }
+      .hero-block--small { min-width: auto; flex-direction: row; align-items: center; gap: 12px; padding: 16px 20px; }
+      .hero-block--small .block-num { font-size: 28px; margin-bottom: 0; }
       .hero-buttons { flex-direction: column; }
       .hero-buttons a { text-align: center; width: 100%; }
 
@@ -576,43 +590,22 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-label">Advisory em IA &middot; Mário Almeida</p>
-      <h1>80% das empresas brasileiras vão investir em IA nos próximos 2 anos. <span class="dim">A maioria vai desperdiçar.</span><sup>1</sup></h1>
-      <p class="hero-sub">O ciclo entre novidade e obsolescência que levava décadas agora leva meses. Sua empresa decide em 18 meses o que o mercado resolve em 3.</p>
-      <div class="hero-adoption">
-        <p class="hero-adoption-title">Tempo para alcançar 100 milhões de usuários</p>
-        <div class="adoption-row">
-          <span class="adoption-label">Telefone</span>
-          <div class="adoption-bar-wrap">
-            <div class="adoption-bar" style="width: 100%;">
-              <span class="adoption-value">75 anos</span>
-            </div>
+      <p class="hero-label">Arquitetura de transição para IA &middot; Mário Almeida</p>
+      <h1>IA acelera tudo. <span class="dim">Inclusive o que você não quer acelerar.</span></h1>
+      <p class="hero-sub">Antes de investir, saiba o que vai amplificar.</p>
+      <div class="hero-data">
+        <div class="hero-blocks">
+          <div class="hero-block hero-block--large">
+            <span class="block-num">93% das atividades de trabalho</span>
+            <span class="block-desc">Sem IA aplicada</span>
+          </div>
+          <div class="hero-block hero-block--small">
+            <span class="block-num">7%</span>
+            <span class="block-desc">Onde 92% da IA opera</span>
           </div>
         </div>
-        <div class="adoption-row">
-          <span class="adoption-label">TV</span>
-          <div class="adoption-bar-wrap">
-            <div class="adoption-bar" style="width: 29%;">
-              <span class="adoption-value">22 anos</span>
-            </div>
-          </div>
-        </div>
-        <div class="adoption-row">
-          <span class="adoption-label">Internet</span>
-          <div class="adoption-bar-wrap">
-            <div class="adoption-bar" style="width: 9.3%;">
-              <span class="adoption-value">7 anos</span>
-            </div>
-          </div>
-        </div>
-        <div class="adoption-row">
-          <span class="adoption-label">IA Generativa</span>
-          <div class="adoption-bar-wrap">
-            <div class="adoption-bar adoption-bar--highlight" style="width: 2%;">
-              <span class="adoption-value">2 meses</span>
-            </div>
-          </div>
-        </div>
+        <p class="hero-source">MIT Center for Collective Intelligence (Malone et al.), "Where can AI be used?", arXiv:2603.20619v1, março 2026</p>
+        <p class="hero-insight">A maioria das oportunidades está onde ninguém olhou.</p>
       </div>
       <div class="hero-buttons">
         <a href="#newsletter" class="btn-primary">Receba análises que o mercado não publica</a>
@@ -660,7 +653,7 @@
         <p>1 IBM / Morning Consult, 2025 — pesquisa com 2.400 tomadores de decisão de TI em 13 países</p>
         <p>2 Amcham Brasil, 2025 — pesquisa sobre adoção de IA em empresas brasileiras</p>
         <p>3 SAP / Oxford Economics, "Value of AI", 2025 — 1.600 executivos em 8 países incl. 200 brasileiros</p>
-        <p>4 UBS Research / Reuters, 2023 — tempo para alcançar 100 milhões de usuários por tecnologia</p>
+        <p>4 MIT Center for Collective Intelligence (Malone et al.), "Where can AI be used?", arXiv:2603.20619v1, março 2026</p>
       </div>
     </div>
   </section>
