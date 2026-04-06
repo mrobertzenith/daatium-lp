@@ -244,7 +244,7 @@
     .hero h1 sup { font-size: 14px; font-weight: 400; vertical-align: super; opacity: 0.3; }
 
     .hero-sub {
-      font-size: 17px; font-weight: 300; color: rgba(255,255,255,0.45);
+      font-size: 17px; font-weight: 300; color: var(--cream);
       max-width: 540px; line-height: 1.8; margin-bottom: 64px;
     }
 
@@ -257,34 +257,33 @@
       flex-direction: column; justify-content: center;
     }
     .hero-block--large {
-      flex: 93; background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      flex: 86; background: var(--cream); border: none;
     }
     .hero-block--small {
-      flex: 20; background: var(--blue2);
+      flex: 14; background: var(--blue2); border: none;
       min-width: 120px; text-align: center;
     }
     .hero-block .block-num {
       font-family: var(--font-serif); font-weight: 700; line-height: 1;
     }
     .hero-block--large .block-num {
-      font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 6px;
+      font-size: 36px; color: var(--dark); letter-spacing: -1px; margin-bottom: 8px;
     }
     .hero-block--small .block-num {
-      font-size: 40px; color: var(--white); letter-spacing: -2px; margin-bottom: 6px;
+      font-size: 40px; color: var(--white); letter-spacing: -2px; margin-bottom: 8px;
     }
     .hero-block .block-desc {
-      font-size: 12px; line-height: 1.4;
+      font-size: 13px; line-height: 1.4;
     }
-    .hero-block--large .block-desc { color: rgba(255,255,255,0.35); }
-    .hero-block--small .block-desc { color: rgba(255,255,255,0.7); }
+    .hero-block--large .block-desc { color: var(--text-med); }
+    .hero-block--small .block-desc { color: rgba(255,255,255,0.8); }
     .hero-source {
-      font-size: 10px; color: rgba(255,255,255,0.2); line-height: 1.5;
+      font-size: 10px; color: var(--cream); opacity: 0.4; line-height: 1.5;
       margin-bottom: 20px;
     }
     .hero-insight {
       font-family: var(--font-serif); font-size: 17px; font-style: italic;
-      color: rgba(255,255,255,0.5); line-height: 1.5;
+      color: var(--cream); opacity: 0.7; line-height: 1.5;
     }
 
     .hero-buttons { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
@@ -613,15 +612,15 @@
       <div class="hero-data">
         <div class="hero-blocks">
           <div class="hero-block hero-block--large">
-            <span class="block-num">93% das atividades de trabalho</span>
-            <span class="block-desc">Sem IA aplicada</span>
+            <span class="block-num">93%</span>
+            <span class="block-desc">das atividades de trabalho ainda não usam IA</span>
           </div>
           <div class="hero-block hero-block--small">
             <span class="block-num">7%</span>
-            <span class="block-desc">Onde 92% da IA opera</span>
+            <span class="block-desc">onde toda a IA está concentrada</span>
           </div>
         </div>
-        <p class="hero-source">MIT Center for Collective Intelligence (Malone et al.), "Where can AI be used?", arXiv:2603.20619v1, março 2026</p>
+        <p class="hero-source">MIT, 2026 — 40.000 atividades analisadas</p>
         <p class="hero-insight">A maioria das oportunidades está onde ninguém olhou.</p>
       </div>
       <div class="hero-buttons">
@@ -671,7 +670,7 @@
         <p>1 Amcham Brasil, 2025 — pesquisa sobre adoção de IA em empresas brasileiras</p>
         <p>2 McKinsey &amp; Company, "The State of AI", 2025 — pesquisa global com empresas que reportam impacto de IA em EBIT</p>
         <p>3 SAP / Oxford Economics, "Value of AI", 2025 — 1.600 executivos em 8 países incl. 200 brasileiros</p>
-        <p>4 MIT Center for Collective Intelligence (Malone et al.), "Where can AI be used?", arXiv:2603.20619v1, março 2026</p>
+        <p>4 MIT Center for Collective Intelligence (Malone et al.), 2026</p>
       </div>
     </div>
   </section>
@@ -729,7 +728,9 @@
           <div class="service-num">01</div>
           <div class="service-body">
             <h3>Sprint</h3>
-            <p class="desc">Uma semana na sua empresa. O Mário lê a operação, identifica onde IA gera valor real, e entrega um retrato claro: onde você está, o que fazer, em que ordem. No quinto dia, o CEO vê resultado — não slide.</p>
+            <p class="desc">Uma semana na empresa. Leitura da operação, entrevistas com líderes, e teste de IA nos dados reais do negócio.</p>
+            <p class="desc">O CEO recebe: retrato da empresa com assessment de maturidade em 6 dimensões, os processos onde IA faz diferença real com justificativa e prioridade, demonstração prática de IA aplicada a um processo real com dados da empresa, e roteiro de 90 dias com ações concretas.</p>
+            <p class="desc">No quinto dia, resultado — não slide.</p>
             <p class="target">Para a empresa que precisa de clareza antes de investir.</p>
           </div>
         </div>
@@ -737,15 +738,21 @@
           <div class="service-num">02</div>
           <div class="service-body">
             <h3>Advisory Recorrente</h3>
-            <p class="desc">Depois do Sprint, quem quer continuar. O Mário como executive partner com cadência: sparring mensal com o CEO, presença em comitê de IA, acompanhamento da execução do roteiro de 90 dias. Poucos clientes simultâneos. Retainer mensal.</p>
-            <p class="target">Para o CEO que quer alguém de confiança acompanhando a transição de perto.</p>
+            <p class="desc">O executivo de IA que a empresa precisa — sem vínculo fixo.</p>
+            <p class="desc">Quem ocupa essa cadeira garante que cada decisão sobre IA passe por alguém com contexto, experiência e independência. Avalia antes de investir. Questiona antes de aprovar. Conecta estratégia com execução. Funciona como CAIO ou Head de IA fracionário — com senioridade de quem já liderou transformação em empresas como TOTVS e Grupo SEB.</p>
+            <p class="desc">Poucos clientes simultâneos. Contrato mensal.</p>
+            <p class="target">Para a empresa que precisa de liderança de IA sênior, não de mais uma consultoria.</p>
           </div>
         </div>
         <div class="service-item reveal reveal-d2">
           <div class="service-num">03</div>
           <div class="service-body">
-            <h3>Programas para Liderança e Equipes</h3>
-            <p class="desc">Preparar a organização para operar com IA. Três formatos: fluência em IA para diretores e gerentes, IA aplicada para equipes operacionais, e AI Readiness para boards e conselhos. In-company, com casos reais do negócio.</p>
+            <h3>Educação Executiva em IA</h3>
+            <p class="desc">Programas in-company para quem decide, quem lidera e quem opera. Casos reais do negócio — não teoria genérica.</p>
+            <p class="desc">Para boards e conselhos: AI Readiness — conselheiros saem com repertório para fazer as perguntas certas sobre IA.</p>
+            <p class="desc">Para diretores e gerentes: fluência em IA — saem sabendo avaliar onde IA se aplica na área deles e como cobrar resultado.</p>
+            <p class="desc">Para equipes operacionais: workshop hands-on — o time sai usando IA no dia seguinte para tarefas reais do trabalho.</p>
+            <p class="desc">Formato, duração e profundidade sob medida.</p>
             <p class="target">Para a empresa que entendeu que IA sem gente preparada é custo, não investimento.</p>
           </div>
         </div>
@@ -870,13 +877,15 @@
     }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Fallback: force-reveal elements already in viewport on load
-    requestAnimationFrame(() => {
+    // Fallback: force-reveal on load + scroll safety net
+    function revealVisible() {
       document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) el.classList.add('visible');
+        if (rect.top < window.innerHeight + 100) el.classList.add('visible');
       });
-    });
+    }
+    requestAnimationFrame(revealVisible);
+    window.addEventListener('scroll', revealVisible, { passive: true });
   </script>
 </body>
 </html>
