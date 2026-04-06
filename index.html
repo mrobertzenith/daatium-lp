@@ -689,12 +689,12 @@
         <div class="bio-text">
           <p>Empreendedor com exit, C-Level em empresas como TOTVS, Grupo SEB e XP Investimentos, co-fundador da ABStartups. Mais de 20 anos transitando entre fundar, escalar e liderar tecnologia e estratégia. Já esteve dos dois lados da mesa. Hoje está do seu.</p>
           <p>Não vende tecnologia. Não entrega relatório. Não faz palestra motivacional sobre o futuro.</p>
-          <p>Daatium é advisory com skin in the game — o executive partner em IA para quem não tem Gartner no speed dial.</p>
+          <p>Daatium é advisory com skin in the game — o arquiteto da transição para IA para quem não tem Gartner no speed dial.</p>
         </div>
       </div>
       <div class="credentials reveal">Founder com exit &middot; Co-fundador ABStartups &middot; C-Level TOTVS &middot; C-Level Grupo SEB &middot; XP Investimentos &middot; Professor Alura Empresas &middot; Advisory em energia, agro, seguros, tecnologia e educação</div>
       <div class="pullquote reveal">
-        <p>IA sem mudança estrutural não dá ROI. IA é energia elétrica, não feature. Ou você redesenha como sua empresa decide, opera e lidera — ou cada real investido em IA é custo com nome bonito.</p>
+        <p>IA é energia elétrica, não feature. Ou você redesenha como sua empresa decide, opera e lidera — ou cada real investido em IA é custo com nome bonito.</p>
       </div>
     </div>
   </section>
@@ -814,9 +814,9 @@
   <section class="section section--white" id="contato">
     <div class="container">
       <div class="contact-inner reveal">
-        <h2 class="section-title section-title--md t-dark">Se a dor já é clara, a conversa começa aqui.</h2>
-        <p class="section-sub">Sem formulário longo, sem vendedor, sem follow-up automatizado. Uma conversa direta com o Mário.</p>
-        <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn-blue">Agendar conversa</a>
+        <h2 class="section-title section-title--md t-dark">A conversa leva 30 minutos. A clareza dura anos.</h2>
+        <p class="section-sub">Sem pitch, sem formulário, sem follow-up automatizado. O Mário escuta, pergunta, e diz se faz sentido. Se fizer, o próximo passo é o Sprint.</p>
+        <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn-blue">Conversar com o Mário</a>
       </div>
     </div>
   </section>
@@ -850,8 +850,16 @@
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Fallback: force-reveal elements already in viewport on load
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) el.classList.add('visible');
+      });
+    });
   </script>
 </body>
 </html>
