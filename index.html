@@ -392,13 +392,12 @@
     /* ===== SERVICES (numbered, dark bg) ===== */
     .service-list { display: flex; flex-direction: column; gap: 0; }
     .service-item {
-      display: grid; grid-template-columns: 80px 1fr; gap: 0;
       padding: 48px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .service-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-    .service-num {
-      font-family: var(--font-serif); font-size: 48px; font-weight: 400;
-      color: var(--blue2); line-height: 1; opacity: 0.6;
+    .service-accent {
+      width: 40px; height: 3px; background: var(--blue2); border-radius: 1px;
+      margin-bottom: 20px;
     }
     .service-body h3 {
       font-family: var(--font-sans); font-size: 22px; font-weight: 700;
@@ -576,8 +575,7 @@
       .bio-block { flex-direction: column; gap: 28px; }
       .bio-photo { width: 160px; height: 200px; }
 
-      .service-item { grid-template-columns: 48px 1fr; padding: 36px 0; }
-      .service-num { font-size: 32px; }
+      .service-item { padding: 36px 0; }
 
       .highlight-box { padding: 32px 24px; }
 
@@ -721,12 +719,12 @@
       <div class="reveal">
         <p class="section-label section-label--light">Como funciona</p>
         <h2 class="section-title section-title--lg t-white">Como funciona</h2>
-        <p class="body-text body-text--light">Clareza, liderança e preparo. Nessa ordem.</p>
+        <p class="body-text body-text--light">Três ofertas independentes. Escolha o que sua empresa precisa agora.</p>
       </div>
       <div class="service-list">
         <div class="service-item reveal">
-          <div class="service-num">01</div>
           <div class="service-body">
+            <div class="service-accent"></div>
             <h3>Sprint</h3>
             <p class="desc">Uma semana na empresa. Leitura da operação, entrevistas com líderes, e teste de IA nos dados reais do negócio.</p>
             <p class="desc">No quinto dia, o CEO tem na mão: um retrato de maturidade da organização em 6 dimensões. Os processos onde IA faz diferença real — priorizados, com justificativa. Uma demonstração prática de IA aplicada com dados da empresa. E um roteiro de 90 dias com ações concretas.</p>
@@ -735,8 +733,8 @@
           </div>
         </div>
         <div class="service-item reveal reveal-d1">
-          <div class="service-num">02</div>
           <div class="service-body">
+            <div class="service-accent"></div>
             <h3>Advisory Recorrente</h3>
             <p class="desc">O executivo de IA que a empresa precisa — sem vínculo fixo.</p>
             <p class="desc">Quem ocupa essa cadeira garante que cada decisão sobre IA passe por alguém com contexto, experiência e independência. Avalia antes de investir. Questiona antes de aprovar. Conecta estratégia com execução.</p>
@@ -745,8 +743,8 @@
           </div>
         </div>
         <div class="service-item reveal reveal-d2">
-          <div class="service-num">03</div>
           <div class="service-body">
+            <div class="service-accent"></div>
             <h3>Educação Executiva em IA</h3>
             <p class="desc">Programas in-company para quem decide, quem lidera e quem opera. Desenhados com casos reais do negócio — não teoria genérica, não conteúdo enlatado.</p>
             <p class="desc">Do conselho à operação, a lógica é a mesma: cada público sai sabendo o que fazer com IA no contexto da função. Conselheiros saem com as perguntas certas. Diretores saem sabendo onde IA se aplica e como cobrar resultado. Equipes saem usando IA no dia seguinte.</p>
