@@ -421,24 +421,95 @@
       font-size: 13px; color: var(--text-light); line-height: 1.7;
     }
 
-    /* ===== SERVICES (numbered, dark bg) ===== */
-    .service-list { display: flex; flex-direction: column; gap: 0; }
-    .service-item {
-      padding: 48px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    /* ===== OFFERS GRID (asymmetric, dark bg) ===== */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 32px;
+      margin-top: 56px;
     }
-    .service-item:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-    .service-accent {
-      width: 40px; height: 3px; background: var(--blue2); border-radius: 1px;
-      margin-bottom: 20px;
+    .offer-card {
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, background 0.25s ease;
     }
-    .service-body h3 {
-      font-family: var(--font-sans); font-size: 22px; font-weight: 700;
-      color: var(--white); margin-bottom: 12px; letter-spacing: -0.3px;
+    .offer-card:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.055);
     }
-    .service-body .desc { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 12px; }
-    .service-body .target {
-      font-family: var(--font-serif); font-size: 14px; font-style: italic;
-      color: var(--blue2); opacity: 0.8;
+    .offer-card--lead {
+      padding: 56px 48px;
+    }
+    .offer-card h3 {
+      font-family: var(--font-sans);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.4px;
+      margin-bottom: 8px;
+    }
+    .offer-card--lead h3 { font-size: 32px; letter-spacing: -0.6px; }
+    .offer-format {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1px;
+      margin-bottom: 24px;
+    }
+    .offer-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .offer-deliverables {
+      margin: 12px 0 32px;
+    }
+    .offer-deliverables-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 4px;
+      letter-spacing: 0.1px;
+    }
+    .offer-deliverables ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .offer-deliverables li {
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .offer-deliverables li:last-child { border-bottom: none; }
+    .offer-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue2);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+    }
+    .offer-cta .arrow { transition: transform 0.2s; display: inline-block; }
+    .offer-cta:hover { color: var(--white); }
+    .offer-cta:hover .arrow { transform: translateX(3px); }
+
+    @media (max-width: 1023px) and (min-width: 641px) {
+      .offers-grid { grid-template-columns: 1fr 1fr; }
+      .offer-card--lead { grid-column: 1 / -1; padding: 48px 44px; }
+      .offer-card--lead h3 { font-size: 28px; }
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -607,7 +678,11 @@
       .bio-block { flex-direction: column; gap: 28px; }
       .bio-photo { width: 160px; height: 200px; }
 
-      .service-item { padding: 36px 0; }
+      .offers-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 40px; }
+      .offer-card { padding: 32px 28px; }
+      .offer-card--lead { padding: 36px 28px; }
+      .offer-card h3 { font-size: 24px; }
+      .offer-card--lead h3 { font-size: 26px; }
 
       .highlight-box { padding: 32px 24px; }
 
@@ -729,48 +804,6 @@
     </div>
   </section>
 
-  <!-- ENTREGAVEIS -->
-  <section class="section section--cream">
-    <div class="container">
-      <div class="reveal">
-        <p class="section-label section-label--blue">Entregáveis</p>
-        <h2 class="section-title section-title--lg t-dark">O que vem no Sprint</h2>
-        <p class="body-text">Cinco entregáveis de decisão. Pensados para você usar em comitê na semana seguinte — não relatórios de consultoria pra ler depois.</p>
-      </div>
-      <div class="service-list">
-        <div class="service-item reveal" style="border-color: rgba(0,0,0,0.06);">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3 style="color: var(--text-dark);">Retrato da operação</h3>
-            <p class="desc" style="color: var(--text-med);">Seis dimensões avaliadas, processo a processo. Onde IA gera valor real e onde vai amplificar problema existente. Não é mapa de maturidade — é documento de decisão.</p>
-          </div>
-        </div>
-        <div class="service-item reveal reveal-d1" style="border-color: rgba(0,0,0,0.06);">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3 style="color: var(--text-dark);">Roteiro de 90 dias</h3>
-            <p class="desc" style="color: var(--text-med);">Prioridades concretas, não 47 iniciativas. O que faz primeiro, o que faz depois, o que não faz. Cada item justificado por dado de mercado e por restrição da própria empresa.</p>
-          </div>
-        </div>
-        <div class="service-item reveal reveal-d2" style="border-color: rgba(0,0,0,0.06);">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3 style="color: var(--text-dark);">Régua de decisão para fornecedor de IA</h3>
-            <p class="desc" style="color: var(--text-med);">Critérios escritos para o CEO, o CFO e o jurídico avaliarem qualquer proposta de IA que entrar pela porta nos próximos 12 meses. Independente de quem vende.</p>
-          </div>
-        </div>
-        <div class="service-item reveal reveal-d3" style="border-color: rgba(0,0,0,0.06);">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3 style="color: var(--text-dark);">Demonstração prática com dados reais</h3>
-            <p class="desc" style="color: var(--text-med);">No quinto dia o CEO vê IA rodando em cima de algo do próprio negócio. Não slide, não vídeo, não promessa. Funcionando.</p>
-          </div>
-        </div>
-      </div>
-      <p class="body-text reveal" style="margin-top: 40px;">E acesso direto ao Mário no mês seguinte. Qualquer dúvida sobre fornecedor, decisão, contratação ou governança — uma mensagem resolve.</p>
-    </div>
-  </section>
-
   <!-- COMO FUNCIONA (dark) -->
   <section class="section section--dark" id="advisory">
     <div class="container">
@@ -779,35 +812,36 @@
         <h2 class="section-title section-title--lg t-white">Como funciona</h2>
         <p class="body-text body-text--light">Três instrumentos. Escolha o que sua empresa precisa agora.</p>
       </div>
-      <div class="service-list">
-        <div class="service-item reveal">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3>Sprint</h3>
-            <p class="desc">Cinco dias presenciais na empresa. CEO no Dia 1 e no Dia 5. Entrevistas com líderes nos Dias 2 e 3. Demonstração prática de IA com os dados reais do negócio no Dia 4. No Dia 5, o CEO recebe os cinco entregáveis descritos acima.</p>
-            <p class="target">Para a empresa que precisa de clareza antes de investir.</p>
+      <div class="offers-grid">
+        <div class="offer-card offer-card--lead reveal">
+          <h3>Sprint</h3>
+          <p class="offer-format">5 dias presenciais &middot; CEO no Dia 1 e Dia 5</p>
+          <p class="offer-desc">Leitura da operação, classificação das atividades onde IA gera valor, e plano concreto de 90 dias.</p>
+          <div class="offer-deliverables">
+            <p class="offer-deliverables-title">O que você recebe no Dia 5:</p>
+            <ul>
+              <li>Retrato da empresa</li>
+              <li>Mapa de valor</li>
+              <li>Roteiro de 90 dias</li>
+              <li>Régua de decisão</li>
+              <li>Demonstração prática de IA com dados reais</li>
+            </ul>
           </div>
+          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre o Sprint <span class="arrow">&rarr;</span></a>
         </div>
-        <div class="service-item reveal reveal-d1">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3>Advisory Recorrente</h3>
-            <p class="desc">Head de IA fracionário. Senioridade de quem já liderou tecnologia em TOTVS, Grupo SEB e XP. No máximo quatro a cinco clientes simultâneos.</p>
-            <p class="desc">O que está dentro: presença em comitê de IA, avaliação de fornecedores, governança, acompanhamento da execução, e conversa direta com o CEO sempre que precisar decidir.</p>
-            <p class="target">Para a empresa que precisa de liderança sênior em IA sem contratar um VP.</p>
-          </div>
+        <div class="offer-card reveal reveal-d1">
+          <h3>Advisory Recorrente</h3>
+          <p class="offer-format">CAIO fracionário &middot; contrato mensal</p>
+          <p class="offer-desc">Presença independente no comitê executivo. Cada decisão sobre IA passa por alguém com contexto, experiência e sem agenda de fornecedor.</p>
+          <p class="offer-desc">Poucos clientes simultâneos. Cadência mensal.</p>
+          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Advisory <span class="arrow">&rarr;</span></a>
         </div>
-        <div class="service-item reveal reveal-d2">
-          <div class="service-body">
-            <div class="service-accent"></div>
-            <h3>Educação Executiva em IA</h3>
-            <p class="desc">Três programas in-company. Casos reais do negócio do cliente, não teoria genérica.</p>
-            <p class="desc"><strong>Board AI Readiness</strong> — para conselheiros. Saem com as perguntas certas para fazer ao CEO sobre IA.</p>
-            <p class="desc"><strong>Fluência para Liderança</strong> — para diretores e gerentes. Saem sabendo onde IA se aplica e como cobrar resultado.</p>
-            <p class="desc"><strong>IA Aplicada para Equipes</strong> — workshops hands-on. Saem usando IA no dia seguinte.</p>
-            <p class="desc">Formato, duração e profundidade sob medida.</p>
-            <p class="target">Para a empresa que entendeu que IA sem gente preparada é custo, não investimento.</p>
-          </div>
+        <div class="offer-card reveal reveal-d2">
+          <h3>Educação Executiva</h3>
+          <p class="offer-format">Programas in-company</p>
+          <p class="offer-desc">Fluência em IA para quem decide, quem lidera e quem opera. Casos reais do negócio, não teoria genérica.</p>
+          <p class="offer-desc">Board AI Readiness &middot; Liderança &middot; Equipes</p>
+          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Educação <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
