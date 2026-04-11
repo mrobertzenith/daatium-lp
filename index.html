@@ -252,8 +252,8 @@
     /* ===== HERO (dark) ===== */
     .hero {
       background: var(--dark);
-      min-height: 100vh; display: flex; align-items: center;
-      padding: 140px 32px 100px; position: relative; overflow: hidden;
+      min-height: 85vh; display: flex; align-items: center;
+      padding: 140px 32px 120px; position: relative; overflow: hidden;
     }
     .hero::after {
       content: ''; position: absolute; top: -40%; right: -20%;
@@ -280,43 +280,6 @@
       max-width: 540px; line-height: 1.8; margin-bottom: 64px;
     }
 
-    .hero-data { margin-bottom: 64px; max-width: 560px; }
-    .hero-blocks {
-      display: flex; gap: 12px; margin-bottom: 16px;
-    }
-    .hero-block {
-      border-radius: 4px; padding: 24px 20px; display: flex;
-      flex-direction: column; justify-content: center;
-    }
-    .hero-block--large {
-      flex: 86; background: var(--cream); border: none;
-    }
-    .hero-block--small {
-      flex: 0 0 auto; background: var(--blue2); border: none;
-      min-width: 160px; text-align: center; padding: 24px 28px;
-    }
-    .hero-block .block-num {
-      font-family: var(--font-serif); font-weight: 700; line-height: 1;
-    }
-    .hero-block--large .block-num {
-      font-size: 36px; color: var(--dark); letter-spacing: -1px; margin-bottom: 8px;
-    }
-    .hero-block--small .block-num {
-      font-size: 40px; color: var(--white); letter-spacing: -2px; margin-bottom: 8px;
-    }
-    .hero-block .block-desc {
-      font-size: 13px; line-height: 1.4;
-    }
-    .hero-block--large .block-desc { color: var(--text-med); }
-    .hero-block--small .block-desc { color: rgba(255,255,255,0.8); }
-    .hero-source {
-      font-size: 10px; color: var(--cream); opacity: 0.4; line-height: 1.5;
-      margin-bottom: 20px;
-    }
-    .hero-insight {
-      font-family: var(--font-serif); font-size: 17px; font-style: italic;
-      color: var(--cream); opacity: 0.7; line-height: 1.5;
-    }
 
     .hero-buttons { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
     .btn-primary {
@@ -500,6 +463,29 @@
     }
     .offer-deliverables li:last-child { border-bottom: none; padding-bottom: 0; }
     .offer-deliverables li:first-child { padding-top: 10px; }
+
+    .offer-formats { list-style: none; margin: 0; padding: 0; }
+    .offer-formats li {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .offer-formats li:last-child { border-bottom: none; padding-bottom: 8px; }
+    .offer-formats li:first-child { padding-top: 8px; }
+    .offer-format-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.4;
+    }
+    .offer-format-desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
     .offer-cta {
       margin-top: auto;
       display: inline-flex;
@@ -679,10 +665,6 @@
       .hero { padding: 110px 20px 72px; }
       .hero h1 { font-size: 30px; letter-spacing: -0.5px; }
       .hero-sub { font-size: 15px; margin-bottom: 48px; }
-      .hero-data { max-width: 100%; margin-bottom: 48px; }
-      .hero-blocks { flex-direction: column; }
-      .hero-block--small { min-width: auto; padding: 16px 20px; text-align: left; }
-      .hero-block--small .block-num { font-size: 28px; }
       .hero-buttons { flex-direction: column; }
       .hero-buttons a { text-align: center; width: 100%; }
 
@@ -738,20 +720,6 @@
       <p class="hero-label">Advisory independente em IA &middot; Mário Almeida</p>
       <h1>Sua empresa precisa de IA. <span class="dim">Mas antes, precisa saber onde, como e por quê.</span></h1>
       <p class="hero-sub">Todo mundo está vendendo IA para a sua empresa. Ninguém está te ajudando a decidir o que comprar, o que ignorar e por onde começar. É isso que eu faço.</p>
-      <div class="hero-data">
-        <div class="hero-blocks">
-          <div class="hero-block hero-block--large">
-            <span class="block-num">1,9x</span>
-            <span class="block-desc">mais receita</span>
-          </div>
-          <div class="hero-block hero-block--small">
-            <span class="block-num">Mesmo time</span>
-            <span class="block-desc"></span>
-          </div>
-        </div>
-        <p class="hero-insight">Mesmas ferramentas. Mesmo treinamento. Mesma estrutura. A diferença foi descobrir onde aplicar IA dentro do próprio negócio.</p>
-        <p class="hero-source">INSEAD / Harvard, 2026 — experimento controlado com 515 empresas</p>
-      </div>
       <div class="hero-buttons">
         <a href="#newsletter" class="btn-primary">Receba análises que o mercado não publica</a>
         <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn-ghost">Marcar uma conversa de 30 minutos <span class="arrow">&rarr;</span></a>
@@ -822,7 +790,7 @@
             <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre o Sprint <span class="arrow">&rarr;</span></a>
           </div>
           <div class="offer-deliverables">
-            <p class="offer-deliverables-title">O que você leva no último dia:</p>
+            <p class="offer-deliverables-title">O que eu entrego:</p>
             <ul>
               <li>Um retrato da sua operação hoje, com os pontos onde IA gera mais valor</li>
               <li>Um mapa de onde está o dinheiro: quais processos, quanto vale cada um, por onde começar</li>
@@ -846,7 +814,27 @@
         <div class="offer-card reveal reveal-d1">
           <h3>Treinamento executivo</h3>
           <p class="offer-subtitle">Para quem precisa que o time inteiro fale a mesma língua sobre IA.</p>
-          <p class="offer-desc">Programas feitos dentro da sua empresa, com casos do seu negócio. Três formatos: preparar o conselho para fazer as perguntas certas, dar fluência para a diretoria cobrar resultado de projetos de IA, e colocar as equipes operacionais usando IA no trabalho do dia seguinte.</p>
+          <p class="offer-desc">Programas feitos dentro da sua empresa, com casos do seu negócio e não teoria genérica. Quatro formatos que funcionam sozinhos ou combinados, dependendo de quem precisa aprender o quê.</p>
+          <div class="offer-deliverables">
+            <ul class="offer-formats">
+              <li>
+                <span class="offer-format-name">Palestras executivas</span>
+                <span class="offer-format-desc">Para abrir reuniões de conselho, convenções e encontros de liderança. Uma hora para nivelar expectativas sobre o que IA faz e o que não faz.</span>
+              </li>
+              <li>
+                <span class="offer-format-name">Workshops aplicados</span>
+                <span class="offer-format-desc">Para equipes operacionais. Meio dia ou dia inteiro, com casos reais do seu negócio, e todo mundo sai usando IA no trabalho do dia seguinte.</span>
+              </li>
+              <li>
+                <span class="offer-format-name">Board AI Readiness</span>
+                <span class="offer-format-desc">Para conselhos de administração e famílias empresárias. Preparação para fazer as perguntas certas quando a diretoria trouxer propostas de IA para aprovação.</span>
+              </li>
+              <li>
+                <span class="offer-format-name">Mentoria executiva</span>
+                <span class="offer-format-desc">Para CEO, diretores e sucessores que querem desenvolver fluência em IA no próprio ritmo. Sessões individuais ao longo de alguns meses, focadas em fazer a pessoa evoluir no tema — enquanto o Advisory mensal cuida das decisões da empresa, a mentoria cuida do executivo que vai tomá-las.</span>
+              </li>
+            </ul>
+          </div>
           <p class="offer-format">Presencial ou remoto, duração conforme o grupo.</p>
           <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Treinamento <span class="arrow">&rarr;</span></a>
         </div>
