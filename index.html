@@ -411,22 +411,18 @@
     }
     .offer-source-sm a { color: inherit; text-decoration: underline; }
 
-    /* Advisory cards (Section A) — two equal flat columns */
+    /* Advisory cards (Section A) — full-width stacked, horizontal two-column interior */
     .advisory-cards {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; position: relative;
-    }
-    .advisory-cards::after {
-      content: ''; position: absolute;
-      left: 50%; transform: translateX(-50%);
-      top: 4%; height: 92%; width: 1px;
-      background: rgba(0,0,0,0.08); pointer-events: none;
+      display: flex; flex-direction: column;
+      gap: 56px;
     }
     .advisory-card {
-      display: flex; flex-direction: column;
-      padding-right: 56px;
+      display: grid; grid-template-columns: 58% 1fr;
+      gap: 56px;
     }
-    .advisory-card + .advisory-card { padding-right: 0; padding-left: 56px; }
+    .advisory-card-text {
+      display: flex; flex-direction: column;
+    }
     .advisory-card h3 {
       font-family: var(--font-sans); font-size: 26px;
       font-weight: 600; color: #1A1A1A;
@@ -521,16 +517,10 @@
     }
     .section--bridge .offer-source-sm { color: rgba(255,255,255,0.28); }
 
-    /* Tablet: stack advisory cards */
+    /* Tablet: collapse card interior to single column */
     @media (max-width: 900px) {
       .offer-section-h2 { font-size: clamp(30px, 5vw, 42px); }
-      .advisory-cards { grid-template-columns: 1fr; }
-      .advisory-cards::after { display: none; }
-      .advisory-card { padding-right: 0; }
-      .advisory-card + .advisory-card {
-        padding-left: 0; padding-top: 48px; margin-top: 48px;
-        border-top: 1px solid rgba(0,0,0,0.08);
-      }
+      .advisory-card { grid-template-columns: 1fr; gap: 32px; }
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -750,7 +740,7 @@
       </div>
 
       <div class="reveal">
-        <p class="body-text">Seu ERP está oferecendo IA. Seu fornecedor de software está oferecendo IA. Aparece uma startup por semana com uma demonstração bonita. O conselho cobrou na última reunião. A próxima geração da família quer fazer alguma coisa antes do fim do ano.</p>
+        <p class="body-text">Seu ERP está oferecendo IA. Seu CRM está oferecendo IA. Aparece uma startup por semana com uma demonstração bonita. O conselho cobrou na última reunião. A próxima geração da família quer fazer alguma coisa antes do fim do ano.</p>
         <p class="body-text">No meio disso, ninguém senta do seu lado e pergunta: onde na sua empresa IA resolve um problema real, quanto isso vale em dinheiro, e o que acontece se você escolher errado a ordem.</p>
         <p class="body-text">O estudo mais recente sobre IA em empresas brasileiras, conduzido pela Meta em parceria com a Fundação Dom Cabral, mostra o tamanho do descompasso: 82,5% dos executivos classificam IA como estratégica, mas 43,3% das empresas destinam menos de 1% do orçamento ao tema, e 68,3% não têm ninguém na estrutura cuidando disso. A importância é consenso. A execução, não.</p>
       </div>
@@ -804,40 +794,41 @@
       <div class="advisory-cards reveal">
         <!-- Sprint de 5 dias -->
         <div class="advisory-card">
-          <h3>Sprint de 5 dias</h3>
-          <p class="offer-subtitle">Para quem precisa de clareza rápida antes de decidir o próximo passo.</p>
-          <p class="offer-desc">Eu vou até sua empresa por uma semana. Converso com você, com sua diretoria, com quem roda a operação. Olho os processos onde IA pode gerar valor real e os onde vai gerar barulho. No final dos cinco dias, você tem um plano concreto do que fazer nos próximos três meses, o que comprar, o que ignorar, e por onde começar.</p>
-          <p class="offer-desc">É a forma mais rápida de sair do "precisamos fazer alguma coisa com IA" para "sei exatamente o que vou fazer na segunda-feira".</p>
+          <div class="advisory-card-text">
+            <h3>Sprint de 5 dias</h3>
+            <p class="offer-subtitle">Para quem precisa de clareza rápida antes de decidir o próximo passo.</p>
+            <p class="offer-desc">Uma semana presencial na sua empresa. No final, você sai com um plano concreto pros próximos três meses — o que fazer, o que comprar, o que ignorar, e por onde começar.</p>
+            <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Marcar o Sprint <span class="arrow">&rarr;</span></a>
+          </div>
           <div class="offer-deliverables">
             <p class="offer-deliverables-title">O que eu entrego:</p>
             <ul>
-              <li>Um retrato da sua operação hoje, com os pontos onde IA gera mais valor</li>
-              <li>Um mapa de onde está o dinheiro: quais processos, quanto vale cada um, por onde começar</li>
-              <li>Um plano concreto para os próximos 90 dias, com prioridades e responsáveis</li>
-              <li>Um critério de decisão para usar sempre que aparecer uma nova proposta de IA</li>
-              <li>Uma demonstração prática de IA rodando com dados da sua empresa, não slide genérico</li>
+              <li>Retrato da sua operação com os pontos onde IA gera mais valor</li>
+              <li>Mapa de onde está o dinheiro: processos, valor e prioridade</li>
+              <li>Plano de 90 dias com responsáveis e prazos</li>
+              <li>Critério de decisão pra cada nova proposta de IA</li>
+              <li>Demonstração prática com dados da sua empresa</li>
             </ul>
           </div>
-          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Marcar o Sprint <span class="arrow">&rarr;</span></a>
         </div>
         <!-- Advisory mensal -->
         <div class="advisory-card">
-          <h3>Advisory mensal</h3>
-          <p class="offer-subtitle">Para quem vai tomar várias decisões sobre IA ao longo do ano e não quer errar.</p>
-          <p class="offer-desc">Toda semana aparece uma decisão sobre IA para ser tomada. Uma proposta de fornecedor, um projeto que alguém quer começar, um pedido do conselho. A maioria dessas decisões não pode esperar o próximo trimestre nem virar mais um item na pauta do diretor de TI, que já está cuidando de infraestrutura, segurança e mais vinte frentes.</p>
-          <p class="offer-desc">É nesse espaço que eu entro. Sem estar na folha, sem agenda de fornecedor. Revisamos as propostas que chegam, discutimos os projetos em andamento, preparamos as decisões difíceis antes do comitê. Um parceiro sênior do lado de fora com quem pensar alto sobre cada movimento de IA da empresa.</p>
+          <div class="advisory-card-text">
+            <h3>Advisory mensal</h3>
+            <p class="offer-subtitle">Para quem vai tomar várias decisões sobre IA ao longo do ano e não quer errar.</p>
+            <p class="offer-desc">Toda semana aparece uma decisão sobre IA pra ser tomada. Uma proposta de fornecedor, um projeto novo, um pedido do conselho. É aqui que eu entro — sem estar na folha, sem agenda de fornecedor, como um parceiro sênior do lado de fora pra pensar cada movimento junto com você.</p>
+            <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Advisory <span class="arrow">&rarr;</span></a>
+          </div>
           <div class="offer-deliverables">
             <p class="advisory-questions-title">As perguntas que normalmente eu respondo:</p>
             <ul class="advisory-questions">
-              <li>&ldquo;Chegou essa proposta de R$800 mil do fornecedor X. Faz sentido pagar por isso?&rdquo;</li>
-              <li>&ldquo;Meu CTO quer montar um time de dados. É agora ou ainda é cedo?&rdquo;</li>
-              <li>&ldquo;O conselho tá me cobrando uma posição sobre IA pra próxima reunião. Por onde começo?&rdquo;</li>
-              <li>&ldquo;A diretoria de marketing quer autonomia pra contratar ferramenta de IA generativa. Libero ou seguro?&rdquo;</li>
-              <li>&ldquo;Meu concorrente anunciou um projeto grande de IA. Tenho que reagir ou espero?&rdquo;</li>
+              <li>&ldquo;Chegou essa proposta de R$800 mil. Faz sentido?&rdquo;</li>
+              <li>&ldquo;Meu CTO quer montar um time de dados. É agora?&rdquo;</li>
+              <li>&ldquo;O conselho tá cobrando posição sobre IA. Por onde começo?&rdquo;</li>
+              <li>&ldquo;Marketing quer autonomia pra contratar ferramenta de IA. Libero?&rdquo;</li>
+              <li>&ldquo;Meu concorrente anunciou um projeto grande. Reajo ou espero?&rdquo;</li>
             </ul>
           </div>
-          <p class="offer-format">Contrato mensal. Poucos clientes ao mesmo tempo.</p>
-          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Advisory <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -865,8 +856,8 @@
         <h2 class="offer-section-h2">Sua empresa não precisa só contratar IA.<br>Precisa aprender a liderar ela.</h2>
       </div>
       <div class="offer-section-body reveal">
-        <p class="offer-body-text">O mesmo estudo da Meta com a Fundação Dom Cabral mostra onde está o verdadeiro gargalo da IA nas empresas brasileiras. 42,7% apontam falta de conhecimento especializado como o obstáculo número um pra avançar. Muito à frente de custo, integração, governança e qualquer outra coisa. E 55,8% das empresas dizem que IA ainda não virou prioridade na agenda de capacitação do time.</p>
-        <p class="offer-body-text">Isso é o mercado te dizendo alto e claro: o problema não é comprar ferramenta, é ter executivos que saibam decidir sobre ela. O conselho que não sabe o que perguntar, a diretoria que não sabe onde apostar, o CEO que precisa responder ao board sem repertório próprio. Esse é o ponto cego que abre espaço pra decisões ruins e pra fornecedor escolher o caminho pela empresa.</p>
+        <p class="offer-body-text">O mesmo estudo da Meta com a Fundação Dom Cabral mostra onde está o verdadeiro gargalo da IA nas empresas brasileiras. 42,7% apontam falta de conhecimento especializado como o obstáculo número um pra avançar — muito à frente de custo, integração ou governança. E 55,8% dizem que IA ainda não virou prioridade na agenda de capacitação do time.</p>
+        <p class="offer-body-text">O problema não é comprar ferramenta. É ter executivos que saibam decidir sobre ela.</p>
         <div class="offer-credentials-block">
           <p>Nos últimos anos eu venho ocupando esse espaço em duas frentes. Como professor na Alura Empresas, conduzo programas de educação executiva em IA com clientes como CPQD, Porto Seguro e Vivo, preparando conselhos, diretorias e líderes de negócio pra tomar decisões melhores nessa nova etapa. Em paralelo, dou palestras e workshops in-company há anos em organizações como Novartis, Fiesp, TOTVS, Brasscom e FBN Brasil, levando IA pra onde ela precisa ser entendida antes de ser contratada — na mesa de quem decide.</p>
         </div>
