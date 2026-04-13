@@ -376,35 +376,37 @@
     }
 
     /* ===== OFFERS — Seção A + Ponte + Seção B ===== */
+    .section--offers-light { background: #F7F7F7; }
+    .section--bridge { background: #222226; }
 
-    /* Section-level */
+    /* Section-level — light theme (Seções A e B) */
     .offer-eyebrow {
       font-size: 12px; font-weight: 400; letter-spacing: 4px;
-      text-transform: uppercase; color: rgba(255,255,255,0.3);
+      text-transform: uppercase; color: rgba(0,0,0,0.35);
       margin-bottom: 28px;
     }
     .offer-section-h2 {
       font-family: var(--font-sans);
       font-size: clamp(36px, 5vw, 58px);
-      font-weight: 500; color: var(--white);
+      font-weight: 500; color: #1A1A1A;
       line-height: 1.08; letter-spacing: -1.5px;
       margin-bottom: 48px; max-width: 720px;
     }
     .offer-section-body { max-width: 720px; margin-bottom: 80px; }
     .offer-body-text {
-      font-size: 18px; color: rgba(255,255,255,0.6);
+      font-size: 18px; color: rgba(0,0,0,0.6);
       line-height: 1.7; margin-bottom: 20px;
     }
     .offer-credentials-block {
-      border-left: 2px solid rgba(255,255,255,0.14);
+      border-left: 2px solid rgba(0,0,0,0.14);
       padding: 20px 24px; margin: 28px 0;
-      background: rgba(255,255,255,0.03);
+      background: rgba(0,0,0,0.03);
     }
     .offer-credentials-block p {
-      font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.7;
+      font-size: 18px; color: rgba(0,0,0,0.65); line-height: 1.7;
     }
     .offer-source-sm {
-      font-size: 13px; color: rgba(255,255,255,0.28);
+      font-size: 13px; color: rgba(0,0,0,0.3);
       line-height: 1.6; margin-top: 8px;
     }
     .offer-source-sm a { color: inherit; text-decoration: underline; }
@@ -418,7 +420,7 @@
       content: ''; position: absolute;
       left: 50%; transform: translateX(-50%);
       top: 4%; height: 92%; width: 1px;
-      background: rgba(255,255,255,0.08); pointer-events: none;
+      background: rgba(0,0,0,0.08); pointer-events: none;
     }
     .advisory-card {
       display: flex; flex-direction: column;
@@ -427,82 +429,97 @@
     .advisory-card + .advisory-card { padding-right: 0; padding-left: 56px; }
     .advisory-card h3 {
       font-family: var(--font-sans); font-size: 26px;
-      font-weight: 600; color: var(--white);
+      font-weight: 600; color: #1A1A1A;
       letter-spacing: -0.4px; margin-bottom: 8px;
     }
     .offer-subtitle {
       font-size: 15px; font-weight: 400;
-      color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 20px;
+      color: rgba(0,0,0,0.5); line-height: 1.5; margin-bottom: 20px;
     }
     .offer-desc {
-      font-size: 15px; color: rgba(255,255,255,0.7);
+      font-size: 15px; color: rgba(0,0,0,0.68);
       line-height: 1.65; margin-bottom: 14px;
     }
     .offer-format {
       font-size: 13px; font-weight: 400;
-      color: rgba(255,255,255,0.4); letter-spacing: 0.1px;
+      color: rgba(0,0,0,0.4); letter-spacing: 0.1px;
       margin-top: 4px; margin-bottom: 0;
     }
     .offer-cta {
       margin-top: auto; display: inline-flex;
       align-items: center; gap: 6px;
-      color: var(--blue2); font-family: var(--font-body);
+      color: var(--blue); font-family: var(--font-body);
       font-size: 13px; font-weight: 500;
       text-decoration: none; letter-spacing: 0.2px;
       transition: color 0.2s; padding-top: 20px;
     }
     .offer-cta .arrow { transition: transform 0.2s; display: inline-block; }
-    .offer-cta:hover { color: var(--white); }
+    .offer-cta:hover { color: #111111; }
     .offer-cta:hover .arrow { transform: translateX(3px); }
 
     /* Sprint deliverables list */
     .offer-deliverables-title {
       font-size: 13px; font-weight: 500;
-      color: rgba(255,255,255,0.4); margin-bottom: 4px; letter-spacing: 0.1px;
+      color: rgba(0,0,0,0.4); margin-bottom: 4px; letter-spacing: 0.1px;
     }
     .offer-deliverables ul { list-style: none; margin: 0; padding: 0; }
     .offer-deliverables li {
       font-size: 15px; font-weight: 400;
-      color: rgba(255,255,255,0.85); line-height: 1.55;
-      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(0,0,0,0.8); line-height: 1.55;
+      padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
     }
     .offer-deliverables li:last-child { border-bottom: none; padding-bottom: 0; }
     .offer-deliverables li:first-child { padding-top: 12px; }
+
+    /* Advisory questions list */
+    .advisory-questions-title {
+      font-size: 13px; font-weight: 500;
+      color: rgba(0,0,0,0.4); margin-bottom: 0; letter-spacing: 0.1px;
+    }
+    .advisory-questions { list-style: none; margin: 0; padding: 0; }
+    .advisory-questions li {
+      font-size: 14px; font-weight: 300; font-style: italic;
+      color: rgba(0,0,0,0.62); line-height: 1.65;
+      padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .advisory-questions li:last-child { border-bottom: none; padding-bottom: 0; }
+    .advisory-questions li:first-child { padding-top: 14px; }
 
     /* Education formats list (Section B) */
     .edu-formats-block { max-width: 720px; }
     .edu-formats-title {
       font-size: 14px; font-weight: 500;
-      color: rgba(255,255,255,0.4); margin-bottom: 0; letter-spacing: 0.1px;
+      color: rgba(0,0,0,0.4); margin-bottom: 0; letter-spacing: 0.1px;
     }
     .edu-formats-list { list-style: none; margin: 0; padding: 0; }
     .edu-formats-list li {
-      padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
       display: flex; flex-direction: column; gap: 6px;
     }
-    .edu-formats-list li:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+    .edu-formats-list li:first-child { border-top: 1px solid rgba(0,0,0,0.08); }
     .edu-formats-list li:last-child { border-bottom: none; }
     .edu-format-name {
       font-size: 17px; font-weight: 500;
-      color: var(--white); line-height: 1.45;
+      color: #1A1A1A; line-height: 1.45;
     }
     .edu-format-desc {
       font-size: 15px; font-weight: 400;
-      color: rgba(255,255,255,0.6); line-height: 1.6;
+      color: rgba(0,0,0,0.6); line-height: 1.6;
     }
 
-    /* Bridge section */
+    /* Bridge section — grafite island */
     .bridge-inner { max-width: 680px; }
     .bridge-headline {
       font-family: var(--font-sans);
       font-size: clamp(26px, 3.2vw, 40px);
-      font-weight: 500; color: var(--white);
+      font-weight: 500; color: #F0F0F0;
       line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 32px;
     }
     .bridge-body p {
       font-size: 18px; color: rgba(255,255,255,0.55);
       line-height: 1.7; margin-bottom: 20px;
     }
+    .section--bridge .offer-source-sm { color: rgba(255,255,255,0.28); }
 
     /* Tablet: stack advisory cards */
     @media (max-width: 900px) {
@@ -512,7 +529,7 @@
       .advisory-card { padding-right: 0; }
       .advisory-card + .advisory-card {
         padding-left: 0; padding-top: 48px; margin-top: 48px;
-        border-top: 1px solid rgba(255,255,255,0.08);
+        border-top: 1px solid rgba(0,0,0,0.08);
       }
     }
 
@@ -771,7 +788,7 @@
   </section>
 
   <!-- SEÇÃO A — ADVISORY INDEPENDENTE -->
-  <section class="section section--dark" id="advisory" style="padding: 140px 32px;">
+  <section class="section section--offers-light" id="advisory" style="padding: 140px 32px;">
     <div class="container">
       <div class="reveal">
         <p class="offer-eyebrow">01 — Advisory Independente</p>
@@ -809,6 +826,16 @@
           <p class="offer-subtitle">Para quem vai tomar várias decisões sobre IA ao longo do ano e não quer errar.</p>
           <p class="offer-desc">Toda semana aparece uma decisão sobre IA para ser tomada. Uma proposta de fornecedor, um projeto que alguém quer começar, um pedido do conselho. A maioria dessas decisões não pode esperar o próximo trimestre nem virar mais um item na pauta do diretor de TI, que já está cuidando de infraestrutura, segurança e mais vinte frentes.</p>
           <p class="offer-desc">É nesse espaço que eu entro. Sem estar na folha, sem agenda de fornecedor. Revisamos as propostas que chegam, discutimos os projetos em andamento, preparamos as decisões difíceis antes do comitê. Um parceiro sênior do lado de fora com quem pensar alto sobre cada movimento de IA da empresa.</p>
+          <div class="offer-deliverables">
+            <p class="advisory-questions-title">As perguntas que normalmente eu respondo:</p>
+            <ul class="advisory-questions">
+              <li>&ldquo;Chegou essa proposta de R$800 mil do fornecedor X. Faz sentido pagar por isso?&rdquo;</li>
+              <li>&ldquo;Meu CTO quer montar um time de dados. É agora ou ainda é cedo?&rdquo;</li>
+              <li>&ldquo;O conselho tá me cobrando uma posição sobre IA pra próxima reunião. Por onde começo?&rdquo;</li>
+              <li>&ldquo;A diretoria de marketing quer autonomia pra contratar ferramenta de IA generativa. Libero ou seguro?&rdquo;</li>
+              <li>&ldquo;Meu concorrente anunciou um projeto grande de IA. Tenho que reagir ou espero?&rdquo;</li>
+            </ul>
+          </div>
           <p class="offer-format">Contrato mensal. Poucos clientes ao mesmo tempo.</p>
           <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="offer-cta">Conversar sobre Advisory <span class="arrow">&rarr;</span></a>
         </div>
@@ -817,7 +844,7 @@
   </section>
 
   <!-- BLOCO DE PONTE -->
-  <section class="section section--dark2" style="padding: 112px 32px;">
+  <section class="section section--bridge" style="padding: 112px 32px;">
     <div class="container">
       <div class="bridge-inner reveal">
         <h2 class="bridge-headline">O que o mercado pediu é o que eu entrego.</h2>
@@ -831,7 +858,7 @@
   </section>
 
   <!-- SEÇÃO B — EDUCAÇÃO EXECUTIVA -->
-  <section class="section section--dark" id="educacao" style="padding: 140px 32px;">
+  <section class="section section--offers-light" id="educacao" style="padding: 140px 32px;">
     <div class="container">
       <div class="reveal">
         <p class="offer-eyebrow">02 — Educação Executiva</p>
