@@ -375,32 +375,47 @@
       font-size: 13px; color: var(--text-light); line-height: 1.7;
     }
 
-    /* ===== OFFERS (Sprint horizontal lead + 2 cards below) ===== */
-    .offers-lead { margin-top: 56px; }
+    /* ===== OFFERS (Sprint elevated card + 2 flat cards below) ===== */
+    .offers-lead { margin-top: 90px; }
     .offers-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 40px;
+      gap: 0;
+      margin-top: 112px;
+      position: relative;
+    }
+    .offers-pair::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 10%;
+      height: 80%;
+      width: 1px;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
     }
     .offer-card {
-      background: rgba(255,255,255,0.03);
-      border-radius: 14px;
-      padding: 40px 36px;
+      background: transparent;
+      border-radius: 0;
+      padding: 0 48px;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, background 0.25s ease;
     }
-    .offer-card:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.055);
-    }
+    .offer-card:first-child { padding-left: 0; padding-right: 48px; }
+    .offer-card:last-child  { padding-left: 48px; padding-right: 0; }
     .offer-card--lead {
+      background: #1C1C1E;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
       display: grid;
       grid-template-columns: 1.5fr 1fr;
-      gap: 56px;
-      padding: 56px;
+      gap: 64px;
+      padding: 72px;
+      transition: transform 0.25s ease;
     }
+    .offer-card--lead:hover { transform: translateY(-2px); }
     .offer-card--lead .offer-body { display: flex; flex-direction: column; }
     .offer-card h3 {
       font-family: var(--font-sans);
@@ -410,7 +425,7 @@
       letter-spacing: -0.4px;
       margin-bottom: 8px;
     }
-    .offer-card--lead h3 { font-size: 34px; letter-spacing: -0.6px; }
+    .offer-card--lead h3 { font-size: 38px; font-weight: 600; letter-spacing: -0.7px; }
     .offer-subtitle {
       font-size: 15px;
       font-weight: 400;
@@ -418,6 +433,7 @@
       line-height: 1.5;
       margin-bottom: 24px;
     }
+    .offer-card--lead .offer-subtitle { font-size: 17px; }
     .offer-desc {
       font-size: 15px;
       color: rgba(255,255,255,0.75);
@@ -448,16 +464,16 @@
       font-size: 15px;
       font-weight: 400;
       color: rgba(255,255,255,0.9);
-      line-height: 1.45;
-      padding: 16px 0;
+      line-height: 1.55;
+      padding: 22px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .offer-deliverables li:last-child { border-bottom: none; padding-bottom: 0; }
-    .offer-deliverables li:first-child { padding-top: 10px; }
+    .offer-deliverables li:first-child { padding-top: 12px; }
 
     .offer-formats { list-style: none; margin: 0; padding: 0; }
     .offer-formats li {
-      padding: 18px 0;
+      padding: 26px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       display: flex;
       flex-direction: column;
@@ -469,13 +485,13 @@
       font-size: 15px;
       font-weight: 500;
       color: var(--white);
-      line-height: 1.4;
+      line-height: 1.5;
     }
     .offer-format-desc {
       font-size: 14px;
       font-weight: 400;
       color: rgba(255,255,255,0.65);
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .offer-cta {
       margin-top: auto;
@@ -506,10 +522,11 @@
     @media (max-width: 900px) {
       .offer-card--lead {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 40px 36px;
+        gap: 36px;
+        padding: 44px 40px;
       }
-      .offer-card--lead h3 { font-size: 28px; }
+      .offer-card--lead h3 { font-size: 30px; }
+      .offers-pair { margin-top: 72px; }
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -674,12 +691,26 @@
       .bio-block { flex-direction: column; gap: 28px; }
       .bio-photo { width: 160px; height: 200px; }
 
-      .offers-lead { margin-top: 40px; }
-      .offers-pair { grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
-      .offer-card { padding: 32px 28px; }
-      .offer-card--lead { grid-template-columns: 1fr; gap: 28px; padding: 36px 28px; }
+      .offers-lead { margin-top: 56px; }
+      .offers-pair {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-top: 48px;
+      }
+      .offers-pair::after { display: none; }
+      .offer-card { padding: 0; }
+      .offer-card:first-child {
+        padding: 0 0 40px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .offer-card:last-child { padding: 40px 0 0 0; }
+      .offer-card--lead {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 36px 28px;
+      }
       .offer-card h3 { font-size: 24px; }
-      .offer-card--lead h3 { font-size: 26px; }
+      .offer-card--lead h3 { font-size: 28px; }
 
       .highlight-box { padding: 32px 24px; }
 
@@ -764,7 +795,7 @@
   </section>
 
   <!-- COMO FUNCIONA (dark) -->
-  <section class="section section--dark" id="advisory">
+  <section class="section section--dark" id="advisory" style="padding-top: 140px; padding-bottom: 140px;">
     <div class="container">
       <div class="reveal">
         <p class="section-label section-label--light">Como funciona</p>
@@ -926,7 +957,6 @@
           <a href="#sobre">Sobre</a>
           <a href="#advisory">Serviços</a>
           <a href="#newsletter">Newsletter</a>
-          <a href="#contato">Contato</a>
         </div>
       </div>
       <div class="footer-legal">
