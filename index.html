@@ -755,22 +755,71 @@
       .newsletter-form button { border-radius: 3px; width: 100%; }
     }
 
-    /* ===== FAQ ===== */
+    /* ===== FAQ accordion ===== */
     .faq-section { text-align: left; }
     .faq-list { max-width: 760px; margin: 0 auto; }
-    .faq-item { border-top: 1px solid rgba(255,255,255,0.08); padding: 32px 0; }
+
+    /* <details> reset */
+    .faq-item { list-style: none; }
+    .faq-item::marker,
+    .faq-item::-webkit-details-marker { display: none; }
+
+    .faq-item {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
     .faq-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+    /* summary = clickable row */
     .faq-question {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 28px 0; cursor: pointer; list-style: none;
+      transition: background-color 200ms;
+      border-radius: 2px;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-item[open] .faq-question,
+    .faq-question:hover { background-color: rgba(255,255,255,0.03); }
+    .faq-question:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.3); outline-offset: 2px;
+    }
+
+    /* H3 inside summary */
+    .faq-question h3 {
       font-family: var(--font-sans); font-size: 18px; font-weight: 500;
-      color: var(--white); margin-bottom: 16px; line-height: 1.4;
+      color: var(--white); line-height: 1.4; margin: 0;
     }
-    .faq-answer {
+
+    /* +/× icon */
+    .faq-icon {
+      flex-shrink: 0; font-size: 22px; font-weight: 300; line-height: 1;
+      color: rgba(255,255,255,0.45);
+      transition: transform 300ms ease, color 300ms;
+      user-select: none;
+    }
+    .faq-item[open] .faq-icon {
+      transform: rotate(45deg); color: rgba(255,255,255,0.7);
+    }
+
+    /* animated answer reveal via grid-template-rows */
+    .faq-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 300ms ease;
+    }
+    .faq-item[open] .faq-body { grid-template-rows: 1fr; }
+
+    .faq-body-inner {
+      overflow: hidden;
       font-family: var(--font-body); font-size: 16px; color: rgba(255,255,255,0.6);
-      line-height: 1.75; margin: 0;
+      line-height: 1.75;
     }
+    .faq-body-inner p { margin: 0; padding-bottom: 28px; }
+
     @media (max-width: 768px) {
-      .faq-question { font-size: 16px; }
-      .faq-answer { font-size: 15px; }
+      .faq-question { padding: 22px 0; min-height: 44px; }
+      .faq-question h3 { font-size: 16px; }
+      .faq-body-inner { font-size: 15px; }
     }
   </style>
 </head>
@@ -1047,45 +1096,85 @@
       </div>
       <div class="faq-list reveal">
 
-        <div class="faq-item">
-          <h3 class="faq-question">O que é advisory independente em IA?</h3>
-          <p class="faq-answer">Advisory independente em IA é o trabalho de ajudar CEOs e diretorias a tomar decisões sobre inteligência artificial sem nenhum vínculo com fornecedores de tecnologia. Diferente de consultorias que vendem implementação ou de fornecedores que vendem ferramentas, o advisor independente não tem agenda própria — não ganha comissão, não revende licença, não tem time de implementação para justificar. Ajuda a empresa a decidir o que comprar, o que ignorar e por onde começar.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>O que é advisory independente em IA?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Advisory independente em IA é o trabalho de ajudar CEOs e diretorias a tomar decisões sobre inteligência artificial sem nenhum vínculo com fornecedores de tecnologia. Diferente de consultorias que vendem implementação ou de fornecedores que vendem ferramentas, o advisor independente não tem agenda própria — não ganha comissão, não revende licença, não tem time de implementação para justificar. Ajuda a empresa a decidir o que comprar, o que ignorar e por onde começar.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Quando faz sentido contratar um Sprint de 5 dias em vez de Advisory mensal?</h3>
-          <p class="faq-answer">O Sprint faz sentido quando a empresa precisa de clareza rápida antes de tomar uma decisão grande sobre IA. Em uma semana presencial, o CEO sai com um plano concreto para os próximos 90 dias. O Advisory mensal faz sentido quando a empresa já passou da fase de "por onde começar" e agora toma várias decisões sobre IA toda semana — proposta de fornecedor, projeto novo, pedido do conselho — e precisa de uma voz sênior independente do lado para cada uma delas.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Quando faz sentido contratar um Sprint de 5 dias em vez de Advisory mensal?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>O Sprint faz sentido quando a empresa precisa de clareza rápida antes de tomar uma decisão grande sobre IA. Em uma semana presencial, o CEO sai com um plano concreto para os próximos 90 dias. O Advisory mensal faz sentido quando a empresa já passou da fase de "por onde começar" e agora toma várias decisões sobre IA toda semana — proposta de fornecedor, projeto novo, pedido do conselho — e precisa de uma voz sênior independente do lado para cada uma delas.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">O que é governança de IA na prática?</h3>
-          <p class="faq-answer">Governança de IA é o conjunto de critérios e processos que uma empresa usa para decidir o que aprovar, o que recusar e como acompanhar projetos de inteligência artificial. Para empresas de médio e grande porte familiares, governança de IA na prática significa ter um critério claro para responder cinco perguntas: quem decide sobre IA na empresa, como propostas de fornecedores são avaliadas, como projetos em andamento são acompanhados, como o board é informado, e como a empresa diz não para o que não vale.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>O que é governança de IA na prática?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Governança de IA é o conjunto de critérios e processos que uma empresa usa para decidir o que aprovar, o que recusar e como acompanhar projetos de inteligência artificial. Para empresas de médio e grande porte familiares, governança de IA na prática significa ter um critério claro para responder cinco perguntas: quem decide sobre IA na empresa, como propostas de fornecedores são avaliadas, como projetos em andamento são acompanhados, como o board é informado, e como a empresa diz não para o que não vale.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">O que é "Head de IA fracionário" e como funciona?</h3>
-          <p class="faq-answer">Head de IA fracionário é o nome informal do papel de ter um executivo sênior em IA ao lado da empresa sem que ele esteja na folha de pagamento. Funciona como um Advisory mensal: o profissional não tem vínculo empregatício, atende poucos clientes ao mesmo tempo, e está disponível para revisar propostas, preparar decisões para comitê e dar leitura independente sobre projetos em andamento. É a alternativa pragmática para empresas que não justificam contratar um Head de IA em tempo integral mas também não querem deixar essas decisões na mão do fornecedor do ERP ou do diretor de TI sobrecarregado.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>O que é "Head de IA fracionário" e como funciona?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>Head de IA fracionário é o nome informal do papel de ter um executivo sênior em IA ao lado da empresa sem que ele esteja na folha de pagamento. Funciona como um Advisory mensal: o profissional não tem vínculo empregatício, atende poucos clientes ao mesmo tempo, e está disponível para revisar propostas, preparar decisões para comitê e dar leitura independente sobre projetos em andamento. É a alternativa pragmática para empresas que não justificam contratar um Head de IA em tempo integral mas também não querem deixar essas decisões na mão do fornecedor do ERP ou do diretor de TI sobrecarregado.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Para que tipo de empresa o advisory da DAATIUM é indicado?</h3>
-          <p class="faq-answer">O advisory da DAATIUM é desenhado para empresas familiares brasileiras de médio e grande porte que estão prestes a tomar decisões grandes sobre IA e não têm ninguém sênior e independente do lado de dentro para discutir cada escolha. Tipicamente são empresas com governança familiar ou pós-familiar, em setores como agro, energia, seguros, educação, indústria e tecnologia.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Para que tipo de empresa o advisory da DAATIUM é indicado?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>O advisory da DAATIUM é desenhado para empresas familiares brasileiras de médio e grande porte que estão prestes a tomar decisões grandes sobre IA e não têm ninguém sênior e independente do lado de dentro para discutir cada escolha. Tipicamente são empresas com governança familiar ou pós-familiar, em setores como agro, energia, seguros, educação, indústria e tecnologia.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Quais são os formatos de educação executiva em IA oferecidos?</h3>
-          <p class="faq-answer">A DAATIUM oferece quatro formatos de educação executiva em IA: palestras executivas para reuniões de conselho e convenções de liderança, workshops aplicados para diretorias e times de liderança, Board AI Readiness para conselhos de administração que precisam exercer governança sobre IA, e mentoria executiva individual para CEOs, diretores e sucessores. Os quatro formatos funcionam sozinhos ou combinados, em modalidade presencial ou remota.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Quais são os formatos de educação executiva em IA oferecidos?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>A DAATIUM oferece quatro formatos de educação executiva em IA: palestras executivas para reuniões de conselho e convenções de liderança, workshops aplicados para diretorias e times de liderança, Board AI Readiness para conselhos de administração que precisam exercer governança sobre IA, e mentoria executiva individual para CEOs, diretores e sucessores. Os quatro formatos funcionam sozinhos ou combinados, em modalidade presencial ou remota.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Por que contratar um advisor independente em vez de uma consultoria tradicional?</h3>
-          <p class="faq-answer">A diferença está no conflito de interesse. Consultorias tradicionais que vendem estratégia também vendem implementação, e isso cria pressão para que toda recomendação termine em um projeto pago de execução. Fornecedores de tecnologia que oferecem advisory também vendem a ferramenta, e isso cria pressão para que toda recomendação termine na contratação do produto deles. O advisor independente não tem nem implementação para vender nem produto para empurrar — a única coisa que tem para oferecer é a recomendação certa, mesmo quando a recomendação é não fazer nada.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Por que contratar um advisor independente em vez de uma consultoria tradicional?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>A diferença está no conflito de interesse. Consultorias tradicionais que vendem estratégia também vendem implementação, e isso cria pressão para que toda recomendação termine em um projeto pago de execução. Fornecedores de tecnologia que oferecem advisory também vendem a ferramenta, e isso cria pressão para que toda recomendação termine na contratação do produto deles. O advisor independente não tem nem implementação para vender nem produto para empurrar — a única coisa que tem para oferecer é a recomendação certa, mesmo quando a recomendação é não fazer nada.</p>
+          </div></div>
+        </details>
 
-        <div class="faq-item">
-          <h3 class="faq-question">Como começar uma conversa com a DAATIUM?</h3>
-          <p class="faq-answer">A primeira conversa dura 30 minutos e é gratuita. O CEO ou diretoria interessada agenda diretamente pelo link de calendário do Mário Almeida. Não há proposta automatizada, formulário de qualificação ou intermediário. A conversa serve para entender o momento da empresa, identificar se há fit entre a situação dela e o tipo de trabalho que a DAATIUM faz, e indicar qual dos formatos (Sprint, Advisory mensal ou Educação Executiva) faz mais sentido. Se não houver fit, a indicação é honesta — incluindo recomendação de outros profissionais quando aplicável.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question">
+            <h3>Como começar uma conversa com a DAATIUM?</h3>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-body"><div class="faq-body-inner">
+            <p>A primeira conversa dura 30 minutos e é gratuita. O CEO ou diretoria interessada agenda diretamente pelo link de calendário do Mário Almeida. Não há proposta automatizada, formulário de qualificação ou intermediário. A conversa serve para entender o momento da empresa, identificar se há fit entre a situação dela e o tipo de trabalho que a DAATIUM faz, e indicar qual dos formatos (Sprint, Advisory mensal ou Educação Executiva) faz mais sentido. Se não houver fit, a indicação é honesta — incluindo recomendação de outros profissionais quando aplicável.</p>
+          </div></div>
+        </details>
 
       </div>
     </div>
