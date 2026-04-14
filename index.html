@@ -227,6 +227,7 @@
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    img, svg { max-width: 100%; }
 
     :root {
       --blue: #004AAD;
@@ -246,7 +247,7 @@
       --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: var(--font-body);
@@ -632,6 +633,7 @@
     }
 
     @media (max-width: 768px) {
+      .logos-section { padding: 64px 20px; }
       .logos-grid { grid-template-columns: repeat(4, 1fr); }
       .logo-item { height: 56px; padding: 0 8px; }
       .logo-item img { max-width: 68px; max-height: 22px; }
@@ -906,14 +908,14 @@
   </section>
 
   <!-- PULLQUOTE -->
-  <section class="section section--dark2" style="padding: 112px 32px;">
+  <section class="section section--dark2" style="padding-top: 112px; padding-bottom: 112px;">
     <div class="container" style="max-width: 720px; text-align: center;">
       <p class="reveal" style="font-family: var(--font-serif); font-size: clamp(22px, 2.8vw, 30px); font-weight: 400; font-style: italic; color: var(--cream); line-height: 1.5; letter-spacing: -0.3px;">IA é energia elétrica, não feature. Ou você redesenha como sua empresa decide, opera e lidera — ou cada real investido em IA é custo com nome bonito.</p>
     </div>
   </section>
 
   <!-- SEÇÃO A — ADVISORY INDEPENDENTE -->
-  <section class="section section--offers-light" id="advisory" style="padding: 140px 32px;">
+  <section class="section section--offers-light" id="advisory" style="padding-top: 140px; padding-bottom: 140px;">
     <div class="container">
       <div class="reveal">
         <p class="offer-eyebrow">01 — Advisory Independente</p>
@@ -970,7 +972,7 @@
   </section>
 
   <!-- BLOCO DE PONTE -->
-  <section class="section section--bridge" style="padding: 112px 32px;">
+  <section class="section section--bridge" style="padding-top: 112px; padding-bottom: 112px;">
     <div class="container">
       <div class="bridge-inner reveal">
         <h3 class="bridge-headline">O que o mercado pediu é o que eu entrego.</h3>
@@ -984,7 +986,7 @@
   </section>
 
   <!-- SEÇÃO B — EDUCAÇÃO EXECUTIVA -->
-  <section class="section section--offers-light" id="educacao" style="padding: 140px 32px;">
+  <section class="section section--offers-light" id="educacao" style="padding-top: 140px; padding-bottom: 140px;">
     <div class="container">
       <div class="reveal">
         <p class="offer-eyebrow">02 — Educação Executiva</p>
