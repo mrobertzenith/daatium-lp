@@ -468,11 +468,24 @@
     /* Advisory cards (Section A) — full-width stacked, horizontal two-column interior */
     .advisory-cards {
       display: flex; flex-direction: column;
-      gap: 56px;
+      gap: 80px;
     }
     .advisory-card {
       display: grid; grid-template-columns: 58% 1fr;
       gap: 56px;
+    }
+    /* Sprint card: elevated island */
+    .advisory-card--sprint {
+      background: #FFFFFF;
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 56px 64px;
+      gap: 64px;
+    }
+    /* Advisory mensal: flat on section bg, hairline separator */
+    .advisory-card--secondary {
+      padding-top: 8px;
     }
     .advisory-card-text {
       display: flex; flex-direction: column;
@@ -482,9 +495,20 @@
       font-weight: 600; color: #1A1A1A;
       letter-spacing: -0.4px; margin-bottom: 8px;
     }
+    /* Sprint title: dominant hierarchy */
+    .advisory-card--sprint h3 {
+      font-size: clamp(28px, 3vw, 38px);
+      font-weight: 600;
+      letter-spacing: -0.8px;
+      margin-bottom: 10px;
+    }
     .offer-subtitle {
       font-size: 15px; font-weight: 400;
       color: rgba(0,0,0,0.5); line-height: 1.5; margin-bottom: 20px;
+    }
+    .advisory-card--sprint .offer-subtitle {
+      font-size: 17px;
+      margin-bottom: 24px;
     }
     .offer-desc {
       font-size: 15px; color: rgba(0,0,0,0.68);
@@ -515,11 +539,11 @@
     .offer-deliverables ul { list-style: none; margin: 0; padding: 0; }
     .offer-deliverables li {
       font-size: 15px; font-weight: 400;
-      color: rgba(0,0,0,0.8); line-height: 1.55;
-      padding: 20px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+      color: rgba(0,0,0,0.8); line-height: 1.6;
+      padding: 28px 0; border-bottom: 1px solid rgba(0,0,0,0.08);
     }
     .offer-deliverables li:last-child { border-bottom: none; padding-bottom: 0; }
-    .offer-deliverables li:first-child { padding-top: 12px; }
+    .offer-deliverables li:first-child { padding-top: 16px; }
 
     /* Advisory questions list */
     .advisory-questions-title {
@@ -576,6 +600,10 @@
     @media (max-width: 900px) {
       .offer-section-h2 { font-size: clamp(30px, 5vw, 42px); }
       .advisory-card { grid-template-columns: 1fr; gap: 32px; }
+      .advisory-card--sprint { padding: 40px 40px; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      .advisory-card--sprint { padding: 32px 28px; }
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -930,7 +958,7 @@
 
       <div class="advisory-cards reveal">
         <!-- Sprint de 5 dias -->
-        <div class="advisory-card">
+        <div class="advisory-card advisory-card--sprint">
           <div class="advisory-card-text">
             <h3>Sprint de 5 dias</h3>
             <p class="offer-subtitle">Para quem precisa de clareza rápida antes de decidir o próximo passo.</p>
@@ -949,7 +977,7 @@
           </div>
         </div>
         <!-- Advisory mensal -->
-        <div class="advisory-card">
+        <div class="advisory-card advisory-card--secondary">
           <div class="advisory-card-text">
             <h3>Advisory mensal</h3>
             <p class="offer-subtitle">Para quem vai tomar várias decisões sobre IA ao longo do ano e não quer errar.</p>
@@ -1239,7 +1267,6 @@
           <a href="#educacao">Educação</a>
           <a href="#newsletter">Newsletter</a>
           <a href="#faq">FAQ</a>
-          <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener noreferrer">Contato</a>
         </div>
       </div>
       <div class="footer-legal">
