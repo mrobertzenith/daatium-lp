@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="799" height="166" viewBox="126 100 799 166">
+  <rect x="126" y="100" width="799" height="166" fill="#131109"/>
+  <g transform="translate(98.0,-107.1) scale(1.5500)"><path fill-rule="evenodd" fill="#c2a260" d="M 65.816406 224.707031 L 49.707031 215.40625 L 33.59375 206.105469 L 33.59375 168.902344 L 49.707031 159.59375 L 65.816406 150.296875 L 81.917969 159.59375 L 98.03125 168.902344 L 98.03125 206.105469 L 81.917969 215.40625 Z M 103.820312 187.503906 L 103.820312 165.554688 L 84.816406 154.585938 L 65.816406 143.613281 L 46.808594 154.585938 L 27.804688 165.554688 L 27.804688 209.445312 L 46.808594 220.414062 L 65.816406 231.394531 L 84.816406 220.414062 L 103.820312 209.445312 Z M 103.820312 187.503906"/><circle cx="65.816" cy="187.504" r="22.961" fill="#c2a260"/></g>
+  <text x="310" y="222" font-family="Cormorant Garamond" font-weight="500" font-size="120" letter-spacing="8" fill="#efe8d8">DAATIUM</text>
+  <text x="310" y="222" font-family="Cormorant Garamond" font-weight="500" font-size="120" letter-spacing="8" fill="#c2a260">DAAT</text>
+</svg>
