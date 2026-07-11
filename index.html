@@ -57,9 +57,15 @@
       "name": "Mário Almeida",
       "url": "https://daatium.com/",
       "image": "https://daatium.com/assets/MarioAlmeida_03.jpg",
-      "jobTitle": "Palestrante, mentor executivo e conselheiro",
-      "worksFor": { "@id": "https://daatium.com/#daatium" },
+      "jobTitle": "Head of Business Development & Strategic Partners",
+      "worksFor": { "@id": "https://daatium.com/#grupo-alun" },
+      "affiliation": { "@id": "https://daatium.com/#daatium" },
       "sameAs": ["https://www.linkedin.com/in/mralmeida"]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://daatium.com/#grupo-alun",
+      "name": "Grupo ALUN"
     },
     {
       "@type": "Organization",
@@ -155,16 +161,27 @@
   .hero h1 .gold { color: var(--gold); }
   .hero p { margin-top: 42px; max-width: 480px; font-size: 18px; color: var(--cream-dim); }
   .hero p em { color: var(--cream); font-style: italic; }
-  .hero-cta {
-    display:inline-block; margin-top: 40px;
+  .hero-kicker {
+    margin-top: 42px;
     font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.22em;
+    font-size: 12px; letter-spacing: 0.28em;
+    line-height: 2.1;
+    color: var(--cream-dim);
+  }
+  .hero-kicker span { white-space: nowrap; }
+  @media (max-width: 680px) {
+    .hero-kicker { font-size: 10.5px; }
+  }
+  .textlink {
+    display:inline-block; margin-top: 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.14em;
     color: var(--gold); text-decoration:none;
     border-bottom: 1px solid var(--gold-dim);
-    padding: 12px 2px 10px;
+    padding: 10px 2px 8px;
     transition: color .15s ease, border-color .15s ease;
   }
-  .hero-cta:hover { color: var(--cream); border-color: var(--cream-dim); }
+  .textlink:hover { color: var(--cream); border-color: var(--cream-dim); }
 
   /* ---------- scaffolding ---------- */
   section { padding: 92px 0; border-top: 1px solid var(--hairline); }
@@ -238,6 +255,11 @@
   .surface p { color: var(--cream-dim); max-width: 480px; }
   .surface p + p { margin-top: 14px; }
   .surface p em { color: var(--cream); }
+  .proofline {
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 11px; letter-spacing: 0.08em; line-height: 1.9;
+    color: var(--gold-dim);
+  }
   .flow { margin-top: 26px; }
   .flow svg { width: 100%; height: auto; display:block; }
   .flow .ft { font-family:'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; fill: var(--gold); }
@@ -260,7 +282,6 @@
     padding: 30px 28px 26px;
     display:flex; flex-direction:column;
   }
-  .quote.wide { grid-column: 1 / -1; }
   .quote p {
     font-family:'Cormorant Garamond', serif;
     font-style: italic; font-weight: 400;
@@ -331,6 +352,8 @@
   .footnav a { color: var(--cream-dim); text-decoration:none; font-size: 11px; letter-spacing: 0.1em; padding: 13px 6px; }
   .footnav a:hover { color: var(--gold); }
   .copyline { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--gold-dim); }
+  .copyline a { color: var(--cream-dim); text-decoration:none; letter-spacing: 0.1em; }
+  .copyline a:hover { color: var(--gold); }
 
   @media (max-width: 680px) {
     .daat { grid-template-columns: 1fr; gap: 28px; }
@@ -388,7 +411,7 @@
       Direção virou <span class="gold">escassez</span>.
     </h1>
     <p>A IA resolveu a pergunta do <em>como</em>. A pergunta do <em>para quê</em> ficou órfã. É nela que eu trabalho.</p>
-    <a class="hero-cta" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">AGENDAR CONVERSA &rarr;</a>
+    <div class="hero-kicker"><span>PALESTRAS</span> · <span>MENTORIA EXECUTIVA</span> · <span>CONSELHOS</span></div>
   </div>
 
   <section>
@@ -430,8 +453,8 @@
       <div class="portrait"><img src="assets/MarioAlmeida_portrait.jpg" alt="Mário Almeida" width="440" height="550" loading="lazy" decoding="async"></div>
       <div>
         <h3>Mário Almeida</h3>
-        <div class="cred">C-LEVEL · TOTVS / GRUPO SEB / XP INVESTIMENTOS<br>CO-FUNDADOR · ABSTARTUPS · FUNDADOR COM EXIT · PROFESSOR ALURA EMPRESAS</div>
-        <p>Trinta anos de carreira entre varejo, finanças e tecnologia. Fundou, escalou e liderou. Hoje trabalha a pergunta que a aceleração deixou órfã: não o que a tecnologia consegue fazer, mas o que vale a pena fazer com ela. A filosofia é uma só: inovação é sobre pessoas, não sobre tecnologia.</p>
+        <div class="cred">HEAD OF BUSINESS DEVELOPMENT &amp; STRATEGIC PARTNERS · GRUPO ALUN<br>C-LEVEL · TOTVS / GRUPO SEB / XP INVESTIMENTOS<br>CO-FUNDADOR · ABSTARTUPS · FUNDADOR COM EXIT · PROFESSOR ALURA EMPRESAS</div>
+        <p>Trinta anos de carreira entre varejo, finanças e tecnologia. Fundou, escalou e liderou. Hoje é Head of Business Development &amp; Strategic Partners do Grupo ALUN. Fora da empresa, trabalha a pergunta que a aceleração deixou órfã: não o que a tecnologia consegue fazer, mas o que vale a pena fazer com ela. A filosofia é uma só: inovação é sobre pessoas, não sobre tecnologia.</p>
       </div>
     </div>
   </section>
@@ -442,14 +465,18 @@
       <div class="surface">
         <h4>Palestras<small>Palco</small></h4>
         <div class="body">
-        <p>Para plateias que já ouviram tudo sobre o que a IA faz. A palestra trata do que ela não faz: dar direção. A sala sai com a pergunta que vai ocupar o comitê na segunda-feira.</p>
+        <p class="proofline">Mais de 300 palestras em 15 anos de palco. Google, NRF Retail's Big Show, TV Senado, Amcham, CNI, Sebrae, Cubo Itaú.</p>
+        <!-- TODO: título definitivo da palestra-assinatura -->
+        <p>Para plateias que já ouviram tudo sobre o que a IA faz, a palestra-assinatura <em>"A IA acelera. Para onde?"</em> trata do que ela não faz: dar direção. A sala sai com a pergunta que vai ocupar o comitê na segunda-feira.</p>
+        <p>Temas modulares: IA para conselhos, liderança e co-inteligência, leitura sóbria da era da IA. Presencial em todo o país ou online. Conteúdo dedicado sob demanda.</p>
+        <a class="textlink" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Consultar agenda para eventos</a>
         </div>
       </div>
       <div class="surface">
         <h4>Mentoria executiva<small>Reservado</small></h4>
         <div class="body">
         <p>Ninguém sobe o Everest de improviso. Se você não encara uma trilha sem preparo, por que basear o desenvolvimento da sua liderança no acaso?</p>
-        <p>Conversa reservada e contínua com quem decide, sobre um método maturado em 25 anos de liderança real. Para diretores e fundadores que precisam escalar a liderança sem perder a saúde nem a clareza estratégica.</p>
+        <p>Conversa reservada e contínua com quem decide, sobre um método maturado em 30 anos de liderança real. Para diretores e fundadores que precisam escalar a liderança sem perder a saúde nem a clareza estratégica.</p>
         <div class="flow">
           <div class="flow-desktop">
           <svg viewBox="0 0 640 210" role="img" aria-label="Método: do ponto de decolagem ao moonshot">
@@ -490,8 +517,8 @@
             </g>
           </svg>
           </div>
-          <!-- mobile: three stages stacked so labels stay legible at 360px -->
-          <div class="flow-mobile">
+          <!-- mobile: three stages stacked so labels stay legible at 360px; aria-hidden para o leitor de tela ler o fluxo uma vez só (versão desktop) -->
+          <div class="flow-mobile" aria-hidden="true">
             <svg viewBox="20 14 160 186" role="img" aria-label="Estágio 1: ponto de decolagem, separar o sinal do ruído">
               <circle cx="60" cy="62" r="4"  fill="#8a744a" opacity="0.45"/>
               <circle cx="96" cy="34" r="6"  fill="#8a744a" opacity="0.45"/>
@@ -527,7 +554,7 @@
       <div class="surface">
         <h4>Conselhos<small>Presença</small></h4>
         <div class="body">
-        <p>Conselhos de administração e comitês consultivos. Na mesa em que todos discutem o como, alguém precisa sustentar o para quê.</p>
+        <p>Conselhos de administração e comitês consultivos. Na mesa em que todos discutem o como, alguém precisa sustentar o para quê. Conselhos precisam supervisionar decisões de tecnologia que não conseguem interrogar; levo à mesa o repertório de quem passou 30 anos do lado de dentro dessas decisões.</p>
         </div>
       </div>
     </div>
@@ -537,19 +564,14 @@
     <h2 class="eyebrow">Quem já trabalhou com o Mário</h2>
     <div class="quotes">
 
-      <div class="quote wide">
-        <p>"Mario foi o arquiteto da transformação digital no Grupo SEB e, ao mesmo tempo, um mentor decisivo na minha trajetória. Sob sua liderança, ampliei minha visão estratégica e desenvolvi competências que foram essenciais para alcançar meu objetivo de me tornar Diretor de Tecnologia na Maple Bear. Sua capacidade de combinar direção visionária com desenvolvimento de talentos deixou um legado que carrego até hoje."</p>
-        <footer><div class="who">Oscar de Rooij</div><div class="role">Diretor de Tecnologia · Maple Bear</div></footer>
-      </div>
-
       <div class="quote">
-        <p>"A contribuição do Mário foi de altíssimo valor para o amadurecimento da CNP em decisões de tecnologia e estratégia de dados. A leitura sênior e independente que ele trouxe para discussões críticas — onde investir, o que priorizar, como organizar — acelerou a maturidade da companhia. Importante destacar também as conexões que fizemos no ecossistema durante o trabalho."</p>
-        <footer><div class="who">Sany Silveira</div><div class="role">CEO · CNP Seguros Holding Brasil</div></footer>
-      </div>
-
-      <div class="quote">
-        <p>"O Mario teve um papel central no meu desenvolvimento profissional. É uma referência para mim em comportamento executivo, visão estratégica e alto nível de exigência, além de unir profundidade técnica em tecnologia a uma forte visão de negócios — aspectos que foram fundamentais no meu desenvolvimento como seu liderado e mentorado, o que me influenciam até hoje."</p>
+        <p>"O Mario teve um papel central no meu desenvolvimento profissional. É uma referência para mim em comportamento executivo, visão estratégica e alto nível de exigência, além de unir profundidade técnica em tecnologia a uma forte visão de negócios."</p>
         <footer><div class="who">Gustavo Resende</div><div class="role">Diretor Executivo · PicPay</div></footer>
+      </div>
+
+      <div class="quote">
+        <p>"Ter o Mario como mentor tem sido uma experiência que ampliou minha visão sobre inovação, tecnologia e também sobre como pensar negócios de forma estratégica. Ele tem a habilidade de provocar reflexões profundas e, ao mesmo tempo, apresentar caminhos práticos e possíveis."</p>
+        <footer><div class="who">Mariana Serra</div><div class="role">CEO · VV Inteligência Humanitária</div></footer>
       </div>
 
       <div class="quote">
@@ -558,18 +580,23 @@
       </div>
 
       <div class="quote">
-        <p>"O Mário trouxe ao Grupo SEB a leitura estratégica que faltava em dados e tecnologia. Construiu uma estratégia que virou referência interna sobre como a companhia decide onde investir nessas áreas."</p>
-        <footer><div class="who">Thamila Zaher</div><div class="role">CEO · Grupo SEB / Maple Bear</div></footer>
-      </div>
-
-      <div class="quote wide">
-        <p>"Ter o Mario como mentor tem sido uma experiência que ampliou minha visão sobre inovação, tecnologia e também sobre como pensar negócios de forma estratégica. Ele tem a habilidade de provocar reflexões profundas e, ao mesmo tempo, apresentar caminhos práticos e possíveis. Sua orientação combina visão de futuro com clareza estratégica, sempre instigando a pensar além do óbvio. O que tem me impulsionado a explorar novas possibilidades, questionar modelos tradicionais e agir com mais confiança diante dos desafios."</p>
-        <footer><div class="who">Mariana Serra</div><div class="role">CEO · VV Inteligência Humanitária</div></footer>
+        <p>"O Mario chegou em um momento crucial na UpMat, justamente quando enfrentávamos uma importante transição digital. Sua mentoria foi essencial para que conseguíssemos criar um produto de tecnologia voltado para a Educação, concebido para ser digital desde o início."</p>
+        <footer><div class="who">Cristina Diaz</div><div class="role">CEO · UpMat</div></footer>
       </div>
 
       <div class="quote">
-        <p>"O Mario chegou em um momento crucial na UpMat, justamente quando enfrentávamos uma importante transição digital. Sua mentoria foi essencial para que conseguíssemos criar um produto de tecnologia voltado para a Educação, concebido para ser digital desde o início. Ele acompanhou de perto toda a implementação, até a chegada dos primeiros clientes. Seu papel como mentor foi determinante para o sucesso dessa jornada."</p>
-        <footer><div class="who">Cristina Diaz</div><div class="role">CEO · UpMat</div></footer>
+        <p>"Mario foi um mentor decisivo na minha trajetória. Sob sua liderança, ampliei minha visão estratégica e desenvolvi competências que foram essenciais para alcançar meu objetivo de me tornar Diretor de Tecnologia na Maple Bear."</p>
+        <footer><div class="who">Oscar de Rooij</div><div class="role">Diretor de Tecnologia · Maple Bear</div></footer>
+      </div>
+
+      <div class="quote">
+        <p>"A contribuição do Mário foi de altíssimo valor para o amadurecimento da CNP em decisões de tecnologia e estratégia de dados. A leitura sênior e independente que ele trouxe para discussões críticas acelerou a maturidade da companhia."</p>
+        <footer><div class="who">Sany Silveira</div><div class="role">CEO · CNP Seguros Holding Brasil</div></footer>
+      </div>
+
+      <div class="quote">
+        <p>"O Mário trouxe ao Grupo SEB a leitura estratégica que faltava em dados e tecnologia. Construiu uma estratégia que virou referência interna sobre como a companhia decide onde investir nessas áreas."</p>
+        <footer><div class="who">Thamila Zaher</div><div class="role">CEO · Grupo SEB / Maple Bear</div></footer>
       </div>
 
       <div class="quote">
@@ -641,7 +668,7 @@
         <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
       </nav>
     </div>
-    <div class="copyline">&copy; 2026 Daatium. Todos os direitos reservados. &middot; Campinas, SP &middot; Brasil</div>
+    <div class="copyline">&copy; 2026 Daatium. Todos os direitos reservados. &middot; Campinas, SP &middot; Brasil &middot; <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">linkedin.com/in/mralmeida</a></div>
   </footer>
 
 </div>
