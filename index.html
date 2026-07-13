@@ -111,21 +111,27 @@
 
   /* ---------- top bar with official logo ---------- */
   header { padding: 30px 0 0; }
+  /* faixa do header mais larga que a coluna de leitura: 7 itens de menu não cabem em 704px */
+  @media (min-width: 960px) {
+    header { margin-left: -90px; margin-right: -90px; }
+  }
   .brandline {
     display:flex; align-items:center; justify-content:space-between;
+    gap: 40px;
     border-bottom: 1px solid var(--hairline);
     padding-bottom: 20px;
   }
-  .logo { display:flex; align-items:center; gap: 14px; text-decoration:none; }
+  .logo { display:flex; align-items:center; gap: 14px; text-decoration:none; flex-shrink: 0; }
   .logo svg { height: 34px; width: auto; display:block; }
   .logo .word {
     font-family:'Cormorant Garamond', serif;
     font-weight: 500; font-size: 27px; letter-spacing: 0.06em;
     line-height: 1;
+    white-space: nowrap;
   }
   .logo .word .g { color: var(--gold); }
   .logo .word .c { color: var(--cream); }
-  .topnav { display:flex; gap: 14px; align-items:center; }
+  .topnav { display:flex; gap: 14px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
   .topnav a {
     font-family:'IBM Plex Mono', monospace;
     font-size: 12px; letter-spacing: 0.12em;
@@ -208,21 +214,40 @@
   .stat .l { font-family:'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; line-height: 1.6; color: var(--cream-dim); margin-top: 10px; }
   .source { font-family:'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--gold-dim); margin-bottom: 44px; }
 
-  /* ---------- daat ---------- */
-  .daat { display:grid; grid-template-columns: 190px 1fr; gap: 48px; align-items:center; }
-  .daat .mark svg { width: 150px; height:auto; display:block; margin: 0 auto; }
-  .daat .mark small {
-    display:block; text-align:center;
+  /* ---------- o nome: díptico ---------- */
+  .diptych {
+    display:grid; grid-template-columns: 1fr 1px 1fr;
+    column-gap: 44px; align-items: stretch;
+  }
+  .diptych .rule { width: 1px; background: var(--hairline); }
+  .dcol .mark {
+    height: 64px;
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 16px;
+  }
+  .dcol .mark svg { height: 60px; width: auto; display:block; }
+  .dcol .mark .hebrew {
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight: 500; font-size: 85px; line-height: 1;
+    color: var(--gold);
+  }
+  .dcol .marklabel {
+    text-align:center;
     font-family:'IBM Plex Mono', monospace;
-    font-size: 11px; letter-spacing: 0.34em;
-    color: var(--gold-dim); margin-top: 16px;
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    margin-bottom: 28px;
   }
-  .daat blockquote {
+  .dcol p { color: var(--cream-dim); }
+  .synthesis {
     font-family:'Cormorant Garamond', serif;
-    font-size: 25px; font-weight: 400; font-style: italic;
-    line-height: 1.5; color: var(--cream);
+    font-style: italic; font-weight: 400;
+    font-size: 24px; line-height: 1.5;
+    color: var(--cream);
+    text-align:center;
+    max-width: 520px;
+    margin: 60px auto 0;
   }
-  .daat blockquote .plain { font-style: normal; color: var(--cream-dim); font-size: 21px; display:block; margin-top: 16px; }
 
   /* ---------- bio ---------- */
   .bio { display:grid; grid-template-columns: 220px 1fr; gap: 40px; align-items:start; }
@@ -352,11 +377,10 @@
   .footnav a { color: var(--cream-dim); text-decoration:none; font-size: 11px; letter-spacing: 0.1em; padding: 13px 6px; }
   .footnav a:hover { color: var(--gold); }
   .copyline { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--hairline); color: var(--gold-dim); }
-  .copyline a { color: var(--cream-dim); text-decoration:none; letter-spacing: 0.1em; }
-  .copyline a:hover { color: var(--gold); }
 
   @media (max-width: 680px) {
-    .daat { grid-template-columns: 1fr; gap: 28px; }
+    .diptych { grid-template-columns: 1fr; row-gap: 40px; }
+    .diptych .rule { width: 100%; height: 1px; }
     .bio { grid-template-columns: 1fr; }
     .surface { grid-template-columns: 1fr; gap: 12px; }
     .quotes { grid-template-columns: 1fr; }
@@ -400,16 +424,14 @@
         <a href="#metodo">Método</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#newsletter">Newsletter</a>
+        <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">LinkedIn</a>
         <a class="nav-contact" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
       </nav>
     </div>
   </header>
 
   <div class="hero">
-    <h1>
-      Velocidade virou <span class="dim">commodity</span>.<br>
-      Direção virou <span class="gold">escassez</span>.
-    </h1>
+    <h1>Velocidade virou <span class="dim">commodity</span>.<br>Direção virou <span class="gold">escassez</span>.</h1>
     <p>A IA resolveu a pergunta do <em>como</em>. A pergunta do <em>para quê</em> ficou órfã. É nela que eu trabalho.</p>
     <div class="hero-kicker"><span>PALESTRAS</span> · <span>MENTORIA EXECUTIVA</span> · <span>CONSELHOS</span></div>
   </div>
@@ -422,7 +444,7 @@
       <div class="stat"><div class="n">95%</div><div class="l">dos projetos de IA sem retorno mensurável</div></div>
       <div class="stat"><div class="n">70%</div><div class="l">das barreiras estão na cultura e na liderança, não nos sistemas</div></div>
     </div>
-    <div class="source">AMCHAM BRASIL · MIT · PESQUISA BR 339 LÍDERES</div>
+    <div class="source">AMCHAM BRASIL · MIT · PESQUISA COM 339 LÍDERES BRASILEIROS</div>
     <div class="prose">
       <p>O problema não é a tecnologia.</p>
       <p>IA é amplificador. Ela acelera o que existe. Empresa com direção clara acelera na direção certa. <strong>Empresa sem eixo chega mais rápido ao lugar errado.</strong></p>
@@ -432,19 +454,20 @@
 
   <section id="nome">
     <h2 class="eyebrow">O nome</h2>
-    <div class="daat">
-      <div class="mark">
-        <svg viewBox="27.8 143.6 76.1 87.8" aria-hidden="true">
-          <use href="#dring" fill="#c2a260"/>
-          <text x="65.8" y="200.5" text-anchor="middle" font-family="Frank Ruhl Libre, serif" font-weight="500" font-size="34" fill="#c2a260">&#1491;&#1506;&#1514;</text>
-        </svg>
-        <small>DAAT &#183; &#1491;&#1506;&#1514;</small>
+    <div class="diptych">
+      <div class="dcol">
+        <div class="mark"><span class="hebrew" lang="he">&#1491;&#1506;&#1514;</span></div>
+        <div class="marklabel">DAAT &#183; HEBRAICO</div>
+        <p>Na tradição hebraica, daat é o ponto oculto onde a sabedoria e o entendimento se encontram e viram vida concreta. Não aparece nos diagramas; só existe quando o conhecimento deixa de ser abstrato e passa a habitar quem conhece. É o conhecimento que muda quem o carrega.</p>
       </div>
-      <blockquote>
-        Daat, no hebraico, é o conhecimento que só existe por experiência. Não é saber sobre. É conhecer por dentro. O sufixo latino ium nomeia o elemento, a substância fundamental.
-        <span class="plain">A IA tem toda a informação do mundo. O que falta às empresas é daat.</span>
-      </blockquote>
+      <div class="rule" aria-hidden="true"></div>
+      <div class="dcol">
+        <div class="mark"><svg viewBox="27.8 143.6 76.1 87.8" fill="#c2a260" aria-hidden="true"><use href="#dsym"/></svg></div>
+        <div class="marklabel">IUM &#183; LATIM</div>
+        <p>O sufixo latino ium nomeia os elementos: a substância que não se decompõe mais. O hexágono é a forma com que a ciência desenha a estrutura da matéria; o círculo, o núcleo. O símbolo diz o que o nome promete: conhecimento tratado como elemento.</p>
+      </div>
     </div>
+    <p class="synthesis">A IA tem toda a informação do mundo e nenhuma experiência dela. O que falta às empresas é daat.</p>
   </section>
 
   <section id="quem">
@@ -666,9 +689,10 @@
         <a href="#depoimentos">Depoimentos</a>
         <a href="#newsletter">Newsletter</a>
         <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
+        <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
-    <div class="copyline">&copy; 2026 Daatium. Todos os direitos reservados. &middot; Campinas, SP &middot; Brasil &middot; <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">linkedin.com/in/mralmeida</a></div>
+    <div class="copyline">&copy; 2026 Daatium. Todos os direitos reservados. &middot; Campinas, SP &middot; Brasil</div>
   </footer>
 
 </div>
