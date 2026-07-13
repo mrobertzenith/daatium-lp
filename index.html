@@ -18,14 +18,16 @@
 <meta name="description" content="Velocidade virou commodity. Direção virou escassez. Palestras, mentoria executiva e conselhos com Mário Almeida, 30 anos entre tecnologia e estratégia.">
 <meta name="author" content="Mário Almeida">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://daatium.com/">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; form-action https://metis.daatium.com; base-uri 'self'; object-src 'none'">
+<link rel="canonical" href="https://www.daatium.com/">
 
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://daatium.com/">
+<meta property="og:url" content="https://www.daatium.com/">
 <meta property="og:title" content="DAATIUM · Mário Almeida — Palestras, mentoria executiva e conselhos">
 <meta property="og:description" content="Velocidade virou commodity. Direção virou escassez. Palestras, mentoria executiva e conselhos com Mário Almeida.">
-<meta property="og:image" content="https://daatium.com/assets/og-daatium-direcao.png">
+<meta property="og:image" content="https://www.daatium.com/assets/og-daatium-direcao.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
@@ -35,10 +37,10 @@
 
 <!-- Twitter/X Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://daatium.com/">
+<meta name="twitter:url" content="https://www.daatium.com/">
 <meta name="twitter:title" content="DAATIUM · Mário Almeida — Palestras, mentoria executiva e conselhos">
 <meta name="twitter:description" content="Velocidade virou commodity. Direção virou escassez. Palestras, mentoria executiva e conselhos com Mário Almeida.">
-<meta name="twitter:image" content="https://daatium.com/assets/og-daatium-direcao.png">
+<meta name="twitter:image" content="https://www.daatium.com/assets/og-daatium-direcao.png">
 <meta name="twitter:image:alt" content="Velocidade virou commodity. Direção virou escassez. DAATIUM, Mário Almeida.">
 
 <!-- Favicon -->
@@ -52,30 +54,83 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://www.daatium.com/#website",
+      "url": "https://www.daatium.com/",
+      "name": "DAATIUM",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://www.daatium.com/#daatium" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.daatium.com/#webpage",
+      "url": "https://www.daatium.com/",
+      "name": "DAATIUM · Mário Almeida — Palestras, mentoria executiva e conselhos",
+      "isPartOf": { "@id": "https://www.daatium.com/#website" },
+      "about": { "@id": "https://www.daatium.com/#daatium" },
+      "inLanguage": "pt-BR"
+    },
+    {
       "@type": "Person",
-      "@id": "https://daatium.com/#mario-almeida",
+      "@id": "https://www.daatium.com/#mario-almeida",
       "name": "Mário Almeida",
-      "url": "https://daatium.com/",
-      "image": "https://daatium.com/assets/MarioAlmeida_03.jpg",
+      "url": "https://www.daatium.com/",
+      "image": "https://www.daatium.com/assets/MarioAlmeida_portrait.jpg",
       "jobTitle": "Head of Business Development & Strategic Partners",
-      "worksFor": { "@id": "https://daatium.com/#grupo-alun" },
-      "affiliation": { "@id": "https://daatium.com/#daatium" },
+      "worksFor": { "@id": "https://www.daatium.com/#grupo-alun" },
+      "affiliation": { "@id": "https://www.daatium.com/#daatium" },
+      "knowsAbout": [
+        "Inteligência artificial aplicada a negócios",
+        "Estratégia de tecnologia e dados",
+        "Governança de tecnologia em conselhos",
+        "Mentoria executiva",
+        "Transformação digital",
+        "Varejo",
+        "Educação",
+        "Mercado de capitais"
+      ],
       "sameAs": ["https://www.linkedin.com/in/mralmeida"]
     },
     {
       "@type": "Organization",
-      "@id": "https://daatium.com/#grupo-alun",
+      "@id": "https://www.daatium.com/#grupo-alun",
       "name": "Grupo ALUN"
     },
     {
       "@type": "Organization",
-      "@id": "https://daatium.com/#daatium",
+      "@id": "https://www.daatium.com/#daatium",
       "name": "DAATIUM",
-      "url": "https://daatium.com/",
-      "logo": "https://daatium.com/assets/favicon.svg",
-      "founder": { "@id": "https://daatium.com/#mario-almeida" },
+      "url": "https://www.daatium.com/",
+      "logo": "https://www.daatium.com/assets/favicon.svg",
+      "founder": { "@id": "https://www.daatium.com/#mario-almeida" },
       "description": "Palestras, mentoria executiva e conselhos com Mário Almeida.",
-      "address": { "@type": "PostalAddress", "addressLocality": "Campinas", "addressRegion": "SP", "addressCountry": "BR" }
+      "address": { "@type": "PostalAddress", "addressLocality": "Campinas", "addressRegion": "SP", "addressCountry": "BR" },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Palestras",
+            "description": "Palestra-assinatura \"A IA acelera. Para onde?\" e quatro temas modulares sobre IA, liderança e governança, para convenções de liderança e eventos executivos. Presencial ou online."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mentoria executiva",
+            "description": "Mentoria reservada e contínua para diretores e fundadores: sessões quinzenais, blocos de competência e OKRs de evolução, em ciclos semestral e anual."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Conselhos",
+            "description": "Conselheiro consultivo em empresas de educação, tecnologia e impacto: visão de tecnologia com olhar de negócio para conselhos de administração e comitês."
+          }
+        }
+      ]
     }
   ]
 }
@@ -261,8 +316,8 @@
   /* ---------- surfaces ---------- */
   .surface { display:grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 36px 0; }
   .surface + .surface { border-top: 1px solid var(--hairline); }
-  .surface h4 { font-family:'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; line-height: 1.2; }
-  .surface h4 small {
+  .surface h3 { font-family:'Cormorant Garamond', serif; font-size: 26px; font-weight: 500; line-height: 1.2; }
+  .surface h3 small {
     display:block; font-family:'IBM Plex Mono', monospace;
     font-size: 11px; letter-spacing: 0.26em; font-weight: 400;
     color: var(--gold-dim); margin-top: 8px; text-transform: uppercase;
@@ -295,7 +350,7 @@
     color: var(--gold-dim); text-transform: uppercase;
     margin-bottom: 14px;
   }
-  .sig-card h5 {
+  .sig-card h4 {
     font-family:'Cormorant Garamond', serif;
     font-size: 30px; font-weight: 500; line-height: 1.2;
     color: var(--cream); margin-bottom: 14px;
@@ -307,7 +362,7 @@
     border: 1px solid var(--hairline);
     padding: 28px 28px 26px;
   }
-  .talk h5 {
+  .talk h4 {
     font-family:'Cormorant Garamond', serif;
     font-size: 22px; font-weight: 500; line-height: 1.25;
     color: var(--cream); margin-bottom: 10px;
@@ -546,7 +601,7 @@
     <h2 class="eyebrow">Como trabalho</h2>
     <div class="surfaces">
       <div class="surface" id="palestras">
-        <h4>Palestras<small>Palco</small></h4>
+        <h3>Palestras<small>Palco</small></h3>
         <div class="body">
         <p class="proofline">Mais de 300 palestras em 15 anos de palco. Google, NRF Retail's Big Show, TV Senado, Amcham, CNI, Sebrae, Cubo Itaú.</p>
         </div>
@@ -555,25 +610,25 @@
             <div class="photo"><img src="assets/palestras/assinatura.jpg" alt="Mário Almeida palestrando com microfone em evento executivo" loading="lazy" decoding="async" onerror="this.closest('.sig-card').classList.add('no-photo')"></div>
             <div class="text">
               <div class="sig-label">Palestra-assinatura</div>
-              <h5>A IA acelera. Para onde?</h5>
+              <h4>A IA acelera. Para onde?</h4>
               <p>Velocidade virou commodity; direção virou escassez. A palestra junta o que ninguém junta: os dados mais recentes sobre IA e a pergunta que os clássicos passaram 2.400 anos refinando. Antes de decidir onde usar a tecnologia, existe uma pergunta anterior: o que a sua empresa está amplificando. Para convenções de liderança e eventos executivos.</p>
             </div>
           </div>
           <div class="talks">
             <div class="talk">
-              <h5>O executivo e o sentido</h5>
+              <h4>O executivo e o sentido</h4>
               <p>A aceleração esvaziou a agenda de direção interior, e a IA tornou impossível ignorar. Aristóteles, Agostinho, Frankl e Senge aterrissados na vida de quem decide: a decisão sem eixo, o cansaço de quem tem tudo, a carreira que perdeu o para quê. Profundidade sem autoajuda. Para encontros de alta gestão, sócios e programas de liderança.</p>
             </div>
             <div class="talk">
-              <h5>O board à prova de IA: como governar a decisão mais cara da década</h5>
+              <h4>O board à prova de IA: como governar a decisão mais cara da década</h4>
               <p>Tecnologia virou pauta de capital, risco e competitividade, e a maioria dos conselhos aprova o que não consegue interrogar. O conteúdo é repertório de governança: as perguntas certas, as respostas a exigir, os sinais de alerta em qualquer proposta com IA dentro. Para conselhos, acionistas e formação de conselheiros.</p>
             </div>
             <div class="talk">
-              <h5>Todo mundo virou gestor</h5>
+              <h4>Todo mundo virou gestor</h4>
               <p>Um profissional com agentes de IA entrega hoje o que era de um time. Isso muda hierarquia, carreira e o próprio significado de liderar, e vai redesenhar seu organograma com ou sem planejamento. Melhor com. Para RH estratégico e convenções de liderança.</p>
             </div>
             <div class="talk">
-              <h5>Por que a IA não decolou na sua empresa (e como destravar)</h5>
+              <h4>Por que a IA não decolou na sua empresa (e como destravar)</h4>
               <p>84% das empresas brasileiras usam IA; 61% não veem resultado. O problema não é técnico: é medo, moda e paralisia. O conteúdo ensina a diagnosticar qual das três trava a sua operação e o que fazer com cada uma. Para CEOs, diretorias e convenções de gestão.</p>
             </div>
           </div>
@@ -585,7 +640,7 @@
         </div>
       </div>
       <div class="surface">
-        <h4>Mentoria executiva<small>Reservado</small></h4>
+        <h3>Mentoria executiva<small>Reservado</small></h3>
         <div class="body">
         <p>Ninguém sobe o Everest de improviso. Você não encara nem uma trilha sem preparo. Por que o desenvolvimento da sua liderança seria diferente?</p>
         <p>Mentoria executiva é um acelerador de desenvolvimento, e desenvolvimento não acontece por inspiração. Acontece por método: sessões quinzenais, blocos de competência, OKRs de evolução, em conversa reservada e contínua. Tudo lapidado em mais de 20 anos liderando e formando executivos. Para diretores e fundadores que precisam escalar a liderança sem perder a saúde nem a clareza estratégica.</p>
@@ -664,7 +719,7 @@
         </div>
       </div>
       <div class="surface">
-        <h4>Conselhos<small>Presença</small></h4>
+        <h3>Conselhos<small>Presença</small></h3>
         <div class="body">
         <p>Conselheiro consultivo em empresas de educação, tecnologia e impacto, e membro de comitê em entidade nacional da indústria.</p>
         <p>A era da IA criou um desafio novo para os conselhos: tecnologia deixou de ser pauta técnica e passou a definir competitividade, risco e alocação de capital. Trago visão de tecnologia com olhar de negócio, a prática de quem construiu empresas do zero e a vivência executiva no C-Level de TOTVS, Grupo SEB e XP.</p>

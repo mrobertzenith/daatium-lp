@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://daatium.com/sitemap.xml
+Sitemap: https://www.daatium.com/sitemap.xml
