@@ -111,9 +111,9 @@
 
   /* ---------- top bar with official logo ---------- */
   header { padding: 30px 0 0; }
-  /* faixa do header mais larga que a coluna de leitura: 7 itens de menu não cabem em 704px */
-  @media (min-width: 960px) {
-    header { margin-left: -90px; margin-right: -90px; }
+  /* faixa do header mais larga que a coluna de leitura: 8 itens de menu não cabem em 704px */
+  @media (min-width: 1010px) {
+    header { margin-left: -125px; margin-right: -125px; }
   }
   .brandline {
     display:flex; align-items:center; justify-content:space-between;
@@ -131,7 +131,7 @@
   }
   .logo .word .g { color: var(--gold); }
   .logo .word .c { color: var(--cream); }
-  .topnav { display:flex; gap: 14px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+  .topnav { display:flex; gap: 12px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
   .topnav a {
     font-family:'IBM Plex Mono', monospace;
     font-size: 12px; letter-spacing: 0.12em;
@@ -275,6 +275,62 @@
     font-size: 11px; letter-spacing: 0.08em; line-height: 1.9;
     color: var(--gold-dim);
   }
+
+  /* ---------- portfólio de palestras ---------- */
+  .portfolio { grid-column: 1 / -1; margin-top: 34px; }
+  .portfolio img { filter: grayscale(1) brightness(0.9); }
+  .sig-card {
+    display:grid; grid-template-columns: 2fr 3fr;
+    background: var(--ink-soft);
+    border: 1px solid var(--hairline);
+  }
+  .sig-card .photo { border-right: 1px solid var(--hairline); min-height: 100%; }
+  .sig-card .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .sig-card.no-photo { grid-template-columns: 1fr; }
+  .sig-card.no-photo .photo { display:none; }
+  .sig-card .text { padding: 36px 34px; }
+  .sig-label {
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--gold-dim); text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .sig-card h5 {
+    font-family:'Cormorant Garamond', serif;
+    font-size: 30px; font-weight: 500; line-height: 1.2;
+    color: var(--cream); margin-bottom: 14px;
+  }
+  .sig-card .text p { color: var(--cream-dim); max-width: none; }
+  .talks { display:grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 26px; }
+  .talk {
+    background: var(--ink-soft);
+    border: 1px solid var(--hairline);
+    padding: 28px 28px 26px;
+  }
+  .talk h5 {
+    font-family:'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; line-height: 1.25;
+    color: var(--cream); margin-bottom: 10px;
+  }
+  .talk p { color: var(--cream-dim); max-width: none; }
+  .stagephotos {
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--hairline);
+    border: 1px solid var(--hairline);
+    margin-top: 26px;
+  }
+  .stagephotos .ph { height: 180px; background: var(--ink-soft); overflow:hidden; }
+  .stagephotos img { width:100%; height:100%; object-fit:cover; display:block; }
+  .textlink {
+    display:inline-block; margin-top: 22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px; letter-spacing: 0.14em;
+    color: var(--gold); text-decoration:none;
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 10px 2px 8px;
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .textlink:hover { color: var(--cream); border-color: var(--cream-dim); }
   .flow { margin-top: 26px; }
   .flow svg { width: 100%; height: auto; display:block; }
   .flow .ft { font-family:'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; fill: var(--gold); }
@@ -384,6 +440,12 @@
     .flow-desktop { display:none; }
     .flow-mobile { display:block; }
     .flow-mobile svg { max-width: 200px; margin: 0 auto 4px; }
+    .sig-card { grid-template-columns: 1fr; }
+    .sig-card .photo { border-right: none; border-bottom: 1px solid var(--hairline); }
+    .sig-card .photo img { max-height: 340px; }
+    .sig-card .text { padding: 28px 24px; }
+    .talks { grid-template-columns: 1fr; }
+    .stagephotos .ph { height: 100px; }
     .clients { grid-template-columns: repeat(3, 1fr); }
     .client { min-height: 64px; padding: 14px 12px; }
     .client img { max-height: 30px; }
@@ -417,6 +479,7 @@
         <a href="#nome">O nome</a>
         <a href="#quem">Quem</a>
         <a href="#metodo">Método</a>
+        <a href="#palestras">Palestras</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#newsletter">Newsletter</a>
         <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">LinkedIn</a>
@@ -490,13 +553,44 @@
   <section id="metodo">
     <h2 class="eyebrow">Como trabalho</h2>
     <div class="surfaces">
-      <div class="surface">
+      <div class="surface" id="palestras">
         <h4>Palestras<small>Palco</small></h4>
         <div class="body">
         <p class="proofline">Mais de 300 palestras em 15 anos de palco. Google, NRF Retail's Big Show, TV Senado, Amcham, CNI, Sebrae, Cubo Itaú.</p>
-        <!-- TODO: título definitivo da palestra-assinatura -->
-        <p>Para plateias que já ouviram tudo sobre o que a IA faz, a palestra-assinatura <em>"A IA acelera. Para onde?"</em> trata do que ela não faz: dar direção. A sala sai com a pergunta que vai ocupar o comitê na segunda-feira.</p>
-        <p>Temas modulares: IA para conselhos, liderança e co-inteligência, leitura sóbria da era da IA. Presencial em todo o país ou online. Conteúdo dedicado sob demanda.</p>
+        </div>
+        <div class="portfolio">
+          <div class="sig-card">
+            <div class="photo"><img src="assets/palestras/assinatura.jpg" alt="Mário Almeida palestrando com microfone em evento executivo" loading="lazy" decoding="async" onerror="this.closest('.sig-card').classList.add('no-photo')"></div>
+            <div class="text">
+              <div class="sig-label">Palestra-assinatura</div>
+              <h5>A IA acelera. Para onde?</h5>
+              <p>Velocidade virou commodity; direção virou escassez. A palestra junta o que ninguém junta: os dados mais recentes sobre IA e a pergunta que os clássicos passaram 2.400 anos refinando. Antes de decidir onde usar a tecnologia, existe uma pergunta anterior: o que a sua empresa está amplificando. Para convenções de liderança e eventos executivos.</p>
+            </div>
+          </div>
+          <div class="talks">
+            <div class="talk">
+              <h5>O executivo e o sentido</h5>
+              <p>A aceleração esvaziou a agenda de direção interior, e a IA tornou impossível ignorar. Aristóteles, Agostinho, Frankl e Senge aterrissados na vida de quem decide: a decisão sem eixo, o cansaço de quem tem tudo, a carreira que perdeu o para quê. Profundidade sem autoajuda. Para encontros de alta gestão, sócios e programas de liderança.</p>
+            </div>
+            <div class="talk">
+              <h5>O board à prova de IA: como governar a decisão mais cara da década</h5>
+              <p>Tecnologia virou pauta de capital, risco e competitividade, e a maioria dos conselhos aprova o que não consegue interrogar. O conteúdo é repertório de governança: as perguntas certas, as respostas a exigir, os sinais de alerta em qualquer proposta com IA dentro. Para conselhos, acionistas e formação de conselheiros.</p>
+            </div>
+            <div class="talk">
+              <h5>Todo mundo virou gestor</h5>
+              <p>Um profissional com agentes de IA entrega hoje o que era de um time. Isso muda hierarquia, carreira e o próprio significado de liderar, e vai redesenhar seu organograma com ou sem planejamento. Melhor com. Para RH estratégico e convenções de liderança.</p>
+            </div>
+            <div class="talk">
+              <h5>Por que a IA não decolou na sua empresa (e como destravar)</h5>
+              <p>84% das empresas brasileiras usam IA; 61% não veem resultado. O problema não é técnico: é medo, moda e paralisia. O conteúdo ensina a diagnosticar qual das três trava a sua operação e o que fazer com cada uma. Para CEOs, diretorias e convenções de gestão.</p>
+            </div>
+          </div>
+          <div class="stagephotos">
+            <div class="ph"><img src="assets/palestras/palco-01.jpg" alt="Mário Almeida em palestra no palco principal" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
+            <div class="ph"><img src="assets/palestras/palco-02.jpg" alt="Mário Almeida apresentando diante do telão" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
+            <div class="ph"><img src="assets/palestras/palco-03.jpg" alt="Mário Almeida falando em pé entre a plateia" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
+          </div>
+          <a class="textlink" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Consultar agenda para eventos</a>
         </div>
       </div>
       <div class="surface">
@@ -684,6 +778,7 @@
         <a href="#nome">O nome</a>
         <a href="#quem">Quem</a>
         <a href="#metodo">Método</a>
+        <a href="#palestras">Palestras</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#newsletter">Newsletter</a>
         <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
