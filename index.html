@@ -335,13 +335,18 @@
   }
   .portrait img {
     width: 100%; height: 100%; object-fit: cover; display:block;
-    filter: grayscale(1) brightness(0.92);
+    /* fotos pré-tratadas nos arquivos: cinza, autocontraste, saída [66,244] */
   }
   .bio h3 { font-family:'Newsreader', serif; font-size: 30px; font-weight: 600; margin-bottom: 12px; }
   .bio .cred {
     font-family:'IBM Plex Mono', monospace;
     font-size: 12px; letter-spacing: 0.05em; line-height: 2;
-    color: var(--neu); margin-bottom: 18px;
+    margin-bottom: 18px;
+  }
+  .bio .cred-now { color: var(--tinta); }
+  .bio .cred-past { color: var(--neu); margin-top: calc(1.6 * 2em); }
+  @media (max-width: 680px) {
+    .bio .cred { font-size: 11.5px; }
   }
   .bio p { max-width: 500px; }
 
@@ -365,7 +370,6 @@
 
   /* ---------- portfólio de palestras ---------- */
   .portfolio { grid-column: 1 / -1; margin-top: 34px; }
-  .portfolio img { filter: grayscale(1) brightness(0.92); }
   .sig-card {
     display:grid; grid-template-columns: 2fr 3fr;
     background: var(--sup);
@@ -572,7 +576,7 @@
 
   <div class="hero">
     <h1>Velocidade virou commodity.<br><em>Direção virou o ativo&nbsp;escasso.</em></h1>
-    <p class="apoio">A IA resolveu o como. Ninguém resolveu o para quê. É aí que eu trabalho.</p>
+    <p class="apoio">Meu trabalho é direção.</p>
     <div class="hero-kicker"><span>PALESTRAS</span> · <span>MENTORIA EXECUTIVA</span> · <span>CONSELHOS</span></div>
   </div>
 
@@ -600,7 +604,7 @@
   <section class="metis" id="newsletter">
     <div class="mark">M É T I S</div>
     <h2>A inteligência que a IA não substitui.</h2>
-    <p>Ensaios sobre decisão, direção e o que permanece humano na era da máquina. No seu e-mail, quando há algo a dizer.</p>
+    <p>Ensaios sobre decisão e direção. No seu e-mail, quando há algo a dizer.</p>
     <form class="signup" action="https://metis.daatium.com/subscribe" method="GET" target="_blank">
       <input type="email" name="email" placeholder="seu@email.com" aria-label="Seu e-mail" autocomplete="email" required>
       <button type="submit">ASSINAR NEWSLETTER</button>
@@ -631,8 +635,12 @@
       <div class="portrait"><img src="assets/MarioAlmeida_portrait.jpg" alt="Mário Almeida" width="440" height="550" loading="lazy" decoding="async"></div>
       <div>
         <h3>Mário Almeida</h3>
-        <div class="cred">HEAD OF BUSINESS DEVELOPMENT &amp; STRATEGIC PARTNERS · GRUPO ALUN<br>C-LEVEL · TOTVS / GRUPO SEB / XP INVESTIMENTOS<br>CO-FUNDADOR · ABSTARTUPS · FUNDADOR COM EXIT · PROFESSOR ALURA EMPRESAS</div>
-        <p>Trinta anos de carreira entre varejo, finanças e tecnologia, de gerente de restaurante aos vinte anos a C-Level em TOTVS, Grupo SEB e XP Investimentos. Hoje é Head of Business Development &amp; Strategic Partners do Grupo ALUN. Na DAATIUM, dedica-se à pergunta que ninguém está fazendo: não o que a tecnologia consegue fazer, mas o que vale a pena fazer com ela. Persegue essa pergunta com o repertório dos clássicos e a experiência de quem operou a tecnologia por dentro. A filosofia é uma só: inovação é sobre pessoas, não sobre tecnologia.</p>
+        <div class="cred">
+          <div class="cred-now">HEAD OF BUSINESS DEVELOPMENT &amp; STRATEGIC PARTNERS · GRUPO ALUN<br>PROFESSOR · ALURA EMPRESAS</div>
+          <div class="cred-past">C-LEVEL · TOTVS / GRUPO SEB / XP INVESTIMENTOS<br>CO-FUNDADOR · ABSTARTUPS<br>FUNDADOR COM EXIT</div>
+        </div>
+        <p>Trinta anos entre varejo, finanças e tecnologia. Começou gerente de restaurante aos vinte anos. Na DAATIUM, trabalha a pergunta que ninguém está fazendo: não o que a tecnologia consegue fazer, mas o que vale a pena fazer com ela.</p>
+        <p>Inovação é sobre pessoas, não sobre tecnologia.</p>
       </div>
     </div>
   </section>
