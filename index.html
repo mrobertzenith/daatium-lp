@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ECEDEA">
+<meta name="theme-color" content="#F7F6F1">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q07WYTNG9"></script>
@@ -141,404 +141,361 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@500&text=%D7%93%D7%A2%D7%AA&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  /* ===== Linha B · Manchete Cinética =====
+     papel claro em voltagem alta: manchete gigante, cobalto, marquee */
   :root{
-    --papel:#ECEDEA;      /* fundo padrão */
-    --tinta:#111417;      /* texto e marca; fundo escuro */
-    --sup:#DFE0DC;        /* bloco sólido sobre papel */
-    --sup-esc:#1B1F22;    /* bloco sólido sobre tinta */
-    --neu:#4B4F52;        /* secundário sobre papel   7,04:1 */
-    --neu-esc:#98A1A7;    /* secundário sobre tinta   7,03:1 */
-    --funcional:#227586;  /* só onde a função exige */
-    --filete: 2.8px;
-    --divisor: 1px solid rgba(17,20,23,0.18);
+    --papel:#F7F6F1;
+    --tinta:#121419;
+    --cobalto:#2B32FF;
+    --neu:#5A5E6B;          /* secundário sobre papel */
+    --neu-esc:#9CA1B0;      /* secundário sobre tinta */
+    --line:rgba(18,20,25,0.16);
+    --rule:2px solid var(--tinta);
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior:smooth; }
   }
-  body {
-    background: var(--papel);
-    color: var(--tinta);
-    font-family: 'Newsreader', serif;
-    font-weight: 400;
-    font-size: 19px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+  body{
+    background:var(--papel);
+    color:var(--tinta);
+    font-family:var(--display);
+    font-weight:400;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  .wrap{ max-width:1140px; margin:0 auto; padding:0 28px; }
 
-  /* ---------- marca: símbolo inline + wordmark Newsreader ---------- */
-  .logo { display:flex; align-items:center; gap: 12px; text-decoration:none; flex-shrink: 0; color: var(--tinta); }
-  .logo svg { height: 34px; width: auto; display:block; fill: currentColor; }
-  .logo .word {
-    font-family:'Newsreader', serif;
-    font-weight: 600; font-size: 27px; letter-spacing: -0.012em;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
-  /* ---------- top bar ---------- */
-  header { padding: 30px 0 0; }
-  /* faixa do header mais larga que a coluna de leitura: 8 itens de menu não cabem em 704px */
-  @media (min-width: 1010px) {
-    header { margin-left: -125px; margin-right: -125px; }
-  }
-  .brandline {
+  /* ---------- nav ---------- */
+  header{ border-bottom:var(--rule); }
+  .brandline{
     display:flex; align-items:center; justify-content:space-between;
-    gap: 40px;
-    border-bottom: var(--filete) solid var(--tinta);
-    padding-bottom: 20px;
+    gap:32px; padding:20px 0;
   }
-  .topnav { display:flex; gap: 12px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
-  .topnav a {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.12em;
-    color: var(--neu); text-decoration:none;
-    transition: color .15s ease;
-    padding: 13px 6px;
-    white-space: nowrap;
+  .logo{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--tinta); flex-shrink:0; }
+  .logo svg{ height:32px; width:auto; display:block; fill:currentColor; }
+  .logo .word{ font-family:var(--display); font-weight:700; font-size:22px; letter-spacing:-0.02em; line-height:1; text-transform:uppercase; }
+  .topnav{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
+  .topnav a{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em;
+    color:var(--tinta); text-decoration:none; text-transform:uppercase;
+    padding:12px 8px; white-space:nowrap;
+    transition:color .15s ease;
   }
-  .topnav a:hover { color: var(--tinta); }
-  .topnav a.nav-contact {
-    color: var(--tinta);
-    border: 1px solid var(--tinta);
-    padding: 11px 18px;
-    transition: background .15s ease, color .15s ease;
+  .topnav a:hover{ color:var(--cobalto); }
+  .topnav a.nav-contact{
+    background:var(--cobalto); color:var(--papel);
+    border-radius:99px; padding:11px 22px;
+    transition:background .15s ease;
   }
-  .topnav a.nav-contact:hover { background: var(--tinta); color: var(--papel); }
-  @media (max-width: 680px) {
-    .topnav { gap: 0; }
-    .topnav a { display:none; }
-    .topnav a.nav-contact { display:inline-block; }
+  .topnav a.nav-contact:hover{ background:var(--tinta); color:var(--papel); }
+  @media (max-width:680px){
+    .topnav a{ display:none; }
+    .topnav a.nav-contact{ display:inline-block; }
   }
 
   /* ---------- hero ---------- */
-  .hero { padding: 110px 0 100px; }
-  .hero h1 {
-    font-family:'Newsreader', serif;
-    font-weight: 600;
-    font-size: clamp(42px, 7vw, 64px);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+  .hero{ padding:84px 0 72px; }
+  .hero h1{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(34px, 8.6vw, 108px);
+    line-height:0.97; letter-spacing:-0.035em;
+    text-transform:uppercase;
+    text-wrap:balance;
   }
-  .hero h1 em { font-style: italic; font-weight: 400; }
-  .hero .apoio {
-    margin-top: 38px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 14px; letter-spacing: 0.1em;
-    line-height: 2;
-    color: var(--neu);
-    text-transform: uppercase;
-    max-width: 640px;
+  .hero h1 .o{ color:var(--cobalto); }
+  .hero h1 .hl{
+    background:var(--cobalto); color:var(--papel);
+    display:inline-block; padding:0 0.18em;
+    transform:rotate(-1.2deg);
   }
-  .hero-kicker {
-    margin-top: 40px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.28em;
-    line-height: 2.1;
-    color: var(--neu);
+  .hero .apoio{
+    margin-top:36px;
+    font-family:var(--mono); font-size:15px; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--tinta);
   }
-  .hero-kicker span { white-space: nowrap; }
-  @media (max-width: 680px) {
-    .hero-kicker { font-size: 10.5px; }
-    .hero .apoio { font-size: 12px; }
+  .hero .meta{
+    margin-top:14px; display:flex; gap:10px 28px; flex-wrap:wrap;
+    font-family:var(--mono); font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--neu);
   }
+  .hero .meta span{ white-space:nowrap; }
+  @media (max-width:680px){ .hero .meta span{ white-space:normal; } }
+
+  /* ---------- marquee de logos ---------- */
+  .marquee{
+    border-top:var(--rule); border-bottom:var(--rule);
+    background:var(--tinta); overflow:hidden; padding:20px 0;
+  }
+  .marquee .track{ display:flex; width:max-content; gap:64px; align-items:center; padding-right:64px;
+    animation:marq 48s linear infinite; }
+  .marquee img{ height:30px; width:auto; filter:grayscale(1) invert(1) brightness(1.5); opacity:0.8; }
+  @keyframes marq{ to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce){
+    .marquee .track{ animation:none; flex-wrap:wrap; width:auto; padding:0 28px; gap:28px 40px; justify-content:center; }
+  }
+  @media (max-width:680px){ .marquee img{ height:22px; } .marquee .track{ gap:40px; } }
 
   /* ---------- scaffolding ---------- */
-  section { padding: 88px 0; border-top: var(--divisor); }
-  .eyebrow {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; font-weight: 400; letter-spacing: 0.3em;
-    color: var(--neu);
-    text-transform: uppercase;
-    margin-bottom: 38px;
+  section{ padding:88px 0; }
+  section + section{ border-top:var(--rule); }
+  .eyebrow{
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    margin-bottom:48px;
   }
-  .prose p { max-width: 560px; margin-bottom: 24px; }
-  .prose p:last-child { margin-bottom: 0; }
-  .prose strong { font-weight: 500; color: var(--tinta); }
+  .eyebrow h2{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(30px, 4.6vw, 56px);
+    line-height:1.0; letter-spacing:-0.03em; text-transform:uppercase;
+  }
+  .eyebrow .idx{ font-family:var(--mono); font-size:12px; letter-spacing:0.2em; color:var(--cobalto); }
 
-  /* ---------- diagnóstico: a costura ---------- */
-  .seam {
-    display:grid; grid-template-columns: 1fr var(--filete) 1fr;
-    border-top: var(--filete) solid var(--tinta);
-    border-bottom: var(--filete) solid var(--tinta);
-    margin: 48px 0 14px;
+  /* ---------- temas (lista editorial) ---------- */
+  .tema{
+    display:grid; grid-template-columns:72px 1fr 300px; gap:28px;
+    padding:36px 0; border-top:1px solid var(--line);
+    align-items:start;
+    transition:background .18s ease, color .18s ease;
   }
-  .seam .bar { background: var(--tinta); }
-  .seam .side { padding: 30px 34px 30px 0; }
-  .seam .side:last-child { padding: 30px 0 30px 34px; }
-  .seam .lbl {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 11px; letter-spacing: 0.2em;
-    color: var(--neu); margin-bottom: 14px;
+  .tema:last-of-type{ border-bottom:1px solid var(--line); }
+  .tema .num{ font-family:var(--mono); font-size:14px; letter-spacing:0.1em; color:var(--cobalto); padding-top:10px; }
+  .tema h3{
+    font-family:var(--display); font-weight:600;
+    font-size:clamp(22px, 2.8vw, 34px);
+    line-height:1.1; letter-spacing:-0.02em; margin-bottom:12px;
   }
-  .seam .maq {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 15px; line-height: 1.85;
+  .tema p{ color:var(--neu); font-size:16.5px; max-width:640px; }
+  .tema .para{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.08em;
+    line-height:1.9; color:var(--neu); text-transform:uppercase; padding-top:10px;
   }
-  .seam .cls {
-    font-family:'Newsreader', serif;
-    font-style: italic; font-weight: 400;
-    font-size: 24px; line-height: 1.4;
+  .tema.assinatura{ background:var(--tinta); color:var(--papel); border-top:var(--rule);
+    margin:0 -28px; padding-left:28px; padding-right:28px; }
+  .tema.assinatura .num{ color:var(--cobalto); }
+  .tema.assinatura p{ color:var(--neu-esc); }
+  .tema.assinatura .para{ color:var(--neu-esc); }
+  .tema.assinatura .sig-tag{
+    display:inline-block; background:var(--cobalto); color:var(--papel);
+    font-family:var(--mono); font-size:10.5px; letter-spacing:0.18em; text-transform:uppercase;
+    padding:5px 12px; margin-bottom:14px; transform:rotate(-1.2deg);
   }
-  @media (max-width: 680px) {
-    .seam { grid-template-columns: 1fr; }
-    .seam .bar { height: var(--filete); }
-    .seam .side { padding: 26px 0; }
-    .seam .side:last-child { padding: 26px 0; }
+  @media (max-width:860px){
+    .tema{ grid-template-columns:48px 1fr; }
+    .tema .para{ grid-column:2; padding-top:0; }
   }
-  .source { font-family:'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--neu); margin-bottom: 44px; }
+  .temas-links{ display:flex; gap:12px 40px; flex-wrap:wrap; margin-top:44px; }
+  .textlink{
+    display:inline-block;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--tinta); text-decoration:none;
+    border-bottom:2px solid var(--cobalto);
+    padding:10px 2px 8px;
+    transition:background .15s ease, color .15s ease;
+  }
+  .textlink:hover{ background:var(--cobalto); color:var(--papel); }
 
-  /* ---------- o nome: díptico ---------- */
-  .diptych {
-    display:grid; grid-template-columns: 1fr 1px 1fr;
-    column-gap: 44px; align-items: stretch;
+  /* ---------- números (faixa tinta) ---------- */
+  .numbers{ background:var(--tinta); color:var(--papel); border-top:var(--rule); }
+  .numbers .grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:0;
   }
-  .diptych .rule { width: 1px; background: rgba(17,20,23,0.18); }
-  .dcol .mark {
-    height: 64px;
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom: 16px;
+  .numbers .cell{ padding:16px 28px 16px 0; border-right:1px solid rgba(247,246,241,0.18); }
+  .numbers .cell:last-child{ border-right:none; }
+  .numbers .cell + .cell{ padding-left:28px; }
+  .numbers .n{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(40px, 5.5vw, 72px);
+    line-height:1; letter-spacing:-0.03em;
   }
-  .dcol .mark svg { height: 60px; width: auto; display:block; fill: var(--tinta); }
-  .dcol .mark .hebrew {
-    font-family:'Noto Serif Hebrew', serif;
-    font-weight: 500; font-size: 72px; line-height: 1;
-    color: var(--tinta);
+  .numbers .cell:nth-child(2) .n{ color:var(--cobalto); filter:brightness(1.6); }
+  .numbers .l{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--neu-esc); margin-top:10px; line-height:1.7;
   }
-  .dcol .marklabel {
-    text-align:center;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 10px; letter-spacing: 0.3em;
-    color: var(--neu);
-    margin-bottom: 28px;
-  }
-  .dcol p { color: var(--neu); font-size: 18px; }
-  .synthesis {
-    font-family:'Newsreader', serif;
-    font-style: italic; font-weight: 400;
-    font-size: 25px; line-height: 1.5;
-    color: var(--tinta);
-    text-align:center;
-    max-width: 520px;
-    margin: 60px auto 0;
-  }
-
-  /* ---------- bio ---------- */
-  .bio { display:grid; grid-template-columns: 220px 1fr; gap: 40px; align-items:start; }
-  .portrait {
-    width: 220px; aspect-ratio: 4 / 5;
-    overflow: hidden;
-  }
-  .portrait img {
-    width: 100%; height: 100%; object-fit: cover; display:block;
-    /* fotos pré-tratadas nos arquivos: cinza, autocontraste, saída [66,244] */
-  }
-  .bio h3 { font-family:'Newsreader', serif; font-size: 30px; font-weight: 600; margin-bottom: 12px; }
-  .bio .cred {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.05em; line-height: 2;
-    margin-bottom: 18px;
-  }
-  .bio .cred-now { color: var(--tinta); }
-  .bio .cred-past { color: var(--neu); margin-top: calc(1.6 * 2em); }
-  @media (max-width: 680px) {
-    .bio .cred { font-size: 11.5px; }
-  }
-  .bio p { max-width: 500px; }
-
-  /* ---------- surfaces ---------- */
-  .surface { display:grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 36px 0; }
-  .surface + .surface { border-top: var(--divisor); }
-  .surface h3 { font-family:'Newsreader', serif; font-size: 28px; font-weight: 600; line-height: 1.2; }
-  .surface h3 small {
-    display:block; font-family:'IBM Plex Mono', monospace;
-    font-size: 11px; letter-spacing: 0.26em; font-weight: 400;
-    color: var(--neu); margin-top: 8px; text-transform: uppercase;
-  }
-  .surface p { color: var(--neu); max-width: 480px; }
-  .surface p + p { margin-top: 14px; }
-  .surface p em { color: var(--tinta); }
-  .proofline {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.08em; line-height: 1.9;
-    color: var(--neu);
+  @media (max-width:860px){
+    .numbers .grid{ grid-template-columns:1fr 1fr; }
+    .numbers .cell{ border-right:none; border-bottom:1px solid rgba(247,246,241,0.18); padding:20px 0; }
+    .numbers .cell + .cell{ padding-left:0; }
+    .numbers .cell:nth-child(odd){ padding-right:24px; }
+    .numbers .cell:nth-child(even){ padding-left:24px; border-left:1px solid rgba(247,246,241,0.18); }
+    .numbers .cell:nth-child(3), .numbers .cell:nth-child(4){ border-bottom:none; }
   }
 
-  /* ---------- portfólio de palestras ---------- */
-  .portfolio { grid-column: 1 / -1; margin-top: 34px; }
-  .sig-card {
-    display:grid; grid-template-columns: 2fr 3fr;
-    background: var(--sup);
+  /* ---------- fita de fotos ---------- */
+  .filmstrip{ padding:0; border-top:var(--rule); }
+  .filmstrip .strip{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:2px; background:var(--tinta);
   }
-  .sig-card .photo { min-height: 100%; }
-  .sig-card .photo img { width:100%; height:100%; object-fit:cover; display:block; }
-  .sig-card.no-photo { grid-template-columns: 1fr; }
-  .sig-card.no-photo .photo { display:none; }
-  .sig-card .text { padding: 36px 34px; }
-  .sig-label {
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 10px; letter-spacing: 0.3em;
-    color: var(--neu); text-transform: uppercase;
-    margin-bottom: 14px;
+  .filmstrip img{
+    width:100%; height:300px; object-fit:cover; display:block;
   }
-  .sig-card h4 {
-    font-family:'Newsreader', serif;
-    font-size: 32px; font-weight: 600; line-height: 1.15;
-    color: var(--tinta); margin-bottom: 14px;
-  }
-  .sig-card .text p { color: var(--neu); max-width: none; }
-  .talks { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
-  .talk {
-    background: var(--sup);
-    padding: 28px 28px 26px;
-  }
-  .talk h4 {
-    font-family:'Newsreader', serif;
-    font-size: 23px; font-weight: 600; line-height: 1.25;
-    color: var(--tinta); margin-bottom: 10px;
-  }
-  .talk p { color: var(--neu); max-width: none; font-size: 18px; }
-  .stagephotos {
-    display:grid; grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 14px;
-  }
-  .stagephotos .ph { height: 180px; background: var(--sup); overflow:hidden; }
-  .stagephotos img { width:100%; height:100%; object-fit:cover; display:block; }
-  .portfolio-links { display:flex; gap: 8px 36px; flex-wrap:wrap; }
-  .textlink {
-    display:inline-block; margin-top: 22px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 12px; letter-spacing: 0.14em;
-    color: var(--tinta); text-decoration:none;
-    border-bottom: 1px solid var(--tinta);
-    padding: 10px 2px 8px;
-    transition: background .15s ease, color .15s ease;
-  }
-  .textlink:hover { background: var(--tinta); color: var(--papel); }
-  .flow { margin-top: 26px; }
-  .flow svg { width: 100%; height: auto; display:block; }
-  .flow .ft { font-family:'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; fill: var(--tinta); font-weight: 500; }
-  .flow .fs { font-family:'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.04em; fill: var(--neu); }
-  .flow-mobile { display:none; }
-  .method-cta {
-    text-align:center;
-    border-top: var(--divisor);
-    padding-top: 44px; margin-top: 8px;
-  }
-  .flowfoot {
-    margin-top: 14px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size: 11px; letter-spacing: 0.06em;
-    color: var(--neu);
-    border-top: var(--divisor);
-    padding-top: 12px;
+  @media (max-width:860px){
+    .filmstrip .strip{ display:flex; overflow-x:auto; }
+    .filmstrip img{ width:72vw; height:230px; flex:none; }
   }
 
-  /* ---------- testimonials ---------- */
-  .quotes { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
-  .quote {
-    background: var(--sup);
-    padding: 30px 28px 26px;
+  /* ---------- mentoria & conselhos ---------- */
+  .pair{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  @media (max-width:860px){ .pair{ grid-template-columns:1fr; } }
+  .offer{
+    border:var(--rule); padding:40px 36px;
+    display:flex; flex-direction:column; gap:16px;
+    transition:background .18s ease, color .18s ease;
+  }
+  .offer:hover{ background:var(--tinta); color:var(--papel); }
+  .offer:hover p{ color:var(--neu-esc); }
+  .offer:hover .ofoot{ color:var(--neu-esc); border-color:rgba(247,246,241,0.25); }
+  .offer .olabel{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--cobalto);
+  }
+  .offer h3{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(26px, 3vw, 38px); letter-spacing:-0.02em; line-height:1.05;
+    text-transform:uppercase;
+  }
+  .offer p{ color:var(--neu); font-size:16.5px; }
+  .offer .ofoot{
+    margin-top:auto; padding-top:16px; border-top:1px solid var(--line);
+    font-family:var(--mono); font-size:11.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--neu); line-height:1.9;
+  }
+
+  /* ---------- quem ---------- */
+  .bio{ display:grid; grid-template-columns:300px 1fr; gap:48px; align-items:start; }
+  @media (max-width:860px){ .bio{ grid-template-columns:1fr; } }
+  .portrait{ border:var(--rule); }
+  .portrait img{ width:100%; aspect-ratio:4/5; object-fit:cover; display:block; }
+  .bio .cred{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.05em; line-height:2;
+    margin-bottom:22px; text-transform:uppercase;
+  }
+  .bio .cred-now{ color:var(--tinta); }
+  .bio .cred-past{ color:var(--neu); margin-top:calc(1.6 * 2em); }
+  .bio p{ max-width:560px; font-size:18px; }
+  .bio p + p{ margin-top:14px; }
+  .bio .filosofia{
+    display:inline-block; background:var(--cobalto); color:var(--papel);
+    padding:8px 15px; margin-top:22px;
+    font-weight:600; transform:rotate(-1.2deg);
+  }
+  @media (max-width:680px){ .bio .cred{ font-size:11px; } }
+
+  /* ---------- depoimentos ---------- */
+  .quotes{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  @media (max-width:860px){ .quotes{ grid-template-columns:1fr; } }
+  .quote{
+    border-top:var(--rule); padding:24px 0 8px;
     display:flex; flex-direction:column;
   }
-  .quote p {
-    font-family:'Newsreader', serif;
-    font-style: italic; font-weight: 400;
-    font-size: 19.5px; line-height: 1.55;
-    color: var(--tinta);
-    flex: 1;
+  .quote .qmark{
+    font-family:var(--display); font-weight:700; font-size:44px; line-height:0.6;
+    color:var(--cobalto); margin-bottom:16px;
   }
-  .quote footer { margin-top: 22px; }
-  .quote .who { font-family:'IBM Plex Mono', monospace; font-weight: 500; font-size: 12px; letter-spacing: 0.08em; color: var(--tinta); }
-  .quote .role { font-family:'IBM Plex Mono', monospace; font-weight: 400; font-size: 11px; letter-spacing: 0.06em; color: var(--neu); margin-top: 4px; }
+  .quote p{ font-size:17px; line-height:1.55; flex:1; }
+  .quote footer{ margin-top:20px; }
+  .quote .who{ font-family:var(--mono); font-weight:500; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; }
+  .quote .role{ font-family:var(--mono); font-size:11px; letter-spacing:0.06em; color:var(--neu); margin-top:4px; text-transform:uppercase; }
 
-  /* ---------- clients ---------- */
-  /* 25 logos: 5 colunas fecham exato no desktop; no mobile o último logo fecha a linha */
-  .clients {
-    display:grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1px; background: rgba(17,20,23,0.18);
-    border: var(--divisor);
-    margin-top: 8px;
+  /* ---------- clientes ---------- */
+  .clients{
+    display:grid; grid-template-columns:repeat(5, 1fr);
+    gap:1px; background:var(--line);
+    border:1px solid var(--line);
   }
-  .client {
-    background: var(--sup);
+  .client{
+    background:var(--papel);
     display:flex; align-items:center; justify-content:center;
-    padding: 22px 18px; min-height: 84px;
+    padding:24px 18px; min-height:92px;
   }
-  .client img {
-    max-width: 100%; max-height: 40px;
-    filter: grayscale(1);
-    opacity: 0.55;
-    transition: opacity .2s ease, filter .2s ease;
+  .client img{
+    max-width:100%; max-height:40px;
+    filter:grayscale(1); opacity:0.55;
+    transition:opacity .2s ease, filter .2s ease;
   }
-  .client:hover img { opacity: 1; filter: none; }
+  .client:hover img{ opacity:1; filter:none; }
+  @media (max-width:680px){
+    .clients{ grid-template-columns:repeat(3, 1fr); }
+    .client{ min-height:68px; padding:14px 12px; }
+    .client img{ max-height:30px; }
+    .client:last-child{ grid-column:1 / -1; }
+  }
 
   /* ---------- metis ---------- */
-  .metis { text-align:center; }
-  .metis .mark { font-family:'Newsreader', serif; font-weight: 600; font-size: 15px; letter-spacing: 0.5em; color: var(--tinta); margin-bottom: 24px; }
-  .metis h2 { font-family:'Newsreader', serif; font-size: clamp(28px, 4.4vw, 38px); font-weight: 600; max-width: 520px; margin: 0 auto 16px; line-height: 1.3; }
-  .metis p { color: var(--neu); max-width: 440px; margin: 0 auto 38px; }
-  .signup { display:flex; max-width: 420px; margin: 0 auto; border: 1px solid var(--tinta); }
-  .signup input { flex:1; min-width: 0; background:transparent; border:none; outline:none; padding: 15px 18px; font-family:'IBM Plex Mono', monospace; font-size: 14px; color: var(--tinta); }
-  .signup input::placeholder { color: var(--neu); }
-  .signup button { background: var(--tinta); color: var(--papel); border:none; padding: 14px 26px; font-family:'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.18em; cursor:pointer; transition: background .15s ease, color .15s ease; }
-  .signup button:hover { background: var(--neu); }
-  @media (max-width: 680px) {
-    .signup { flex-direction: column; }
-    .signup input { font-size: 16px; text-align:center; padding: 16px 18px; } /* <16px dispara zoom automático no iOS */
-    .signup button { border-top: 1px solid var(--tinta); padding: 16px; }
+  .metis{ background:var(--tinta); color:var(--papel); border-top:var(--rule); text-align:center; }
+  .metis .mark{
+    font-family:var(--mono); font-size:13px; letter-spacing:0.5em;
+    color:var(--cobalto); filter:brightness(1.6); margin-bottom:24px;
+  }
+  .metis h2{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(28px, 4.4vw, 46px); letter-spacing:-0.02em; line-height:1.1;
+    text-transform:uppercase;
+    max-width:640px; margin:0 auto 16px; text-wrap:balance;
+  }
+  .metis p{ color:var(--neu-esc); max-width:440px; margin:0 auto 38px; font-size:16.5px; }
+  .signup{ display:flex; max-width:460px; margin:0 auto; border:2px solid var(--papel); }
+  .signup input{
+    flex:1; min-width:0; background:transparent; border:none; outline:none;
+    padding:16px 18px; font-family:var(--mono); font-size:14px; color:var(--papel);
+  }
+  .signup input::placeholder{ color:var(--neu-esc); }
+  .signup button{
+    background:var(--cobalto); color:var(--papel); border:none;
+    padding:14px 28px; font-family:var(--mono); font-size:12px; letter-spacing:0.18em;
+    cursor:pointer; transition:background .15s ease, color .15s ease;
+  }
+  .signup button:hover{ background:var(--papel); color:var(--tinta); }
+  @media (max-width:680px){
+    .signup{ flex-direction:column; }
+    .signup input{ font-size:16px; text-align:center; padding:16px 18px; }
+    .signup button{ border-top:2px solid var(--papel); padding:16px; }
   }
 
   /* ---------- cta ---------- */
-  .cta { text-align:center; padding-bottom: 56px; }
-  .cta h2 { font-family:'Newsreader', serif; font-size: clamp(30px, 5vw, 44px); font-weight: 600; line-height: 1.25; max-width: 560px; margin: 0 auto 42px; }
-  .btn { display:inline-block; background: var(--tinta); color: var(--papel); border: 1px solid var(--tinta); text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.22em; padding: 16px 42px; transition: background .18s ease, color .18s ease; }
-  .btn:hover { background: transparent; color: var(--tinta); }
-
-  footer.site {
-    border-top: var(--filete) solid var(--tinta);
-    padding: 30px 0 48px;
-    font-family:'IBM Plex Mono', monospace;
-    font-weight: 400;
-    font-size: 10px; letter-spacing: 0.12em;
-    color: var(--neu);
+  .cta{ text-align:center; padding:110px 0; }
+  .cta h2{
+    font-family:var(--display); font-weight:700;
+    font-size:clamp(40px, 7.5vw, 96px);
+    letter-spacing:-0.035em; line-height:0.97; text-transform:uppercase;
+    margin-bottom:48px; text-wrap:balance;
   }
-  .footrow { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 14px; }
-  .footbrand { display:flex; align-items:center; gap:10px; color: var(--neu); }
-  .footbrand svg { height:20px; width:auto; fill: currentColor; }
-  .footnav { display:flex; gap: 8px; flex-wrap:wrap; }
-  .footnav a { color: var(--neu); text-decoration:none; font-size: 10px; letter-spacing: 0.1em; padding: 13px 6px; }
-  .footnav a:hover { color: var(--tinta); }
-  .copyline { margin-top: 22px; padding-top: 16px; border-top: var(--divisor); color: var(--neu); }
-
-  @media (max-width: 680px) {
-    .diptych { grid-template-columns: 1fr; row-gap: 40px; }
-    .diptych .rule { width: 100%; height: 1px; }
-    .bio { grid-template-columns: 1fr; }
-    .surface { grid-template-columns: 1fr; gap: 12px; }
-    .quotes { grid-template-columns: 1fr; }
-    .hero { padding: 88px 0 78px; }
-    section { padding: 70px 0; }
-    .flow-desktop { display:none; }
-    .flow-mobile { display:block; }
-    .flow-mobile svg { max-width: 200px; margin: 0 auto 4px; }
-    .sig-card { grid-template-columns: 1fr; }
-    .sig-card .photo img { max-height: 340px; }
-    .sig-card .text { padding: 28px 24px; }
-    .talks { grid-template-columns: 1fr; }
-    .stagephotos .ph { height: 100px; }
-    .clients { grid-template-columns: repeat(3, 1fr); }
-    .client { min-height: 64px; padding: 14px 12px; }
-    .client img { max-height: 30px; }
-    .client:last-child { grid-column: 1 / -1; }
+  .cta h2 .o{ color:var(--cobalto); }
+  .btn{
+    display:inline-block; background:var(--cobalto); color:var(--papel);
+    border:2px solid var(--cobalto); text-decoration:none;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.22em; text-transform:uppercase;
+    padding:18px 48px; border-radius:99px;
+    transition:background .18s ease, color .18s ease;
   }
-  :focus-visible { outline: 2px solid var(--funcional); outline-offset: 3px; }
+  .btn:hover{ background:transparent; color:var(--tinta); border-color:var(--tinta); }
+
+  footer.site{
+    border-top:var(--rule);
+    padding:30px 0 48px;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em;
+    color:var(--neu); text-transform:uppercase;
+  }
+  .footrow{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; }
+  .footbrand{ display:flex; align-items:center; gap:10px; color:var(--tinta); }
+  .footbrand svg{ height:20px; width:auto; fill:currentColor; }
+  .footnav{ display:flex; gap:4px; flex-wrap:wrap; }
+  .footnav a{ color:var(--neu); text-decoration:none; font-size:11px; letter-spacing:0.1em; padding:13px 8px; }
+  .footnav a:hover{ color:var(--cobalto); }
+  .copyline{ margin-top:22px; padding-top:16px; border-top:1px solid var(--line); color:var(--neu); }
+
+  @media (max-width:680px){
+    .hero{ padding:64px 0 56px; }
+    section{ padding:64px 0; }
+    .cta{ padding:84px 0; }
+    .tema.assinatura{ margin:0 -28px; }
+  }
+  :focus-visible{ outline:3px solid var(--cobalto); outline-offset:3px; }
 </style>
 </head>
 <body>
@@ -553,276 +510,208 @@
   </defs>
 </svg>
 
-<div class="wrap">
-
-  <header>
+<header>
+  <div class="wrap">
     <div class="brandline">
       <a class="logo" href="#">
         <svg viewBox="27.8 143.6 76.1 87.8" aria-hidden="true"><use href="#dsym"/></svg>
         <span class="word">Daatium</span>
       </a>
       <nav class="topnav">
-        <a href="#nome">O nome</a>
+        <a href="#temas">Temas</a>
+        <a href="#mentoria">Mentoria</a>
         <a href="#quem">Quem</a>
-        <a href="#metodo">Método</a>
-        <a href="#palestras">Palestras</a>
         <a href="#depoimentos">Depoimentos</a>
-        <a href="#newsletter">Newsletter</a>
+        <a href="#newsletter">Métis</a>
         <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="nav-contact" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
+        <a class="nav-contact" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Agenda</a>
       </nav>
     </div>
-  </header>
-
-  <div class="hero">
-    <h1>Velocidade virou commodity.<br><em>Direção virou o ativo&nbsp;escasso.</em></h1>
-    <p class="apoio">Meu trabalho é direção.</p>
-    <div class="hero-kicker"><span>PALESTRAS</span> · <span>MENTORIA EXECUTIVA</span> · <span>CONSELHOS</span></div>
   </div>
+</header>
 
-  <section>
-    <h2 class="eyebrow">O diagnóstico</h2>
-    <div class="seam">
-      <div class="side">
-        <div class="lbl">O QUE OS DADOS DIZEM</div>
-        <div class="maq">84% JÁ USAM IA<br>61% SEM IMPACTO NOS RESULTADOS<br>95% DOS PROJETOS SEM RETORNO<br>70% DAS BARREIRAS: CULTURA E LIDERANÇA</div>
-      </div>
-      <div class="bar" aria-hidden="true"></div>
-      <div class="side">
-        <div class="lbl">O QUE ELES NÃO DIZEM</div>
-        <div class="cls">Que a pergunta anterior nunca foi respondida: o que a sua empresa está amplificando.</div>
-      </div>
+<div class="wrap">
+  <div class="hero">
+    <h1>Velocidade virou <span class="o">commodity.</span><br>Direção virou o <span class="hl">ativo&nbsp;escasso</span></h1>
+    <p class="apoio">Meu trabalho é direção.</p>
+    <div class="meta">
+      <span>Mário Almeida</span>
+      <span>Palestras · Mentoria executiva · Conselhos</span>
+      <span>Google · NRF · TV Senado</span>
     </div>
-    <div class="source">AMCHAM BRASIL · MIT · PESQUISA COM 339 LÍDERES BRASILEIROS</div>
-    <div class="prose">
-      <p>O problema não é a tecnologia.</p>
-      <p>IA é amplificador. Ela acelera o que existe. Empresa com direção clara acelera na direção certa. <strong>Empresa sem eixo chega mais rápido ao lugar errado.</strong></p>
-      <p>Antes de perguntar o que a IA consegue fazer, existe uma pergunta anterior: o que a sua empresa está amplificando.</p>
+  </div>
+</div>
+
+<div class="marquee" aria-label="Clientes DAATIUM">
+  <div class="track">
+    <img src="assets/logos/novartis.png" alt="Novartis" loading="lazy"><img src="assets/logos/grupo-seb.png" alt="Grupo SEB" loading="lazy"><img src="assets/logos/caixa-seguradora.png" alt="Caixa Seguradora" loading="lazy"><img src="assets/logos/cnp-holding.png" alt="CNP Holding" loading="lazy"><img src="assets/logos/sonda.png" alt="Sonda" loading="lazy"><img src="assets/logos/softplan.png" alt="Softplan" loading="lazy"><img src="assets/logos/machado-meyer.png" alt="Machado Meyer" loading="lazy"><img src="assets/logos/serena.png" alt="Serena" loading="lazy"><img src="assets/logos/grupo-cometa.png" alt="Grupo Cometa" loading="lazy"><img src="assets/logos/upmat.png" alt="UpMat" loading="lazy"><img src="assets/logos/estancia-bahia.png" alt="Estância Bahia" loading="lazy"><img src="assets/logos/lyga.png" alt="Lyga" loading="lazy">
+    <img src="assets/logos/novartis.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/grupo-seb.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/caixa-seguradora.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/cnp-holding.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/sonda.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/softplan.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/machado-meyer.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/serena.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/grupo-cometa.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/upmat.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/estancia-bahia.png" alt="" aria-hidden="true" loading="lazy"><img src="assets/logos/lyga.png" alt="" aria-hidden="true" loading="lazy">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section id="temas">
+    <div class="eyebrow"><h2>Temas de palestra</h2><span class="idx">300+ palestras · Presencial ou online</span></div>
+
+    <div class="tema assinatura">
+      <div class="num">01</div>
+      <div>
+        <span class="sig-tag">Palestra-assinatura</span>
+        <h3>A IA acelera. Para onde?</h3>
+        <p>Velocidade virou commodity; direção virou escassez. A palestra junta o que ninguém junta: os dados mais recentes sobre IA e a pergunta que os clássicos passaram 2.400 anos refinando. Antes de decidir onde usar a tecnologia, existe uma pergunta anterior: o que a sua empresa está amplificando.</p>
+      </div>
+      <div class="para">Convenções de liderança e eventos executivos</div>
+    </div>
+
+    <div class="tema">
+      <div class="num">02</div>
+      <div>
+        <h3>O executivo e o sentido</h3>
+        <p>A aceleração esvaziou a agenda de direção interior, e a IA tornou impossível ignorar. Aristóteles, Agostinho, Frankl e Senge aterrissados na vida de quem decide: a decisão sem eixo, o cansaço de quem tem tudo, a carreira que perdeu o para quê. Profundidade sem autoajuda.</p>
+      </div>
+      <div class="para">Alta gestão, sócios e programas de liderança</div>
+    </div>
+
+    <div class="tema">
+      <div class="num">03</div>
+      <div>
+        <h3>O board à prova de IA</h3>
+        <p>Tecnologia virou pauta de capital, risco e competitividade, e a maioria dos conselhos aprova o que não consegue interrogar. O conteúdo é repertório de governança: as perguntas certas, as respostas a exigir, os sinais de alerta em qualquer proposta com IA dentro.</p>
+      </div>
+      <div class="para">Conselhos, acionistas e formação de conselheiros</div>
+    </div>
+
+    <div class="tema">
+      <div class="num">04</div>
+      <div>
+        <h3>Todo mundo virou gestor</h3>
+        <p>Um profissional com agentes de IA entrega hoje o que era de um time. Isso muda hierarquia, carreira e o próprio significado de liderar, e vai redesenhar seu organograma com ou sem planejamento. Melhor com.</p>
+      </div>
+      <div class="para">RH estratégico e convenções de liderança</div>
+    </div>
+
+    <div class="tema">
+      <div class="num">05</div>
+      <div>
+        <h3>Por que a IA não decolou na sua empresa</h3>
+        <p>84% das empresas brasileiras usam IA; 61% não veem resultado. O problema não é técnico: é medo, moda e paralisia. O conteúdo ensina a diagnosticar qual das três trava a sua operação e o que fazer com cada uma.</p>
+      </div>
+      <div class="para">CEOs, diretorias e convenções de gestão</div>
+    </div>
+
+    <div class="temas-links">
+      <a class="textlink" href="/palestras.pdf" target="_blank" rel="noopener" onclick="window.gtag&amp;&amp;gtag('event','download_portfolio_palestras')">Baixar portfólio (PDF)</a>
+      <a class="textlink" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Consultar agenda para eventos</a>
     </div>
   </section>
+</div>
 
-  <section class="metis" id="newsletter">
-    <div class="mark">M É T I S</div>
-    <h2>A inteligência que a IA não substitui.</h2>
-    <p>Ensaios sobre decisão e direção. No seu e-mail, quando há algo a dizer.</p>
-    <form class="signup" action="https://metis.daatium.com/subscribe" method="GET" target="_blank">
-      <input type="email" name="email" placeholder="seu@email.com" aria-label="Seu e-mail" autocomplete="email" required>
-      <button type="submit">ASSINAR NEWSLETTER</button>
-    </form>
-  </section>
+<section class="numbers">
+  <div class="wrap">
+    <div class="grid">
+      <div class="cell"><div class="n">300+</div><div class="l">Palestras em 15 anos de palco</div></div>
+      <div class="cell"><div class="n">30</div><div class="l">Anos entre varejo, finanças e tecnologia</div></div>
+      <div class="cell"><div class="n">25</div><div class="l">Marcas no portfólio de clientes</div></div>
+      <div class="cell"><div class="n">C-Level</div><div class="l">TOTVS · Grupo SEB · XP Investimentos</div></div>
+    </div>
+  </div>
+</section>
 
-  <section id="nome">
-    <h2 class="eyebrow">O nome</h2>
-    <div class="diptych">
-      <div class="dcol">
-        <div class="mark"><span class="hebrew" lang="he">&#1491;&#1506;&#1514;</span></div>
-        <div class="marklabel">DAAT &#183; HEBRAICO</div>
-        <p>Na tradição hebraica, daat é o ponto oculto onde a sabedoria e o entendimento se encontram e viram vida concreta. Não aparece nos diagramas; só existe quando o conhecimento deixa de ser abstrato e passa a habitar quem conhece. É o conhecimento que muda quem o carrega.</p>
+<section class="filmstrip" aria-label="Fotos de palco">
+  <div class="strip">
+    <img src="assets/palestras/assinatura.jpg" alt="Mário Almeida palestrando com microfone em evento executivo" loading="lazy" decoding="async">
+    <img src="assets/palestras/palco-01.jpg" alt="Mário Almeida em palestra no palco principal" loading="lazy" decoding="async">
+    <img src="assets/palestras/palco-02.jpg" alt="Mário Almeida apresentando diante do telão" loading="lazy" decoding="async">
+    <img src="assets/palestras/palco-03.jpg" alt="Mário Almeida em painel do Congresso do Futuro na TV Senado" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<div class="wrap">
+
+  <section id="mentoria">
+    <div class="eyebrow"><h2>Fora do palco</h2><span class="idx">Reservado · Contínuo</span></div>
+    <div class="pair">
+      <div class="offer">
+        <span class="olabel">Mentoria executiva</span>
+        <h3>Liderança não escala por improviso</h3>
+        <p>Ninguém sobe o Everest de improviso. Você não encara nem uma trilha sem preparo. Por que o desenvolvimento da sua liderança seria diferente?</p>
+        <p>Mentoria executiva é um acelerador de desenvolvimento, e desenvolvimento não acontece por inspiração. Acontece por método: sessões quinzenais, blocos de competência, OKRs de evolução, em conversa reservada e contínua. Tudo lapidado em mais de 20 anos liderando e formando executivos.</p>
+        <div class="ofoot">Ciclo Travessia · semestral · 12 sessões<br>Ciclo Consolidação · anual · 24 sessões<br>Programas corporativos sob demanda</div>
       </div>
-      <div class="rule" aria-hidden="true"></div>
-      <div class="dcol">
-        <div class="mark"><svg viewBox="27.8 143.6 76.1 87.8" aria-hidden="true"><use href="#dsym"/></svg></div>
-        <div class="marklabel">IUM &#183; LATIM</div>
-        <p>O sufixo latino ium nomeia os elementos: a substância que não se decompõe mais. O hexágono é a forma com que a ciência desenha a estrutura da matéria; o círculo, o núcleo. O símbolo diz o que o nome promete: conhecimento tratado como elemento.</p>
+      <div class="offer">
+        <span class="olabel">Conselhos</span>
+        <h3>Governar a decisão mais cara da década</h3>
+        <p>Conselheiro consultivo em empresas de educação, tecnologia e impacto, e membro de comitê em entidade nacional da indústria.</p>
+        <p>A era da IA criou um desafio novo para os conselhos: tecnologia deixou de ser pauta técnica e passou a definir competitividade, risco e alocação de capital. Trago visão de tecnologia com olhar de negócio, a prática de quem construiu empresas do zero e a vivência executiva no C-Level de TOTVS, Grupo SEB e XP.</p>
+        <div class="ofoot">Conselhos de administração · Comitês consultivos</div>
       </div>
     </div>
-    <p class="synthesis">A IA leu tudo. Não viveu nada. Daat é o conhecimento de quem viveu. Se&nbsp;aprende&nbsp;decidindo. Se&nbsp;desenvolve&nbsp;liderando.</p>
   </section>
 
   <section id="quem">
-    <h2 class="eyebrow">Quem</h2>
+    <div class="eyebrow"><h2>Quem</h2><span class="idx">Mário Almeida</span></div>
     <div class="bio">
       <div class="portrait"><img src="assets/MarioAlmeida_portrait.jpg" alt="Mário Almeida" width="440" height="550" loading="lazy" decoding="async"></div>
       <div>
-        <h3>Mário Almeida</h3>
         <div class="cred">
           <div class="cred-now">HEAD OF BUSINESS DEVELOPMENT &amp; STRATEGIC PARTNERS · GRUPO ALUN<br>PROFESSOR · ALURA EMPRESAS</div>
           <div class="cred-past">C-LEVEL · TOTVS / GRUPO SEB / XP INVESTIMENTOS<br>CO-FUNDADOR · ABSTARTUPS<br>FUNDADOR COM EXIT</div>
         </div>
         <p>Trinta anos entre varejo, finanças e tecnologia. Começou gerente de restaurante aos vinte anos. Na DAATIUM, trabalha a pergunta que ninguém está fazendo: não o que a tecnologia consegue fazer, mas o que vale a pena fazer com ela.</p>
-        <p>Inovação é sobre pessoas, não sobre tecnologia.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="metodo">
-    <h2 class="eyebrow">Como trabalho</h2>
-    <div class="surfaces">
-      <div class="surface" id="palestras">
-        <h3>Palestras<small>Palco</small></h3>
-        <div class="body">
-        <p class="proofline">Mais de 300 palestras em 15 anos de palco. Google, NRF Retail's Big Show, TV Senado, Amcham, CNI, Sebrae, Cubo Itaú.</p>
-        </div>
-        <div class="portfolio">
-          <div class="sig-card">
-            <div class="photo"><img src="assets/palestras/assinatura.jpg" alt="Mário Almeida palestrando com microfone em evento executivo" loading="lazy" decoding="async" onerror="this.closest('.sig-card').classList.add('no-photo')"></div>
-            <div class="text">
-              <div class="sig-label">Palestra-assinatura</div>
-              <h4>A IA acelera. Para onde?</h4>
-              <p>Velocidade virou commodity; direção virou escassez. A palestra junta o que ninguém junta: os dados mais recentes sobre IA e a pergunta que os clássicos passaram 2.400 anos refinando. Antes de decidir onde usar a tecnologia, existe uma pergunta anterior: o que a sua empresa está amplificando. Para convenções de liderança e eventos executivos.</p>
-            </div>
-          </div>
-          <div class="talks">
-            <div class="talk">
-              <h4>O executivo e o sentido</h4>
-              <p>A aceleração esvaziou a agenda de direção interior, e a IA tornou impossível ignorar. Aristóteles, Agostinho, Frankl e Senge aterrissados na vida de quem decide: a decisão sem eixo, o cansaço de quem tem tudo, a carreira que perdeu o para quê. Profundidade sem autoajuda. Para encontros de alta gestão, sócios e programas de liderança.</p>
-            </div>
-            <div class="talk">
-              <h4>O board à prova de IA: como governar a decisão mais cara da década</h4>
-              <p>Tecnologia virou pauta de capital, risco e competitividade, e a maioria dos conselhos aprova o que não consegue interrogar. O conteúdo é repertório de governança: as perguntas certas, as respostas a exigir, os sinais de alerta em qualquer proposta com IA dentro. Para conselhos, acionistas e formação de conselheiros.</p>
-            </div>
-            <div class="talk">
-              <h4>Todo mundo virou gestor</h4>
-              <p>Um profissional com agentes de IA entrega hoje o que era de um time. Isso muda hierarquia, carreira e o próprio significado de liderar, e vai redesenhar seu organograma com ou sem planejamento. Melhor com. Para RH estratégico e convenções de liderança.</p>
-            </div>
-            <div class="talk">
-              <h4>Por que a IA não decolou na sua empresa (e como destravar)</h4>
-              <p>84% das empresas brasileiras usam IA; 61% não veem resultado. O problema não é técnico: é medo, moda e paralisia. O conteúdo ensina a diagnosticar qual das três trava a sua operação e o que fazer com cada uma. Para CEOs, diretorias e convenções de gestão.</p>
-            </div>
-          </div>
-          <div class="stagephotos">
-            <div class="ph"><img src="assets/palestras/palco-01.jpg" alt="Mário Almeida em palestra no palco principal" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
-            <div class="ph"><img src="assets/palestras/palco-02.jpg" alt="Mário Almeida apresentando diante do telão" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
-            <div class="ph"><img src="assets/palestras/palco-03.jpg" alt="Mário Almeida em painel do Congresso do Futuro na TV Senado" loading="lazy" decoding="async" onerror="(function(i){var s=i.closest('.stagephotos');i.parentElement.remove();if(!s.children.length)s.remove();})(this)"></div>
-          </div>
-          <div class="portfolio-links">
-            <a class="textlink" href="/palestras.pdf" target="_blank" rel="noopener" onclick="window.gtag&amp;&amp;gtag('event','download_portfolio_palestras')">Baixar portfólio (PDF)</a>
-            <a class="textlink" href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Consultar agenda para eventos</a>
-          </div>
-        </div>
-      </div>
-      <div class="surface">
-        <h3>Mentoria executiva<small>Reservado</small></h3>
-        <div class="body">
-        <p>Ninguém sobe o Everest de improviso. Você não encara nem uma trilha sem preparo. Por que o desenvolvimento da sua liderança seria diferente?</p>
-        <p>Mentoria executiva é um acelerador de desenvolvimento, e desenvolvimento não acontece por inspiração. Acontece por método: sessões quinzenais, blocos de competência, OKRs de evolução, em conversa reservada e contínua. Tudo lapidado em mais de 20 anos liderando e formando executivos. Para diretores e fundadores que precisam escalar a liderança sem perder a saúde nem a clareza estratégica.</p>
-        <div class="flow">
-          <div class="flow-desktop">
-          <svg viewBox="0 0 640 210" role="img" aria-label="Método: do ponto de decolagem ao moonshot">
-            <!-- stage 1: signal among noise -->
-            <g>
-              <circle cx="60" cy="62" r="4"  fill="#4B4F52" opacity="0.45"/>
-              <circle cx="96" cy="34" r="6"  fill="#4B4F52" opacity="0.45"/>
-              <circle cx="138" cy="52" r="4" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="44" cy="104" r="5" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="150" cy="96" r="5" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="66" cy="140" r="6" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="126" cy="136" r="4" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="97" cy="88" r="13" fill="#111417"/>
-              <text x="97" y="176" text-anchor="middle" class="ft">PONTO DE DECOLAGEM</text>
-              <text x="97" y="192" text-anchor="middle" class="fs">separar o sinal do ruído</text>
-            </g>
-            <!-- chevrons -->
-            <g stroke="#111417" stroke-width="2" fill="none" opacity="0.6">
-              <path d="M 216 66 L 244 88 L 216 110"/>
-              <path d="M 244 66 L 272 88 L 244 110"/>
-            </g>
-            <!-- stage 2: trajectory -->
-            <g>
-              <path d="M 306 128 C 346 122, 386 100, 420 66" stroke="#4B4F52" stroke-width="1.5" fill="none" stroke-dasharray="1 7" stroke-linecap="round"/>
-              <circle cx="306" cy="128" r="4" fill="#111417"/>
-              <circle cx="352" cy="115" r="4" fill="#111417"/>
-              <circle cx="394" cy="90" r="4" fill="#111417"/>
-              <text x="352" y="176" text-anchor="middle" class="ft">SESSÕES QUINZENAIS</text>
-              <text x="352" y="192" text-anchor="middle" class="fs">blocos de competência · métricas</text>
-            </g>
-            <!-- stage 3: moonshot -->
-            <g>
-              <circle cx="530" cy="88" r="44" fill="none" stroke="#111417" stroke-width="1.5"/>
-              <circle cx="530" cy="88" r="30" fill="#111417"/>
-              <text x="530" y="93" text-anchor="middle" font-family="Newsreader, serif" font-size="15" fill="#ECEDEA">moonshot</text>
-              <text x="530" y="176" text-anchor="middle" class="ft">MOONSHOT</text>
-              <text x="530" y="192" text-anchor="middle" class="fs">roteiro de desenvolvimento</text>
-            </g>
-          </svg>
-          </div>
-          <!-- mobile: three stages stacked so labels stay legible at 360px; aria-hidden para o leitor de tela ler o fluxo uma vez só (versão desktop) -->
-          <div class="flow-mobile" aria-hidden="true">
-            <svg viewBox="20 14 160 186" role="img" aria-label="Estágio 1: ponto de decolagem, separar o sinal do ruído">
-              <circle cx="60" cy="62" r="4"  fill="#4B4F52" opacity="0.45"/>
-              <circle cx="96" cy="34" r="6"  fill="#4B4F52" opacity="0.45"/>
-              <circle cx="138" cy="52" r="4" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="44" cy="104" r="5" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="150" cy="96" r="5" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="66" cy="140" r="6" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="126" cy="136" r="4" fill="#4B4F52" opacity="0.45"/>
-              <circle cx="97" cy="88" r="13" fill="#111417"/>
-              <text x="97" y="176" text-anchor="middle" class="ft">PONTO DE DECOLAGEM</text>
-              <text x="97" y="192" text-anchor="middle" class="fs">separar o sinal do ruído</text>
-            </svg>
-            <svg viewBox="245 40 220 160" role="img" aria-label="Estágio 2: sessões quinzenais, blocos de competência e métricas">
-              <path d="M 306 128 C 346 122, 386 100, 420 66" stroke="#4B4F52" stroke-width="1.5" fill="none" stroke-dasharray="1 7" stroke-linecap="round"/>
-              <circle cx="306" cy="128" r="4" fill="#111417"/>
-              <circle cx="352" cy="115" r="4" fill="#111417"/>
-              <circle cx="394" cy="90" r="4" fill="#111417"/>
-              <text x="360" y="176" text-anchor="middle" class="ft">SESSÕES QUINZENAIS</text>
-              <text x="360" y="192" text-anchor="middle" class="fs">blocos de competência · métricas</text>
-            </svg>
-            <svg viewBox="435 30 210 170" role="img" aria-label="Estágio 3: moonshot, roteiro de desenvolvimento">
-              <circle cx="530" cy="88" r="44" fill="none" stroke="#111417" stroke-width="1.5"/>
-              <circle cx="530" cy="88" r="30" fill="#111417"/>
-              <text x="530" y="93" text-anchor="middle" font-family="Newsreader, serif" font-size="15" fill="#ECEDEA">moonshot</text>
-              <text x="530" y="176" text-anchor="middle" class="ft">MOONSHOT</text>
-              <text x="530" y="192" text-anchor="middle" class="fs">roteiro de desenvolvimento</text>
-            </svg>
-          </div>
-          <div class="flowfoot">Dois ciclos: Travessia, semestral, 12 sessões quinzenais. Consolidação, anual, 24 sessões. Programas corporativos sob demanda.</div>
-        </div>
-        </div>
-      </div>
-      <div class="surface">
-        <h3>Conselhos<small>Presença</small></h3>
-        <div class="body">
-        <p>Conselheiro consultivo em empresas de educação, tecnologia e impacto, e membro de comitê em entidade nacional da indústria.</p>
-        <p>A era da IA criou um desafio novo para os conselhos: tecnologia deixou de ser pauta técnica e passou a definir competitividade, risco e alocação de capital. Trago visão de tecnologia com olhar de negócio, a prática de quem construiu empresas do zero e a vivência executiva no C-Level de TOTVS, Grupo SEB e XP.</p>
-        </div>
-      </div>
-      <div class="method-cta">
-        <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn">CONTRATAR</a>
+        <p class="filosofia">Inovação é sobre pessoas, não sobre tecnologia.</p>
       </div>
     </div>
   </section>
 
   <section id="depoimentos">
-    <h2 class="eyebrow">Quem já trabalhou comigo</h2>
+    <div class="eyebrow"><h2>Quem já trabalhou comigo</h2><span class="idx">8 depoimentos</span></div>
     <div class="quotes">
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"O Mario teve um papel central no meu desenvolvimento profissional. É uma referência para mim em comportamento executivo, visão estratégica e alto nível de exigência, além de unir profundidade técnica em tecnologia a uma forte visão de negócios."</p>
         <footer><div class="who">Gustavo Resende</div><div class="role">Diretor Executivo · PicPay</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"Ter o Mario como mentor tem sido uma experiência que ampliou minha visão sobre inovação, tecnologia e também sobre como pensar negócios de forma estratégica. Ele tem a habilidade de provocar reflexões profundas e, ao mesmo tempo, apresentar caminhos práticos e possíveis."</p>
         <footer><div class="who">Mariana Serra</div><div class="role">CEO · VV Inteligência Humanitária</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"Mário possui uma combinação rara de profunda expertise técnica e pensamento crítico. Sua capacidade de conectar ideias complexas a aplicações práticas de negócio o torna um mentor excepcional."</p>
         <footer><div class="who">André Rabelo</div><div class="role">Head Growth · iFood</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"O Mario chegou em um momento crucial na UpMat, justamente quando enfrentávamos uma importante transição digital. Sua mentoria foi essencial para que conseguíssemos criar um produto de tecnologia voltado para a Educação, concebido para ser digital desde o início."</p>
         <footer><div class="who">Cristina Diaz</div><div class="role">CEO · UpMat</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"Mario foi um mentor decisivo na minha trajetória. Sob sua liderança, ampliei minha visão estratégica e desenvolvi competências que foram essenciais para alcançar meu objetivo de me tornar Diretor de Tecnologia na Maple Bear."</p>
         <footer><div class="who">Oscar de Rooij</div><div class="role">Diretor de Tecnologia · Maple Bear</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"A contribuição do Mário foi de altíssimo valor para o amadurecimento da CNP em decisões de tecnologia e estratégia de dados. A leitura sênior e independente que ele trouxe para discussões críticas acelerou a maturidade da companhia."</p>
         <footer><div class="who">Sany Silveira</div><div class="role">CEO · CNP Seguros Holding Brasil</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"O Mário trouxe ao Grupo SEB a leitura estratégica que faltava em dados e tecnologia. Construiu uma estratégia que virou referência interna sobre como a companhia decide onde investir nessas áreas."</p>
         <footer><div class="who">Thamila Zaher</div><div class="role">CEO · Grupo SEB / Maple Bear</div></footer>
       </div>
 
       <div class="quote">
+        <div class="qmark">&ldquo;</div>
         <p>"O trabalho do Mário foi fundamental para termos uma leitura fina sobre onde investir em tecnologia e dados, o que priorizar, e como executar de forma prática e orientada a resultado."</p>
         <footer><div class="who">Arthur Trauczynski</div><div class="role">Co-CEO · Global Vita Sports / FSX Participações</div></footer>
       </div>
@@ -830,8 +719,8 @@
     </div>
   </section>
 
-  <section>
-    <h2 class="eyebrow">Clientes</h2>
+  <section id="clientes">
+    <div class="eyebrow"><h2>Clientes</h2><span class="idx">25 marcas</span></div>
     <div class="clients">
       <div class="client"><img src="assets/logos/novartis.png" alt="Novartis" loading="lazy"></div>
       <div class="client"><img src="assets/logos/grupo-seb.png" alt="Grupo SEB" loading="lazy"></div>
@@ -860,33 +749,47 @@
       <div class="client"><img src="assets/logos/serena.png" alt="Serena" loading="lazy"></div>
     </div>
   </section>
+</div>
 
+<section class="metis" id="newsletter">
+  <div class="wrap">
+    <div class="mark">M É T I S</div>
+    <h2>A inteligência que a IA não substitui.</h2>
+    <p>Ensaios sobre decisão e direção. No seu e-mail, quando há algo a dizer.</p>
+    <form class="signup" action="https://metis.daatium.com/subscribe" method="GET" target="_blank">
+      <input type="email" name="email" placeholder="seu@email.com" aria-label="Seu e-mail" autocomplete="email" required>
+      <button type="submit">ASSINAR</button>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
   <section class="cta" id="contato">
-    <h2>Vamos conversar.</h2>
-    <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn">AGENDAR CONVERSA</a>
+    <h2>Vamos <span class="o">conversar.</span></h2>
+    <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn">Agendar conversa</a>
   </section>
+</div>
 
-  <footer class="site">
+<footer class="site">
+  <div class="wrap">
     <div class="footrow">
       <div class="footbrand">
         <svg viewBox="27.8 143.6 76.1 87.8" aria-hidden="true"><use href="#dsym"/></svg>
         <span>DAATIUM</span>
       </div>
       <nav class="footnav">
-        <a href="#nome">O nome</a>
+        <a href="#temas">Temas</a>
+        <a href="#mentoria">Mentoria</a>
         <a href="#quem">Quem</a>
-        <a href="#metodo">Método</a>
-        <a href="#palestras">Palestras</a>
         <a href="#depoimentos">Depoimentos</a>
-        <a href="#newsletter">Newsletter</a>
-        <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Contato</a>
+        <a href="#newsletter">Métis</a>
+        <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener">Agenda</a>
         <a href="https://www.linkedin.com/in/mralmeida" target="_blank" rel="noopener">LinkedIn</a>
       </nav>
     </div>
     <div class="copyline">&copy; 2026 Daatium. Todos os direitos reservados. &middot; Campinas, SP &middot; Brasil</div>
-  </footer>
-
-</div>
+  </div>
+</footer>
 
 </body>
 </html>
