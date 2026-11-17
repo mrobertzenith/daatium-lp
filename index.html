@@ -149,6 +149,7 @@
     --papel:#F7F6F1;
     --tinta:#121419;
     --cobalto:#2B32FF;
+    --cobalto-luz:#7C82FF;   /* cobalto para texto sobre tinta, 5,7:1 */
     --neu:#5A5E6B;          /* secundário sobre papel */
     --neu-esc:#9CA1B0;      /* secundário sobre tinta */
     --line:rgba(18,20,25,0.16);
@@ -276,7 +277,7 @@
   }
   .tema.assinatura{ background:var(--tinta); color:var(--papel); border-top:var(--rule);
     margin:0 -28px; padding-left:28px; padding-right:28px; }
-  .tema.assinatura .num{ color:var(--cobalto); }
+  .tema.assinatura .num{ color:var(--cobalto-luz); }
   .tema.assinatura p{ color:var(--neu-esc); }
   .tema.assinatura .para{ color:var(--neu-esc); }
   .tema.assinatura .sig-tag{
@@ -312,7 +313,7 @@
     font-size:clamp(30px, 4.6vw, 62px);
     line-height:1; letter-spacing:-0.03em;
   }
-  .numbers .cell:nth-child(2) .n{ color:var(--cobalto); filter:brightness(1.6); }
+  .numbers .cell:nth-child(2) .n{ color:var(--cobalto-luz); }
   .numbers .l{
     font-family:var(--mono); font-size:11.5px; letter-spacing:0.14em;
     text-transform:uppercase; color:var(--neu-esc); margin-top:10px; line-height:1.7;
@@ -429,7 +430,7 @@
   .metis{ background:var(--tinta); color:var(--papel); border-top:var(--rule); text-align:center; }
   .metis .mark{
     font-family:var(--mono); font-size:13px; letter-spacing:0.5em;
-    color:var(--cobalto); filter:brightness(1.6); margin-bottom:24px;
+    color:var(--cobalto-luz); margin-bottom:24px;
   }
   .metis h2{
     font-family:var(--display); font-weight:800;
