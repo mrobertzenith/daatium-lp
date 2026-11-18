@@ -114,7 +114,7 @@
           "itemOffered": {
             "@type": "Service",
             "name": "Palestras",
-            "description": "Palestra-assinatura \"A IA acelera. Para onde?\" e quatro temas modulares sobre IA, liderança e governança, para convenções de liderança e eventos executivos. Presencial ou online."
+            "description": "Palestra-assinatura \"A IA acelera. Para onde?\" e duas palestras complementares sobre governança de IA e liderança, para convenções de liderança e eventos executivos. Presencial ou online."
           }
         },
         {
@@ -228,6 +228,22 @@
   .hero .meta span{ white-space:nowrap; }
   @media (max-width:680px){ .hero .meta span{ white-space:normal; } }
 
+
+  /* ---------- hero funcional ---------- */
+  .hero .lede{ margin-top:32px; max-width:680px; font-size:clamp(17px,1.6vw,20px); line-height:1.5; color:var(--tinta); }
+  .hero .cta-row{ margin-top:28px; display:flex; gap:14px 28px; flex-wrap:wrap; align-items:center; }
+  /* ---------- ficha da palestra ---------- */
+  .tema .ficha{ margin-top:22px; display:grid; gap:0; max-width:680px; }
+  .tema .ficha div{ display:grid; grid-template-columns:150px 1fr; gap:16px; padding:12px 0; border-top:1px solid var(--line); font-size:15.5px; }
+  .tema .ficha dt{ font-family:var(--mono); font-size:11.5px; letter-spacing:0.12em; text-transform:uppercase; color:var(--cobalto); padding-top:3px; }
+  .tema .ficha dd{ color:var(--tinta); }
+  .tema.assinatura .ficha div{ border-color:rgba(247,246,241,0.25); }
+  .tema.assinatura .ficha dt{ color:var(--cobalto-luz); }
+  .tema.assinatura .ficha dd{ color:var(--papel); }
+  .tema .lead{ font-size:18px; color:var(--tinta); }
+  .tema.assinatura .lead{ color:var(--papel); }
+  @media (max-width:560px){ .tema .ficha div{ grid-template-columns:1fr; gap:4px; } }
+
   /* ---------- marquee de logos ---------- */
   .marquee{
     border-top:var(--rule); border-bottom:var(--rule);
@@ -258,7 +274,7 @@
 
   /* ---------- temas (lista editorial) ---------- */
   .tema{
-    display:grid; grid-template-columns:72px 1fr 300px; gap:28px;
+    display:grid; grid-template-columns:72px 1fr; gap:28px;
     padding:36px 0; border-top:1px solid var(--line);
     align-items:start;
     transition:background .18s ease, color .18s ease;
@@ -517,7 +533,7 @@
         <span class="word">Daatium</span>
       </a>
       <nav class="topnav">
-        <a href="#temas">Temas</a>
+        <a href="#temas">Palestras</a>
         <a href="#mentoria">Mentoria</a>
         <a href="#quem">Quem</a>
         <a href="#depoimentos">Depoimentos</a>
@@ -532,7 +548,12 @@
 <div class="wrap">
   <div class="hero">
     <h1>Velocidade virou <span class="o">commodity.</span><br>Direção virou o <span class="hl">ativo&nbsp;escasso</span></h1>
-    <p class="apoio">Meu trabalho é direção.</p>
+    <p class="lede">Palestras para convenções, conselhos e diretorias sobre inteligência artificial, decisão e liderança. Também mentoria executiva e conselho consultivo. Mário Almeida, 30 anos entre varejo, finanças e tecnologia.</p>
+    <div class="cta-row">
+      <a href="https://calendar.app.google/qFcKdW56ehzAnmnGA" target="_blank" rel="noopener" class="btn">Consultar agenda</a>
+      <a class="textlink" href="#temas">Ver as palestras</a>
+      <a class="textlink" href="/palestras.pdf" target="_blank" rel="noopener" onclick="window.gtag&&gtag('event','download_portfolio_palestras')">Baixar portfólio</a>
+    </div>
     <div class="meta">
       <span>Mário Almeida</span>
       <span>Palestras · Mentoria executiva · Conselhos</span>
@@ -551,52 +572,46 @@
 <div class="wrap">
 
   <section id="temas">
-    <div class="eyebrow"><h2>Temas de palestra</h2><span class="idx">300+ palestras · Presencial ou online</span></div>
+    <div class="eyebrow"><h2>Palestras</h2><span class="idx">3 palestras · 300+ já realizadas</span></div>
 
     <div class="tema assinatura">
       <div class="num">01</div>
       <div>
         <span class="sig-tag">Palestra-assinatura</span>
         <h3>A IA acelera. Para onde?</h3>
-        <p>Velocidade virou commodity; direção virou escassez. A palestra junta o que ninguém junta: os dados mais recentes sobre IA e a pergunta que os clássicos passaram 2.400 anos refinando. Antes de decidir onde usar a tecnologia, existe uma pergunta anterior: o que a sua empresa está amplificando.</p>
+        <p class="lead">Antes de decidir onde usar IA, é preciso saber o que a sua empresa está amplificando.</p>
+        <dl class="ficha">
+          <div><dt>A plateia sai com</dt><dd>um critério para decidir onde usar IA e onde não usar, apoiado nos dados mais recentes e em 2.400 anos de pensamento sobre técnica e decisão</dd></div>
+          <div><dt>Indicada para</dt><dd>Convenções de liderança e eventos executivos</dd></div>
+          <div><dt>Formato</dt><dd>Presencial ou online</dd></div>
+        </dl>
       </div>
-      <div class="para">Convenções de liderança e eventos executivos</div>
     </div>
 
     <div class="tema">
       <div class="num">02</div>
       <div>
-        <h3>O executivo e o sentido</h3>
-        <p>A aceleração esvaziou a agenda de direção interior, e a IA tornou impossível ignorar. Aristóteles, Agostinho, Frankl e Senge aterrissados na vida de quem decide: a decisão sem eixo, o cansaço de quem tem tudo, a carreira que perdeu o para quê. Profundidade sem autoajuda.</p>
+        <h3>O board à prova de IA</h3>
+        <p class="lead">Conselhos aprovam hoje propostas de tecnologia que não sabem interrogar.</p>
+        <dl class="ficha">
+          <div><dt>A plateia sai com</dt><dd>as perguntas certas a fazer, as respostas a exigir e os sinais de alerta em qualquer proposta com IA</dd></div>
+          <div><dt>Indicada para</dt><dd>Conselhos, acionistas e formação de conselheiros</dd></div>
+          <div><dt>Formato</dt><dd>Presencial ou online</dd></div>
+        </dl>
       </div>
-      <div class="para">Alta gestão, sócios e programas de liderança</div>
     </div>
 
     <div class="tema">
       <div class="num">03</div>
       <div>
-        <h3>O board à prova de IA</h3>
-        <p>Tecnologia virou pauta de capital, risco e competitividade, e a maioria dos conselhos aprova o que não consegue interrogar. O conteúdo é repertório de governança: as perguntas certas, as respostas a exigir, os sinais de alerta em qualquer proposta com IA dentro.</p>
-      </div>
-      <div class="para">Conselhos, acionistas e formação de conselheiros</div>
-    </div>
-
-    <div class="tema">
-      <div class="num">04</div>
-      <div>
         <h3>Todo mundo virou gestor</h3>
-        <p>Um profissional com agentes de IA entrega hoje o que era de um time. Isso muda hierarquia, carreira e o próprio significado de liderar, e vai redesenhar seu organograma com ou sem planejamento. Melhor com.</p>
+        <p class="lead">Um profissional com agentes de IA entrega o que era de um time. Isso redesenha o organograma com ou sem planejamento.</p>
+        <dl class="ficha">
+          <div><dt>A plateia sai com</dt><dd>um mapa de como a IA muda hierarquia, carreira e liderança, e o que decidir agora</dd></div>
+          <div><dt>Indicada para</dt><dd>RH estratégico e convenções de liderança</dd></div>
+          <div><dt>Formato</dt><dd>Presencial ou online</dd></div>
+        </dl>
       </div>
-      <div class="para">RH estratégico e convenções de liderança</div>
-    </div>
-
-    <div class="tema">
-      <div class="num">05</div>
-      <div>
-        <h3>Por que a IA não decolou na sua empresa</h3>
-        <p>84% das empresas brasileiras usam IA; 61% não veem resultado. O problema não é técnico: é medo, moda e paralisia. O conteúdo ensina a diagnosticar qual das três trava a sua operação e o que fazer com cada uma.</p>
-      </div>
-      <div class="para">CEOs, diretorias e convenções de gestão</div>
     </div>
 
     <div class="temas-links">
@@ -779,7 +794,7 @@
         <span>DAATIUM</span>
       </div>
       <nav class="footnav">
-        <a href="#temas">Temas</a>
+        <a href="#temas">Palestras</a>
         <a href="#mentoria">Mentoria</a>
         <a href="#quem">Quem</a>
         <a href="#depoimentos">Depoimentos</a>
